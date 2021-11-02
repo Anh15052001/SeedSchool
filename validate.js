@@ -28,7 +28,6 @@ function validateform1() {
         email.focus;
         return false;
     }
-    else{
-        alert('OK roi day, Email nay hop le.');
-    }
+    alert("Bạn đã đăng kí thành công !")
+    return true;
 }

@@ -2,341 +2,369 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/content.css">
-    <title>Seed School</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/content.css" />
+  <title>Seed School</title>
 </head>
 
 <body>
-    <div class="root">
-        <div class="header">
-            <div class="header-top">
-                <img src="./public/image/logo.png" alt="">
-            </div>
-            <div class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            Giới thiệu
-                            <ul class="dropdown">
-                                <li class="nav-item min-content">
-                                    <a href="" class="nav-link">Lời ngỏ</a>
-                                </li>
-                                <li class="nav-item min-content">
-                                    <a href="" class="nav-link">Tầm nhìn và sứ mệnh</a>
-                                </li>
-                                <li class="nav-item min-content">
-                                    <a href="" class="nav-link">Đội ngũ giáo viên</a>
-                                </li>
-                                <li class="nav-item min-content">
-                                    <a href="" class="nav-link">Môi trường chăm sóc và nuôi dạy</a>
-                                </li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Chương trình học</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Tuyển sinh</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Tin tức</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Tuyển dụng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Liên hệ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Đăng nhập</a>
-                    </li>
+  <div class="root">
+    <div class="header">
+      <div class="header-top">
+        <img src="./public/image/logo_pc.png" alt="" id="pclogo" />
+        <img src="./public/image/logo_sp.png" alt="" id="splogo" />
+        <a href="" id="login">Đăng nhập</a>
+      </div>
+      <div class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link">
+              Giới thiệu
+              <ul class="dropdown">
+                <li class="nav-item min-content">
+                  <a href="" class="nav-link">Lời ngỏ</a>
+                </li>
+                <li class="nav-item min-content">
+                  <a href="" class="nav-link">Tầm nhìn và sứ mệnh</a>
+                </li>
+                <li class="nav-item min-content">
+                  <a href="" class="nav-link">Đội ngũ giáo viên</a>
+                </li>
+                <li class="nav-item min-content">
+                  <a href="" class="nav-link">Môi trường chăm sóc và nuôi dạy</a>
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Chương trình học</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Tuyển sinh</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Tin tức</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Tuyển dụng</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Liên hệ</a>
+          </li>
+        </ul>
 
-                </ul>
-
-                <i class="fas fa-bars bars"></i>
-            </div>
-        </div>
-        <div class="content">
-            <div class="slides swiper mySwiper">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <img src="./public/image/slide1.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./public/image/slide2.jpg" alt="">
-
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./public/image/slide3.jpg" alt="">
-
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./public/image/slide4.jpg" alt="">
-
-                    </div>
-
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-            <div class="content-description">
-                <h3 class="content-title">Hệ thống trường mầm non quốc tế Seed School</h3>
-                <p>Hệ thống trường mầm non quốc tế Saigon Academy là đơn vị mầm non tiên phong trong giáo dục sớm với
-                    Chương trình Giáo dục sớm 0 tuổi tại Tp.HCM, Trường Mầm non Saigon Academy đã ứng dụng các phương
-                    pháp giáo dục sớm tiên tiến nhằm phát triển tối đa những tố chất và khả năng mà trẻ đang có, giúp
-                    trẻ có được nền tảng vững chắc về trí tuệ, sức khoẻ và nhân cách ngay trong giai đoạn vàng từ 0-6
-                    tuổi.</p>
-            </div>
-
-            <div class="content-education">
-                <h3 class="content-title">Chương trình giáo dục</h3>
-                <p>Chương trình GIÁO DỤC SỚM 0 TUỔI gồm 8 lĩnh vực phát triển toàn diện cho trẻ, được thiết kế dựa trên
-                    56 chỉ số phát triển quan trọng nhằm xác định các mục tiêu học tập cơ bản đối với trẻ nhỏ</p>
-
-                <div class="education-list">
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module1.jpg" alt="">
-                            <div class="education-description">Lĩnh vực ngôn ngữ</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module2.jpg" alt="">
-                            <div class="education-description">Lĩnh vực toán học</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module3.jpg" alt="">
-                            <div class="education-description">Lĩnh vực âm nhạc & hội họa</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module4.jpg" alt="">
-                            <div class="education-description">Lĩnh vực thể chất</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module5.jpg" alt="">
-                            <div class="education-description">Lĩnh vực xã hội & cộng đồng</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module6.jpg" alt="">
-                            <div class="education-description">Lĩnh vực hoa học & kỹ thuật</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module7.jpg" alt="">
-                            <div class="education-description">Giáo dục nhân cách và kĩ năng sống</div>
-                        </a>
-                    </div>
-                    <div class="education-module">
-                        <a href="">
-                            <img src="./public/image/module8.jpg" alt="">
-                            <div class="education-description">Kỹ năng học tập suốt đời</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-parents">
-                <h3 class="content-title">Phụ huynh của chúng tôi</h3>
-
-                <div class="swiper myParents">
-                    <div class="parents-list swiper-wrapper">
-                        <div class="parents-item swiper-slide">
-                            <img src="./public/image/parents1.jpg" alt="">
-                            <div class="parents-description">
-                                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
-                                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
-                                <p>Tìm được một ngôi trường để có thể yên tâm rằng con em mình đang được chăm sóc, nuôi
-                                    dưỡng và phát triển cả về trí tuệ lẫn nhân cách là một việc vô cùng khó khăn.... Và
-                                    trường Mầm non Saigon Academy là lựa chọn của tôi</p>
-                            </div>
-                        </div>
-                        <div class="parents-item swiper-slide">
-                            <img src="./public/image/parents2.jpg" alt="">
-                            <div class="parents-description">
-                                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
-                                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
-                                <p>Tìm được một ngôi trường để có thể yên tâm rằng con em mình đang được chăm sóc, nuôi
-                                    dưỡng và phát triển cả về trí tuệ lẫn nhân cách là một việc vô cùng khó khăn.... Và
-                                    trường Mầm non Saigon Academy là lựa chọn của tôi</p>
-                            </div>
-                        </div>
-                        <div class="parents-item swiper-slide">
-                            <img src="./public/image/parents3.jpg" alt="">
-                            <div class="parents-description">
-                                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
-                                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
-                                <p>Tìm được một ngôi trường để có thể yên tâm rằng con em mình đang được chăm sóc, nuôi
-                                    dưỡng và phát triển cả về trí tuệ lẫn nhân cách là một việc vô cùng khó khăn.... Và
-                                    trường Mầm non Saigon Academy là lựa chọn của tôi</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-
-            </div>
-
-            <div class="content-news">
-                <h3 class="content-title">Tin tức</h3>
-
-                <div class="news">
-                    <div class="new">
-                        <a href="">
-                            <img src="./public/image/new1.jpg" alt="">
-                            <p>Tập đoàn giáo dục Nguyễn Hoàng tổ chức chương trình Nghệ thuật “Mẹ là tình yêu”</p>
-                        </a>
-                    </div>
-                    <div class="new">
-                        <a href="">
-                            <img src="./public/image/new2.jpg" alt="">
-                            <p>Chương trình hè tại trường mầm non quốc tế Saigon Academy có gì thú vị ?</p>
-                        </a>
-                    </div>
-                    <div class="new">
-                        <a href="">
-                            <img src="./public/image/new3.jpg" alt="">
-                            <p>Công dụng tuyệt vời của cà rốt dành cho trẻ mầm non</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-members">
-                <h3 class="content-title">Thành viên hệ thống tập đoàn giáo dục Seed</h3>
-
-                <div class="group">
-                    <div class="member">
-                        <img src="./public/image/member1.png" alt="">
-                    </div>
-                    <div class="member">
-                        <img src="./public/image/member2.png" alt="">
-                    </div>
-                    <div class="member">
-                        <img src="./public/image/member3.png" alt="">
-                    </div>
-                    <div class="member">
-                        <img src="./public/image/member4.png" alt="">
-                    </div>
-                    <div class="member">
-                        <img src="./public/image/member5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="footer-top">
-                <h3>Hệ thống trường mầm non quốc tế Saigon Academy</h3>
-
-                <div class="cols">
-                    <div class="col">
-                        <div class="row">
-                            <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
-                            <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                        </div>
-                        <div class="row">
-                            <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
-                            <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                        </div>
-                        <div class="row">
-                            <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
-                            <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
-                            <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                        </div>
-                        <div class="row">
-                            <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
-                            <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                            <a href="">028 3848 4930</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <h2>Kết nối Seed</h2>
-                            <h2>Youtube</h2>
-                            <h2>Facebook</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <span>Copyright © 2012 Saigon Academy. All Rights Reserved.</span>
-            </div>
-        </div>
+        <i class="fas fa-bars bars"></i>
+      </div>
     </div>
+    <div class="content">
+      <div class="slides swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./public/image/slide1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./public/image/slide2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./public/image/slide3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./public/image/slide4.jpg" alt="" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="content-description">
+        <h3 class="content-title">
+          Hệ thống trường mầm non quốc tế Seed School
+        </h3>
+        <p>
+          Hệ thống trường mầm non quốc tế Saigon Academy là đơn vị mầm non
+          tiên phong trong giáo dục sớm với Chương trình Giáo dục sớm 0 tuổi
+          tại Tp.HCM, Trường Mầm non Saigon Academy đã ứng dụng các phương
+          pháp giáo dục sớm tiên tiến nhằm phát triển tối đa những tố chất và
+          khả năng mà trẻ đang có, giúp trẻ có được nền tảng vững chắc về trí
+          tuệ, sức khoẻ và nhân cách ngay trong giai đoạn vàng từ 0-6 tuổi.
+        </p>
+      </div>
+
+      <div class="content-education">
+        <h3 class="content-title">Chương trình giáo dục</h3>
+        <p>
+          Chương trình GIÁO DỤC SỚM 0 TUỔI gồm 8 lĩnh vực phát triển toàn diện
+          cho trẻ, được thiết kế dựa trên 56 chỉ số phát triển quan trọng nhằm
+          xác định các mục tiêu học tập cơ bản đối với trẻ nhỏ
+        </p>
+
+        <div class="education-list">
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module1.jpg" alt="" />
+              <div class="education-description">Lĩnh vực ngôn ngữ</div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module2.jpg" alt="" />
+              <div class="education-description">Lĩnh vực toán học</div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module3.jpg" alt="" />
+              <div class="education-description">
+                Lĩnh vực âm nhạc & hội họa
+              </div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module4.jpg" alt="" />
+              <div class="education-description">Lĩnh vực thể chất</div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module5.jpg" alt="" />
+              <div class="education-description">
+                Lĩnh vực xã hội & cộng đồng
+              </div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module6.jpg" alt="" />
+              <div class="education-description">
+                Lĩnh vực hoa học & kỹ thuật
+              </div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module7.jpg" alt="" />
+              <div class="education-description">
+                Giáo dục nhân cách và kĩ năng sống
+              </div>
+            </a>
+          </div>
+          <div class="education-module">
+            <a href="">
+              <img src="./public/image/module8.jpg" alt="" />
+              <div class="education-description">
+                Kỹ năng học tập suốt đời
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-parents">
+        <h3 class="content-title">Phụ huynh của chúng tôi</h3>
+
+        <div class="swiper myParents">
+          <div class="parents-list swiper-wrapper">
+            <div class="parents-item swiper-slide">
+              <img src="./public/image/parents1.jpg" alt="" />
+              <div class="parents-description">
+                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
+                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
+                <p>
+                  Tìm được một ngôi trường để có thể yên tâm rằng con em mình
+                  đang được chăm sóc, nuôi dưỡng và phát triển cả về trí tuệ
+                  lẫn nhân cách là một việc vô cùng khó khăn.... Và trường Mầm
+                  non Saigon Academy là lựa chọn của tôi
+                </p>
+              </div>
+            </div>
+            <div class="parents-item swiper-slide">
+              <img src="./public/image/parents2.jpg" alt="" />
+              <div class="parents-description">
+                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
+                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
+                <p>
+                  Tìm được một ngôi trường để có thể yên tâm rằng con em mình
+                  đang được chăm sóc, nuôi dưỡng và phát triển cả về trí tuệ
+                  lẫn nhân cách là một việc vô cùng khó khăn.... Và trường Mầm
+                  non Saigon Academy là lựa chọn của tôi
+                </p>
+              </div>
+            </div>
+            <div class="parents-item swiper-slide">
+              <img src="./public/image/parents3.jpg" alt="" />
+              <div class="parents-description">
+                <p>Phụ huynh bé Nguyễn Khoa Diệu Khánh Ngọc</p>
+                <p>Viện phó Viện Nghiên Cứu Giáo dục Tp.HCM</p>
+                <p>
+                  Tìm được một ngôi trường để có thể yên tâm rằng con em mình
+                  đang được chăm sóc, nuôi dưỡng và phát triển cả về trí tuệ
+                  lẫn nhân cách là một việc vô cùng khó khăn.... Và trường Mầm
+                  non Saigon Academy là lựa chọn của tôi
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+
+      <div class="content-news">
+        <h3 class="content-title">Tin tức</h3>
+
+        <div class="news">
+          <div class="new">
+            <a href="">
+              <img src="./public/image/new1.jpg" alt="" />
+              <p>
+                Tập đoàn giáo dục Nguyễn Hoàng tổ chức chương trình Nghệ thuật
+                “Mẹ là tình yêu”
+              </p>
+            </a>
+          </div>
+          <div class="new">
+            <a href="">
+              <img src="./public/image/new2.jpg" alt="" />
+              <p>
+                Chương trình hè tại trường mầm non quốc tế Saigon Academy có
+                gì thú vị ?
+              </p>
+            </a>
+          </div>
+          <div class="new">
+            <a href="">
+              <img src="./public/image/new3.jpg" alt="" />
+              <p>Công dụng tuyệt vời của cà rốt dành cho trẻ mầm non</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-members">
+        <h3 class="content-title">
+          Thành viên hệ thống tập đoàn giáo dục Seed
+        </h3>
+
+        <div class="group">
+          <div class="member">
+            <img src="./public/image/member1.png" alt="" />
+          </div>
+          <div class="member">
+            <img src="./public/image/member2.png" alt="" />
+          </div>
+          <div class="member">
+            <img src="./public/image/member3.png" alt="" />
+          </div>
+          <div class="member">
+            <img src="./public/image/member4.png" alt="" />
+          </div>
+          <div class="member">
+            <img src="./public/image/member5.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-top">
+        <h3>Hệ thống trường mầm non quốc tế Saigon Academy</h3>
+
+        <div class="cols">
+          <div class="col">
+            <div class="row">
+              <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
+              <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+            </div>
+            <div class="row">
+              <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
+              <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+            </div>
+            <div class="row">
+              <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
+              <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
+              <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+            </div>
+            <div class="row">
+              <h3>CƠ SỞ TRẦN NHẬT DUẬT</h3>
+              <span>27AB Trần Nhật Duật, P. Tân Định, Q. 1</span>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+              <a href="">028 3848 4930</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <h2>Kết nối Seed</h2>
+              <h2>Youtube</h2>
+              <h2>Facebook</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Copyright © 2012 Saigon Academy. All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-    new Swiper(".myParents", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+  new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  new Swiper(".myParents", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
 </script>
 <script src="app.js"></script>
 

@@ -92,7 +92,7 @@
 .nav-item:hover .dropdown {
     top: 100%;
     margin-top: -1px;
-    opacity: 1;
+    opacity: 0.95;
     visibility: visible;
 }
 

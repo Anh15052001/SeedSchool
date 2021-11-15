@@ -83,12 +83,13 @@
     margin-bottom: 10px;
 }
 
-.parents-description {
+.parents-name, .parents-job {
     text-align: center;
 }
 
 .parents-description p {
     margin-bottom: 10px;
+    max-width: 40rem;
 }
 
 .parents-description p:first-child {
@@ -103,8 +104,8 @@
     padding: 3rem 5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 15px;
+    align-items: flex-start;
 }
 
 .news img {
@@ -211,7 +212,7 @@
         top: 100%;
         margin-top: -1px;
         visibility: visible;
-        opacity: 1;
+        opacity: 0.95;
     }
     .dropdown {
         right: 100%;

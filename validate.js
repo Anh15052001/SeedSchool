@@ -1,14 +1,5 @@
-var postAPI='https://seedschool.herokuapp.com/v2/api-docs'
-fetch(postAPI)
-    .then(function (response){
-        return response.json();
-    })
-    .then(function (posts) {
-        console.log(posts)
-    }).catch(function (err){
-        console.log('Có lỗi')
-})
-alert('Hi javascrpi')
+
+
 
 function validateform() {
     var name = document.myform.username.value;
@@ -21,8 +12,26 @@ function validateform() {
         alert("Mật khẩu phải ít nhất 6 kí tự");
         return false;
     }
-    var postAPI='https://jsonplaceholder.typicode.com/posts'
-    fetch(postAPI)
+    var postAPI='https://seedschool.herokuapp.com/api/v1/account/login'
+    fetch(postAPI,{
+
+        method:"POST",
+
+        body: JSON.stringify({
+
+            username: "string",
+
+            password: "string"
+
+        }),
+
+        headers: {
+
+            "Content-type": "application/json; charset=UTF-8"
+
+        }
+
+    })
         .then(function (response){
           return response.json();
     })

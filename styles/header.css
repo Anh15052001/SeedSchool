@@ -1,14 +1,14 @@
 .header-top {
     display: flex;
     height: 60px;
-    padding: 0 5rem;
+    padding: 0 2rem 0 6rem;
     align-items: center;
     justify-content: space-between;
 }
 
 @media only screen and (max-width: 1050px) {
     .header-top {
-        padding: 0 1.75rem;
+        padding: 0 1rem;
     }
 }
 

@@ -10,7 +10,6 @@
 <!--Thư viện jquery validation-->
 
 <body>
-<script src="validate.js">
 
 </script>
 <h2>Đăng nhập</h2>
@@ -26,7 +25,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container" name="form" method="post" action="">
-    <form name="myform" onsubmit="return validateform()">
+    <form name="myform" id="myform">
       <h1>Sign in</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -55,6 +54,6 @@
     </div>
   </div>
 </div>
-
+<script src="validate.js"></script>
 </body>
 </html>

@@ -1,33 +1,39 @@
-function validateform() {
-    var name = document.myform.username.value;
-    var password = document.myform.password.value;
+document.getElementById("myform").addEventListener("submit", (e) => {
+  e.preventDefault();
+  var name = document.myform.username.value;
+  var password = document.myform.password.value;
+  if (name == null || name == "") {
+    alert("Tài khoản không được để trống");
+    return false;
+  } else if (password.length < 6) {
+    alert("Mật khẩu phải ít nhất 6 kí tự");
+    return false;
+  }
+  var postAPI = "https://seedschool.herokuapp.com/api/v1/account/login";
 
-    if (name == null || name == "") {
-        alert("Tài khoản không được để trống");
-        return false;
-    } else if (password.length < 6) {
-        alert("Mật khẩu phải ít nhất 6 kí tự");
-        return false;
-    }
-}
-function validateform1() {
-    var name = document.myform1.username1.value;
-    var password = document.myform1.password1.value;
+  fetch(postAPI, {
+    method: "POST",
+    body: JSON.stringify({
+      username: name,
 
-    if (name == null || name == "") {
-        alert("Tài khoản không được để trống");
-        return false;
-    } else if (password.length < 6) {
-        alert("Mật khẩu phải ít nhất 6 kí tự");
-        return false;
-    }
-    var email = document.getElementById('email');
-    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (!filter.test(email.value)) {
-        alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
-        email.focus;
-        return false;
-    }
-    alert("Bạn đã đăng kí thành công !")
-    return true;
-}
+      password: password,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (posts) {
+      if (posts.error) {
+        alert("Login failure!");
+        console.log(posts);
+      } else {
+        alert("Login successfully!");
+        console.log(posts);
+        localStorage.setItem("token", posts.token);
+      }
+    })
+    .catch((error) => console.log(error));
+});

@@ -1,0 +1,51 @@
+.dialog-label,
+input {
+    display: block;
+}
+
+input.text {
+    box-sizing: unset;
+    margin-bottom: 12px;
+    width: 95%;
+    padding: .4em;
+    border: 1px solid gray;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+}
+
+.modal-body {
+    overflow-y: scroll;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.modal-content {
+    height: 495px;
+    width: 400px;
+}
+
+.modal {
+    text-align: center;
+}
+
+.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 486px) {
+    .modal-content {
+        width: 300px;
+    }
+}

@@ -30,6 +30,26 @@
     /* easeOutCubic */
 }
 
+.teacher-box {
+    padding: 10px;
+    box-shadow: 0 0 5px gray;
+    background-color: aliceblue;
+}
+
+.teacher-img img {
+    aspect-ratio: 3/4;
+    border: 1px solid gray;
+}
+
+.teacher-name {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.teacher-name a {
+    color: black;
+}
+
 .ttr-header.hide {
     top: -60px;
 }

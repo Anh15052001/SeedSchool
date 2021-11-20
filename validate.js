@@ -33,6 +33,7 @@ document.getElementById("myform").addEventListener("submit", (e) => {
         alert("Login successfully!");
         console.log(posts);
         localStorage.setItem("token", posts.token);
+        window.location.replace("./admin/index.html");
       }
     })
     .catch((error) => console.log(error));

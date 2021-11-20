@@ -1744,7 +1744,7 @@
     top: 1px;
 }
 
-.modify-event-btn {
+.blue-btn {
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -1765,7 +1765,7 @@
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
-.delete-event-btn {
+.red-btn {
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -1781,11 +1781,12 @@
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
+    margin-right: 15px;
     background: red;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
-.add-event-btn {
+.green-btn {
     display: inline-block;
     font-weight: 400;
     text-align: center;

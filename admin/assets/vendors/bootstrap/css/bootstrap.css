@@ -1972,7 +1972,7 @@ pre code {
 }
 
 select.form-control:not([size]):not([multiple]) {
-    height: calc(2.25rem + 2px)
+    height: calc(2.5rem + 1.5px);
 }
 
 select.form-control:focus::-ms-value {
@@ -4849,7 +4849,8 @@ input[type=submit].btn-block {
     display: flex;
     padding-left: 0;
     list-style: none;
-    border-radius: .25rem
+    border-radius: .25rem;
+    margin-top: 25px;
 }
 
 .page-link {

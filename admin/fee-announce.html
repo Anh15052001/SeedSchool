@@ -223,124 +223,89 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Chỉnh sửa thông tin</h4>
+                <h4 class="breadcrumb-title">Gửi thông báo</h4>
                 <ul class="db-breadcrumb-list">
-                    <li><i class="fa fa-home"></i>Trang quản lý</li>
-                    <li>Cài đặt</li>
-                    <li>Chỉnh sửa thông tin</li>
+                    <li><i class="fa fa-home"></i>Gửi thông báo</li>
+                    <li>Thông báo chi phí</li>
                 </ul>
             </div>
             <!-- Card -->
             <div class="row">
-                <!-- Your Profile Views Chart -->
                 <div class="col-lg-10 m-b30" style="margin: auto">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Chỉnh sửa thông tin</h4>
+                            <h4>Bảng chi phí học tập</h4>
                         </div>
+
                         <div class="widget-inner">
-                            <form class="edit-profile m-b30">
-                                <div class="form-group row">
-                                    <div class="col-md-10  ml-auto">
-                                        <h3>1. Thông tin cơ bản</h3>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Họ và tên</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="Trần Văn Tuyến">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Chức vụ</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="Hiệu trưởng">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Mã cán bộ</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="CB016023">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Ngày sinh</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="date" value="1981-02-11" min="1901-02-11" max="2101-02-11">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Giới tính</label>
-                                    <div class="col-md-8">
-                                        <select class="form-control">
-                                            <option selected="selected">Nam</option>
-                                            <option>Nữ</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="seperator"></div>
+                            <from class="edit-profile m-b30">
+                                <div class="">
+                                    <div class="col-12">
+                                        <table id="item-add" style="width:100%;">
+                                            <tr class="list-item">
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col-md-7">
+                                                            <label class="col-form-label">Khoản chi phi cần đóng</label>
+                                                            <div>
+                                                                <input class="form-control" type="text" value="">
+                                                            </div>
+                                                        </div>
 
-                                <div class="form-group row">
-                                    <div class="col-sm-10 ml-auto">
-                                        <h3>2. Thông tin liên hệ</h3>
+                                                        <div class="col-md-3">
+                                                            <label class="col-form-label">Thành tiền</label>
+                                                            <div>
+                                                                <input class="form-control" type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <label class="col-form-label">Close</label>
+                                                            <div class="form-group">
+                                                                <a class="delete" href="#"><i class="fa fa-close"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label class="col-form-label">Tổng tiền</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="">
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Số điện thoại</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="0397973727">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Địa chỉ email</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="tuyentv@seed.edu.vn">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Địa chỉ web</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="tuyenteaching.com.vn">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Địa chỉ nhà</label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" value="Số nhà 66, ngõ 75 Giải Phóng, phường Bách Khoa, quận Hai Bà Trưng, Hà Nội">
-                                    </div>
-                                </div>
                                 <div class="row">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <button type="reset" class="blue-btn">Lưu thay đổi</button>
-                                        <button type=" reset " class="red-btn">Hủy bỏ</button>
+                                    <div class="col-md-10">
+                                        <div class="col-md-2"></div>
+                                        <button type="reset" class="add-event-btn" style="margin-top: 20px; margin-bottom: 0; margin-left: 15px;"><i class="fa fa-fw fa-plus-circle"></i>Add Item</button>
+                                        <button type="reset" class="modify-event-btn" style="margin-top: 20px;" ">Save changes</button>
                                     </div>
                                 </div>
-                            </form>
+                            </from>
                         </div>
                     </div>
                 </div>
-                <!-- Your Profile Views Chart END-->
+
             </div>
+            <!-- Card END -->
         </div>
     </main>
     <div class="ttr-overlay "></div>
 
     <!-- External JavaScripts -->
-    <script src="assets/js/jquery-3.6.0.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/admin.js"></script>
-    <script src="assets/js//catchbutton.js"></script>
+    <script src="assets/js/jquery-3.6.0.js "></script>
+    <script src="assets/js/jquery.min.js "></script>
+    <script src="assets/js/jquery-ui.js "></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js "></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js "></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js "></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js "></script>
+    <script src="assets/js/admin.js "></script>
+    <script src="assets/js//catchbutton.js "></script>
 </body>
 
 </html>

@@ -211,93 +211,70 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Đăng bài</h4>
+                <h4 class="breadcrumb-title">Thống kê</h4>
                 <ul class="db-breadcrumb-list">
-                    <li><i class="fa fa-home"></i>Quản lý Web</li>
-                    <li>Đăng bài</li>
+                    <li><i class="fa fa-home"></i>Trang quản lý</li>
+                    <li>Thống kê</li>
                 </ul>
             </div>
             <!-- Card -->
             <div class="row">
+                <!-- Your Profile Views Chart -->
                 <div class="col-lg-10 m-b30" style="margin: auto">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Tạo bài viết</h4>
+                            <h4>Thành viên hệ thống</h4>
                         </div>
                         <div class="widget-inner">
                             <form class="edit-profile m-b30">
-                                <div class="">
-                                    <div class="form-group row">
-                                        <div class="col-md-10  ml-auto">
-                                            <h3>1. Thiết lập chung</h3>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label">Ngày bắt đầu</label>
-                                        <div class="col-md-3">
-                                            <input class="form-control" type="date" value="2021-11-14" min="2001-02-11" max="2101-02-11">
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label">Chọn ảnh đại điện</label>
-                                        <div class="col-md-8">
-                                            <input type="file" accept="image/*" multiple>
-                                        </div>
-                                    </div>
-
-                                    <div class="seperator"></div>
-
-                                    <div class="form-group row">
-                                        <div class="col-sm-10 ml-auto">
-                                            <h3>2. Nôi dung bài viết</h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label">Tiêu đề bài viết</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" type="text" value="Bánh mì">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label">Nôi dung bài viết</label>
-                                        <div class="col-md-8">
-                                            <textarea class="form-control"> </textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <div class="col-md-10  ml-auto">
-                                            <h3>3. Tác giả</h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label">Họ và tên</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" type="text" value="Bánh mì">
-                                        </div>
-                                    </div>
+                                <div class="form-group row">
+                                    <span class="col-3">Số học sinh:</span>
+                                    <span class="col-3">512</span>
+                                    <span class="col-3">Ban quản lý:</span>
+                                    <span class="col-3">8</span>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <button type="reset" class="modify-event-btn">Lưu thay đổi</button>
-                                        <button type="reset" class="delete-event-btn">Hủy bỏ</button>
-                                    </div>
+                                <div class="form-group row">
+                                    <span class="col-3">Số giáo viên:</span>
+                                    <span class="col-3">32</span>
+                                    <span class="col-3">Phòng văn thư:</span>
+                                    <span class="col-3">8</span>
                                 </div>
+
+                                <div class="form-group row">
+                                    <span class="col-3">Số lớp học:</span>
+                                    <span class="col-3">32</span>
+                                    <span class="col-3">Bộ phận khác:</span>
+                                    <span class="col-3">8</span>
+                                </div>
+
                             </form>
                         </div>
                     </div>
 
+                    <div class="widget-box">
+                        <div class="wc-title">
+                            <h4>Biểu đồ nhập học</h4>
+                        </div>
+                        <div class="widget-inner">
+                            <canvas id="admission-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="widget-box">
+                        <div class="wc-title">
+                            <h4>Biểu đồ thu - chi</h4>
+                        </div>
+                        <div class="widget-inner">
+                            <canvas id="revenue-chart" width="400" height="200"></canvas>
+                        </div>
+
+                    </div>
+                    <!-- Your Profile Views Chart END-->
                 </div>
+                <!-- Card END -->
             </div>
-            <!-- Card END -->
-        </div>
     </main>
     <div class="ttr-overlay"></div>
 
@@ -309,6 +286,8 @@
     <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/drawchart.js"></script>
     <script src="assets/js/admin.js"></script>
     <script src="assets/js//catchbutton.js"></script>
 </body>

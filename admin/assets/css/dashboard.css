@@ -1761,7 +1761,7 @@
     line-height: 1.5;
     border-radius: .25rem;
     background: blue;
-    margin-right: 10px;
+    text-align: right;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -1781,8 +1781,8 @@
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    margin-right: 15px;
     background: red;
+    text-align: right;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -1804,7 +1804,6 @@
     border-radius: .25rem;
     background: green;
     text-align: right;
-    margin-bottom: 20px;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 

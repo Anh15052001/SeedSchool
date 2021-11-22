@@ -72,14 +72,18 @@ const revenue_chart = new Chart(cxt_revenue, {
                 type: 'linear',
                 position: 'left',
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 1800,
+                    min: 0
                 }
             }, {
                 id: 'y2',
                 type: 'linear',
                 position: 'right',
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 1800,
+                    min: 0
                 }
             }]
         }

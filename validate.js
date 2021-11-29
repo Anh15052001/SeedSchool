@@ -1,4 +1,3 @@
-
 document.getElementById("myform").addEventListener("submit", (e) => {
   e.preventDefault();
   var name = document.myform.username.value;
@@ -27,12 +26,14 @@ document.getElementById("myform").addEventListener("submit", (e) => {
       return response.json();
     })
     .then(function (posts) {
-      if (posts.error) {
-        alert("Login failure!");
-        console.log(posts);
+      console.log(posts);
+      if (!posts.token) {
+        document.getElementById("error").innerHTML =
+          posts.message || posts.error;
+        posts.error ? document.getElementById("username").focus() : "";
+        posts.message ? document.getElementById("password").focus() : "";
       } else {
         alert("Login successfully!");
-        console.log(posts);
         localStorage.setItem("token", posts.token);
         window.location.replace("./index.html");
       }

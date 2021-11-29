@@ -28,15 +28,15 @@
   </div>
   <div class="form-container sign-in-container" name="form" method="post" action="">
     <form name="myform" id="myform">
-      <h1>Sign in</h1>
-      <div class="social-container">
+      <h1>Sign In</h1>
+      <!-- <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <span>or use your account</span>
-      <input name="username" type="text" placeholder="Username" required/>
-      <input  name="password" type="password" placeholder="Password" required/>
+      </div> -->
+      <span id="error"></span>
+      <input name="username" type="text" placeholder="Username" required id="username"/>
+      <input  name="password" type="password" placeholder="Password" required id="password"/>
       <a href="#">Forgot your password?</a>
       <button value="register" onsubmit="validateform()">Sign In</button>
     </form>

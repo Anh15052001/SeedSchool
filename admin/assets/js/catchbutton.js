@@ -132,8 +132,9 @@ $(document).on('click', '#add-event', function() {
         "</div>" +
 
         "<div class='row flex' style='justify-content: flex-end;'>" +
-        "<button class='blue-btn mod-event-btn' type='button' style='margin-right: 15px; text-align: center; width: 100px;'>" + "Chỉnh sửa" + "</button>" +
-        "<button class='red-btn del-event-btn' data-toggle='modal' data-target='#del-event-dialog' data-backdrop='static' type='button' style='margin-right: 15px;'>" + "Xóa hoạt động" + "</button>" +
+        "<button class='green-btn ntf-event-btn' type='button' style='margin-right: 15px;' data-toggle='modal' data-target='#ntf-event-dialog' data-backdrop='static'>" + "Thông báo" + "</button>" +
+        "<button class='blue-btn mod-event-btn' type='button' style='margin-right: 15px; width: 100px'>" + "Chỉnh sửa" + "</button>" +
+        "<button class='red-btn del-event-btn' type='button' style='margin-right: 15px;' data-toggle='modal' data-target='#del-event-dialog' data-backdrop='static'>" + "Xóa hoạt động" + "</button>" +
         "</div>" +
         "</form>" +
         "</div>" +

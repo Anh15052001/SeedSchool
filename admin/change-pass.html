@@ -45,7 +45,7 @@
             <!--logo start -->
             <div class="ttr-logo-box">
                 <div>
-                    <a href="admin-index.html" class="ttr-logo">
+                    <a href="admin-homepage.html" class="ttr-logo">
                         <img class="ttr-logo-mobile" alt="" src="assets/images/logo-mb.png" width="40" height="40">
                         <img class="ttr-logo-desktop" alt="" src="assets/images/logo-pc.png" width="170" height="40">
                     </a>
@@ -56,7 +56,7 @@
             <div class="ttr-header-right ttr-with-seperator">
                 <!-- header right menu start -->
                 <ul class="ttr-header-navigation">
-                    <li>
+                    <li id="greeting">
                         <a href="admin-index.html">
                         Xin chào, 
                         <span>Trần Văn Tuyến</span>
@@ -71,10 +71,10 @@
                         <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="assets/images/testimonials/pic4.jpg" width="32" height="32"></span></a>
                         <div class="ttr-header-submenu">
                             <ul>
-                                <li><a href="admin-index.html">Thông tin cá nhân</a></li>
+                                <li><a href="admin-index.html">Trang cá nhân</a></li>
                                 <li><a href="change-info.html">Chỉnh sửa thông tin</a></li>
                                 <li><a href="change-pass.html">Đổi mật khẩu</a></li>
-                                <li><a href="../login.html">Đăng xuất</a></li>
+                                <li><a href="../loginadmin.html ">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -221,7 +221,7 @@
             <!-- Card -->
             <div class="row">
                 <!-- Your Profile Views Chart -->
-                <div class="col-lg-10 m-b30" style="margin: auto">
+                <div class="col-lg-5 col-md-6 col-sm-7 col-10 m-b30" style="margin: auto;">
                     <div class="widget-box">
                         <div class="wc-title">
                             <h4>Đổi mật khẩu</h4>
@@ -230,28 +230,30 @@
                             <form class="edit-profile m-b30">
 
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Nhập mật khẩu cũ</label>
-                                    <div class="col-md-6">
-                                        <input class="form-control" type="password">
+                                    <div class="col-12">
+                                        <input class="form-control" type="password" placeholder="Nhập mật khẩu cũ">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Nhập mật khẩu mới</label>
-                                    <div class="col-md-6">
-                                        <input class="form-control" type="password">
+                                    <div class="col-12">
+                                        <input class="form-control" type="password" placeholder="Nhập mật khẩu mới">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Nhập lại mật khẩu</label>
-                                    <div class="col-md-6">
-                                        <input class="form-control" type="password">
+                                    <div class="col-12">
+                                        <input class="form-control" type="password" placeholder="Nhập lại mật khẩu mới">
                                     </div>
                                 </div>
 
-                                <div class="row flex" style="justify-content: center;">
-                                    <button type="reset" class="blue-btn" style="margin-bottom: 0;">Đổi mật khẩu</button>
+                                <div class="form-group row">
+                                    <div class="col-6" style="padding-right: 7.5px;">
+                                        <button type="button" class="col-12 blue-btn" style="margin-top: 15px;">Đổi mật khẩu</button>
+                                    </div>
+                                    <div class="col-6" style="padding-left: 7.5px;">
+                                        <button type="reset" class="col-12 red-btn" style="margin-top: 15px;">Nhập lại</button>
+                                    </div>
                                 </div>
 
                             </form>

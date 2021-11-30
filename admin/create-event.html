@@ -45,7 +45,7 @@
             <!--logo start -->
             <div class="ttr-logo-box">
                 <div>
-                    <a href="admin-index.html" class="ttr-logo">
+                    <a href="admin-homepage.html" class="ttr-logo">
                         <img class="ttr-logo-mobile" alt="" src="assets/images/logo-mb.png" width="40" height="40">
                         <img class="ttr-logo-desktop" alt="" src="assets/images/logo-pc.png" width="170" height="40">
                     </a>
@@ -56,7 +56,7 @@
             <div class="ttr-header-right ttr-with-seperator">
                 <!-- header right menu start -->
                 <ul class="ttr-header-navigation">
-                    <li>
+                    <li id="greeting">
                         <a href="admin-index.html">
                         Xin chào, 
                         <span>Trần Văn Tuyến</span>
@@ -71,10 +71,10 @@
                         <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="assets/images/testimonials/pic4.jpg" width="32" height="32"></span></a>
                         <div class="ttr-header-submenu">
                             <ul>
-                                <li><a href="admin-index.html">Thông tin cá nhân</a></li>
+                                <li><a href="admin-index.html">Trang cá nhân</a></li>
                                 <li><a href="change-info.html">Chỉnh sửa thông tin</a></li>
                                 <li><a href="change-pass.html">Đổi mật khẩu</a></li>
-                                <li><a href="../login.html">Đăng xuất</a></li>
+                                <li><a href="../loginadmin.html ">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -271,8 +271,9 @@
                                 </div>
 
                                 <div class="row flex" style="justify-content: flex-end;">
-                                    <button class="blue-btn mod-event-btn" type="button" style="margin-right: 15px; text-align: center; width: 100px;">Chỉnh sửa</button>
-                                    <button class="red-btn del-event-btn" data-toggle="modal" data-target="#del-event-dialog" data-backdrop="static" type="button" style="margin-right: 15px;">Xóa hoạt động</button>
+                                    <button class="green-btn ntf-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#ntf-event-dialog" data-backdrop="static">Thông báo</button>
+                                    <button class="blue-btn mod-event-btn" type="button" style="margin-right: 15px; width: 100px">Chỉnh sửa</button>
+                                    <button class="red-btn del-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#del-event-dialog" data-backdrop="static">Xóa hoạt động</button>
                                 </div>
                             </form>
                         </div>
@@ -327,8 +328,9 @@
                                 </div>
 
                                 <div class="row flex" style="justify-content: flex-end;">
-                                    <button class="blue-btn mod-event-btn" type="button" style="margin-right: 15px; text-align: center; width: 100px;">Chỉnh sửa</button>
-                                    <button class="red-btn del-event-btn" data-toggle="modal" data-target="#del-event-dialog" data-backdrop="static" type="button" style="margin-right: 15px;">Xóa hoạt động</button>
+                                    <button class="green-btn ntf-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#ntf-event-dialog" data-backdrop="static">Thông báo</button>
+                                    <button class="blue-btn mod-event-btn" type="button" style="margin-right: 15px; width: 100px">Chỉnh sửa</button>
+                                    <button class="red-btn del-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#del-event-dialog" data-backdrop="static">Xóa hoạt động</button>
                                 </div>
                             </form>
                         </div>
@@ -371,6 +373,150 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="blue-btn" id="add-event" data-dismiss="modal">Thêm hoạt động</button>
+                    <button type="button" class="red-btn" data-dismiss="modal">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ntf-event-dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title ">Gửi thông báo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <fieldset>
+                            <div>
+                                <label class="dialog-label"><strong>Tới nhóm các tài khoản</strong></label>
+                                <div style="column-count: 3;">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M3A
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M3B
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M3C
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M3D
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M3E
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M4A
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M4B
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M4C
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M4D
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M4E
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M5A
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M5B
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M5C
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M5D
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" value="">Lớp M5E
+                                    </label>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">Giáo viên toàn trường
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">Học sinh toàn trường
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 3 tuổi và GVCN tương ứng
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 4 tuổi và GVCN tương ứng
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 5 tuổi và GVCN tương ứng
+                                </label>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label class="dialog-label"><strong>Tới tài khoản cụ thể</strong></label>
+                                <input type="text" id="ntf-acc" class="text ui-widget-content ui-corner-all" placeholder="Tên các tài khoản, ngăn cách bởi dấu ';'">
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <label class="dialog-label"><strong>Link bài viết đính kèm (Nếu có)</strong></label>
+                                <input type="text" id="ntf-acc" class="text ui-widget-content ui-corner-all" placeholder="Link bài viết chi tiết về hoạt động">
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <div class="form-group">
+                                    <label class="dialog-label"><strong>Ghi chú thêm (Nếu có)</strong></label>
+                                    <textarea class="form-control" rows="5" placeholder="Các ghi chú thêm như cách đăng ký hoạt động, lưu ý khi tham gia,... Nên sử dụng khi chưa có bài viết về hoạt động"></textarea>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="blue-btn" id="ntf-event" data-dismiss="modal">Gửi thông báo</button>
                     <button type="button" class="red-btn" data-dismiss="modal">Hủy bỏ</button>
                 </div>
             </div>

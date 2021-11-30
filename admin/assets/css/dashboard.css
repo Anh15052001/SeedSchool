@@ -175,6 +175,7 @@
 }
 
 .ttr-header-submenu {
+    z-index: 1000;
     background-color: #fff;
     position: absolute;
     top: 100%;
@@ -738,7 +739,7 @@
     .ttr-header-right .ttr-header-navigation .ttr-header-submenu.ttr-notify-list {
         right: -60px;
     }
-    .ttr-header-navigation li:first-child {
+    #greeting {
         display: none;
     }
 }
@@ -1761,7 +1762,6 @@
     line-height: 1.5;
     border-radius: .25rem;
     background: blue;
-    text-align: right;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -1782,7 +1782,6 @@
     line-height: 1.5;
     border-radius: .25rem;
     background: red;
-    text-align: right;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -1803,7 +1802,6 @@
     line-height: 1.5;
     border-radius: .25rem;
     background: green;
-    text-align: right;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 

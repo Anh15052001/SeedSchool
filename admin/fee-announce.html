@@ -45,7 +45,7 @@
             <!--logo start -->
             <div class="ttr-logo-box">
                 <div>
-                    <a href="admin-index.html" class="ttr-logo">
+                    <a href="admin-homepage.html" class="ttr-logo">
                         <img class="ttr-logo-mobile" alt="" src="assets/images/logo-mb.png" width="40" height="40">
                         <img class="ttr-logo-desktop" alt="" src="assets/images/logo-pc.png" width="170" height="40">
                     </a>
@@ -56,7 +56,7 @@
             <div class="ttr-header-right ttr-with-seperator">
                 <!-- header right menu start -->
                 <ul class="ttr-header-navigation">
-                    <li>
+                    <li id="greeting">
                         <a href="admin-index.html">
                         Xin chào, 
                         <span>Trần Văn Tuyến</span>
@@ -71,10 +71,10 @@
                         <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="assets/images/testimonials/pic4.jpg" width="32" height="32"></span></a>
                         <div class="ttr-header-submenu">
                             <ul>
-                                <li><a href="admin-index.html">Thông tin cá nhân</a></li>
+                                <li><a href="admin-index.html">Trang cá nhân</a></li>
                                 <li><a href="change-info.html">Chỉnh sửa thông tin</a></li>
                                 <li><a href="change-pass.html">Đổi mật khẩu</a></li>
-                                <li><a href="../login.html">Đăng xuất</a></li>
+                                <li><a href="../loginadmin.html ">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -124,6 +124,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="fee-announce.html" class="ttr-material-button">
+                            <span class="ttr-icon"><i class="ti-money"></i></span>
+                            <span class="ttr-label">Thiết lập chi phí</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#" class="ttr-material-button">
                             <span class="ttr-icon"><i class="ti-list"></i></span>
                             <span class="ttr-label">Danh sách</span>
@@ -150,21 +156,6 @@
                             </li>
                             <li>
                                 <a href="create-menu.html" class="ttr-material-button"><span class="ttr-label">Lên thực đơn</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="ttr-material-button">
-                            <span class="ttr-icon"><i class="ti-email"></i></span>
-                            <span class="ttr-label">Gửi thông báo</span>
-                            <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="fee-announce.html" class="ttr-material-button"><span class="ttr-label">Thông báo chi phí</span></a>
-                            </li>
-                            <li>
-                                <a href="event-announce.html" class="ttr-material-button"><span class="ttr-label">Thông báo sự kiện</span></a>
                             </li>
                         </ul>
                     </li>
@@ -214,7 +205,7 @@
                 <h4 class="breadcrumb-title">Gửi thông báo</h4>
                 <ul class="db-breadcrumb-list">
                     <li><i class="fa fa-home"></i>Gửi thông báo</li>
-                    <li>Thông báo chi phí</li>
+                    <li>Thiết lập chi phí</li>
                 </ul>
             </div>
             <!-- Card -->
@@ -222,58 +213,63 @@
                 <div class="col-lg-10 m-b30" style="margin: auto">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Bảng chi phí học tập</h4>
+                            <h4>Khoản thu cố định (Thu theo đợt)</h4>
                         </div>
-
                         <div class="widget-inner">
-                            <from class="edit-profile m-b30">
-                                <div class="">
-                                    <div class="col-12">
-                                        <table id="item-add" style="width:100%;">
-                                            <tr class="list-item">
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-md-7">
-                                                            <label class="col-form-label">Khoản chi phi cần đóng</label>
-                                                            <div>
-                                                                <input class="form-control" type="text" value="">
-                                                            </div>
-                                                        </div>
+                            <form class="edit-profile m-b30">
 
-                                                        <div class="col-md-3">
-                                                            <label class="col-form-label">Thành tiền</label>
-                                                            <div>
-                                                                <input class="form-control" type="text" value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <label class="col-form-label">Close</label>
-                                                            <div class="form-group">
-                                                                <a class="delete" href="#"><i class="fa fa-close"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Học phí / tháng</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="0" max="1000000000" step="10000" value="2000000" disabled>
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-3">
-                                        <label class="col-form-label">Tổng tiền</label>
-                                        <div>
-                                            <input class="form-control" type="text" value="">
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Tiền ăn / bữa</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="1000" max="1000000" step="1000" value="30000" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Phụ phí / tháng</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="1000" max="10000000" step="10000" value="170000" disabled>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-10">
-                                        <div class="col-md-2"></div>
-                                        <button type="reset" class="add-event-btn" style="margin-top: 20px; margin-bottom: 0; margin-left: 15px;"><i class="fa fa-fw fa-plus-circle"></i>Add Item</button>
-                                        <button type="reset" class="modify-event-btn" style="margin-top: 20px;" ">Save changes</button>
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Phí CSVC</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="0" max="10000000" value="1500000" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Số bữa / tháng</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="0" max="31" value="24" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label class="col-form-label"><strong>Số tháng / đợt</strong></label>
+                                        <div class="form-group">
+                                            <input class="form-control event-form" type="number" min="0" max="12" value="4" disabled>
+                                        </div>
                                     </div>
                                 </div>
-                            </from>
+
+                                <div class="row flex" style="justify-content: flex-end;">
+                                    <button class="green-btn ntf-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#ntf-event-dialog" data-backdrop="static">Thông báo</button>
+                                    <button class="blue-btn mod-event-btn" type="button" style="margin-right: 15px; width: 100px">Chỉnh sửa</button>
+                                    <button class="red-btn del-event-btn" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#del-event-dialog" data-backdrop="static">Xóa hoạt động</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

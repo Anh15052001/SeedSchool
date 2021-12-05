@@ -6,7 +6,14 @@ document.getElementById("myform").addEventListener("submit", (e) => {
         alert("Tài khoản không được để trống");
         return false;
     } else if (password.length < 6) {
-        alert("Mật khẩu phải ít nhất 6 kí tự");
+        $('.alert--error').removeClass("hide");
+        $('.alert--error').addClass("show");
+        $('.alert--error').addClass("showAlert");
+        $('.close-btn').click(function(){
+            $('.alert--error').addClass("hide");
+            $('.alert--error').removeClass("show");
+        })
+        // alert("Mật khẩu phải ít nhất 6 kí tự");
         return false;
     }
     var postAPI = "https://seedschool.herokuapp.com/api/v1/account/login";
@@ -33,7 +40,14 @@ document.getElementById("myform").addEventListener("submit", (e) => {
                 posts.error ? document.getElementById("username").focus() : "";
                 posts.message ? document.getElementById("password").focus() : "";
             } else {
-                alert("Login successfully!");
+                $('.alert--success').removeClass("hide");
+                $('.alert--success').addClass("show");
+                $('.alert--success').addClass("showAlert");
+              $('.close-btn').click(function(){
+                $('.alert--success').addClass("hide");
+                $('.alert--success').removeClass("show");
+              })
+                // alert("Login successfully!");
                 localStorage.setItem("token", posts.token);
                 window.location.replace("./index.html");
             }

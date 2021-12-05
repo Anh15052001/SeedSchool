@@ -2263,7 +2263,6 @@ button.back-to-top {
     display: inline-block;
     font-size: 13px;
     text-transform: capitalize;
-    font-family: ;
     margin-right: 5px;
 }
 
@@ -3465,7 +3464,7 @@ button.back-to-top {
 
 .edit-profile .col-form-label {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .edit-profile {

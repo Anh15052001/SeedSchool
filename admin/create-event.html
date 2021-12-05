@@ -118,12 +118,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="statistical.html" class="ttr-material-button">
-                            <span class="ttr-icon"><i class="ti-stats-up"></i></span>
-                            <span class="ttr-label">Thống kê</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="#" class="ttr-material-button">
                             <span class="ttr-icon"><i class="ti-list"></i></span>
                             <span class="ttr-label">Danh sách</span>
@@ -139,34 +133,28 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="ttr-material-button">
-                            <span class="ttr-icon"><i class="ti-write"></i></span>
-                            <span class="ttr-label">Lên kế hoạch</span>
-                            <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+                        <a href="statistical.html" class="ttr-material-button">
+                            <span class="ttr-icon"><i class="ti-stats-up"></i></span>
+                            <span class="ttr-label">Thống kê</span>
                         </a>
-                        <ul>
-                            <li>
-                                <a href="create-event.html" class="ttr-material-button"><span class="ttr-label">Hoạt động ngoại khóa</span></a>
-                            </li>
-                            <li>
-                                <a href="create-menu.html" class="ttr-material-button"><span class="ttr-label">Lên thực đơn</span></a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
-                        <a href="#" class="ttr-material-button">
-                            <span class="ttr-icon"><i class="ti-email"></i></span>
-                            <span class="ttr-label">Gửi thông báo</span>
-                            <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+                        <a href="create-fee.html" class="ttr-material-button">
+                            <span class="ttr-icon"><i class="ti-money"></i></span>
+                            <span class="ttr-label">Thiết lập chi phí</span>
                         </a>
-                        <ul>
-                            <li>
-                                <a href="fee-announce.html" class="ttr-material-button"><span class="ttr-label">Thông báo chi phí</span></a>
-                            </li>
-                            <li>
-                                <a href="event-announce.html" class="ttr-material-button"><span class="ttr-label">Thông báo sự kiện</span></a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a href="create-event.html" class="ttr-material-button">
+                            <span class="ttr-icon"><i class="ti-car"></i></span>
+                            <span class="ttr-label">Hoạt động ngoại khóa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-menu.html" class="ttr-material-button">
+                            <span class="ttr-icon"><i class="ti-calendar"></i></span>
+                            <span class="ttr-label">Lên thực đơn</span>
+                        </a>
                     </li>
                     <li>
                         <a href="#" class="ttr-material-button">
@@ -222,6 +210,7 @@
             <div class="row">
                 <!-- Your Profile Views Chart -->
                 <div class="col-lg-10 m-b30" id="event-box-list" style="margin: auto">
+
                     <div class="widget-box">
                         <div class="wc-title">
                             <h4>Tiêm vaccine Covid-19 đợt 2</h4>
@@ -231,42 +220,49 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Tên hoạt động</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Tiêm vaccine Covid-19 đợt 2" disabled>
+                                        <input class="form-control input-event-name" type="text" value="Tiêm vaccine Covid-19 đợt 2" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Đối tượng</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Các bé lớp 5 tuổi (lớp M5A, M5B, M5C, M5D và M5E)" disabled>
+                                        <input class="form-control input-event-participant" type="text" value="Các bé lớp 5 tuổi (lớp M5A, M5B, M5C, M5D và M5E)" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Điều kiện</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Đạt đủ điều kiện sức khỏe, được sự đồng ý của phụ huynh" disabled>
+                                        <input class="form-control input-event-condition" type="text" value="Đạt đủ điều kiện sức khỏe, được sự đồng ý của phụ huynh" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Thời gian</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="time" value="07:00" disabled>
+                                        <input class="form-control input-event-time" type="time" value="07:00" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Ngày diễn ra</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="date" value="2022-02-11" min="2001-02-11" disabled>
+                                        <input class="form-control input-event-date" type="date" value="2022-02-11" min="2001-02-11" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Địa điểm</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Ký túc xá Bách Khoa, phường Bách Khoa, quận Hai Bà Trưng, Hà Nội" disabled>
+                                        <input class="form-control input-event-place" type="text" value="Ký túc xá Bách Khoa, phường Bách Khoa, quận Hai Bà Trưng, Hà Nội" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 col-form-label">Phí tham gia</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control input-event-fee" type="number" value="0" step="1000" disabled>
                                     </div>
                                 </div>
 
@@ -288,42 +284,49 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Tên hoạt động</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Hoạt động ngoại khóa - Trò chơi con mực" disabled>
+                                        <input class="form-control input-event-name" type="text" value="Hoạt động ngoại khóa - Trò chơi con mực" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Đối tượng</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Học sinh toàn trường đều có thể đăng ký tham gia" disabled>
+                                        <input class="form-control input-event-participant" type="text" value="Học sinh toàn trường đều có thể đăng ký tham gia" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Điều kiện</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="200 học sinh đăng ký sớm nhất" disabled>
+                                        <input class="form-control input-event-condition" type="text" value="200 học sinh đăng ký sớm nhất" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Thời gian</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="time" value="14:00" disabled>
+                                        <input class="form-control input-event-time" type="time" value="14:00" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Ngày diễn ra</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="date" value="2022-01-21" min="2001-02-11" disabled>
+                                        <input class="form-control input-event-date" type="date" value="2022-01-21" min="2001-02-11" disabled>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Địa điểm</label>
                                     <div class="col-md-10">
-                                        <input class="form-control event-form" type="text" value="Sân vận động và nhà thi đấu SeedSchool" disabled>
+                                        <input class="form-control input-event-place" type="text" value="Sân vận động và nhà thi đấu SeedSchool" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-2 col-form-label">Phí tham gia</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control input-event-fee" type="number" value="300000" step="1000" disabled>
                                     </div>
                                 </div>
 
@@ -356,17 +359,19 @@
                     <form>
                         <fieldset>
                             <label class="dialog-label">Tên hoạt động</label>
-                            <input type="text" id="add-name" class="text ui-widget-content ui-corner-all">
+                            <input type="text" id="add-event-name" class="text ui-widget-content ui-corner-all">
                             <label class="dialog-label">Thành viên</label>
-                            <input type="text" id="add-participant" class="text ui-widget-content ui-corner-all">
+                            <input type="text" id="add-event-participant" class="text ui-widget-content ui-corner-all">
                             <label class="dialog-label">Điều kiện</label>
-                            <input type="text" id="add-condition" class="text ui-widget-content ui-corner-all">
+                            <input type="text" id="add-event-condition" class="text ui-widget-content ui-corner-all">
                             <label class="dialog-label">Thời gian</label>
-                            <input type="time" id="add-time" min="2001-02-11" class="text ui-widget-content ui-corner-all">
+                            <input type="time" id="add-event-time" min="2001-02-11" class="text ui-widget-content ui-corner-all">
                             <label class="dialog-label">Ngày</label>
-                            <input type="date" id="add-date" class="text ui-widget-content ui-corner-all">
+                            <input type="date" id="add-event-date" class="text ui-widget-content ui-corner-all">
                             <label class="dialog-label">Địa điểm</label>
-                            <input type="text" id="add-place" class="text ui-widget-content ui-corner-all">
+                            <input type="text" id="add-event-place" class="text ui-widget-content ui-corner-all">
+                            <label class="dialog-label">Phí tham gia</label>
+                            <input type="number" id="add-event-fee" class="text ui-widget-content ui-corner-all">
                         </fieldset>
                     </form>
                 </div>
@@ -470,39 +475,15 @@
                                     </label>
                                     </div>
                                 </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">Giáo viên toàn trường
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">Học sinh toàn trường
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 3 tuổi và GVCN tương ứng
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 4 tuổi và GVCN tương ứng
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">HS các lớp 5 tuổi và GVCN tương ứng
-                                </label>
-                                </div>
+
                             </div>
                             <div style="margin-top: 10px;">
-                                <label class="dialog-label"><strong>Tới tài khoản cụ thể</strong></label>
-                                <input type="text" id="ntf-acc" class="text ui-widget-content ui-corner-all" placeholder="Tên các tài khoản, ngăn cách bởi dấu ';'">
+                                <label class="dialog-label"><strong>Tới các tài khoản cụ thể (File excel)</strong></label>
+                                <input type="file">
                             </div>
                             <div style="margin-top: 10px;">
                                 <label class="dialog-label"><strong>Link bài viết đính kèm (Nếu có)</strong></label>
-                                <input type="text" id="ntf-acc" class="text ui-widget-content ui-corner-all" placeholder="Link bài viết chi tiết về hoạt động">
+                                <input type="text" class="text ui-widget-content ui-corner-all" placeholder="Link bài viết chi tiết về hoạt động">
                             </div>
                             <div style="margin-top: 10px;">
                                 <div class="form-group">

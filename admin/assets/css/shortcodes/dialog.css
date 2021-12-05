@@ -43,9 +43,3 @@ fieldset {
     text-align: left;
     vertical-align: middle;
 }
-
-@media only screen and (max-width: 486px) {
-    .modal-content {
-        width: 300px;
-    }
-}

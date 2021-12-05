@@ -744,6 +744,11 @@
     }
 }
 
+.fee-sum {
+    float: left;
+    margin-top: 10px;
+}
+
 .ttr-wrapper {
     padding-top: 95px;
     -webkit-transition: margin 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -1335,13 +1340,6 @@
     width: 40%;
 }
 
-
-/* Reply */
-
-.review-bx-reply .form-control {
-    height: 150px;
-}
-
 .bookmarks-bx .card-courses-list-bx {
     margin-bottom: 10px;
 }
@@ -1373,10 +1371,6 @@
 
 .widget-inner .edit-profile table {
     margin-bottom: 0;
-}
-
-.edit-profile textarea.form-control {
-    height: 150px;
 }
 
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    fetch(
+      "https://seedschool.herokuapp.com/api/v1/student/?page-number=0&page-size=10&sort-by=%2Bid",
+      {
+        method: "GET",
+        headers: {
+          Authorization:
+            "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHJpbmciLCJleHAiOjE2Mzk0NDAwMDB9.g6Iiw1RyzIcnQNXzm-ydwCLW9a0UHsUXeh_ki8ANsWPekR3Nwe9rgmtJ-_XxgX9uuC2S46IL9tIuZTjytx8m0Q",
+
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    )
+      .then((resp) => resp.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  </script>
+</html>

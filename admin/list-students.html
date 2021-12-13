@@ -235,7 +235,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="student-table-body">
-                                    <!-- <tr>
+                                    <tr>
                                         <td>Nguyễn Ngọc Bảo Anh</td>
                                         <td>HS021001</td>
                                         <td>M3A</td>
@@ -264,8 +264,8 @@
                                         <td>11/02/2021</td>
                                         <td>0326122017</td>
                                         <td><a href="">cuonglh021003</a></td>
-                                    </tr> -->
-                                    
+                                    </tr>
+
                                 </tbody>
                             </table>
 
@@ -324,22 +324,22 @@
                 ]
             });
         });
-        
+
         const bodyTable = document.getElementById("student-table-body")
-        
-            const tokenAdmin = localStorage.getItem("tokenAdmin");
-            async function getStudents() {
-                try {
-                    const resp = await fetch("https://seedschool.herokuapp.com/api/v1/student/?page-number=0&page-size=10&sort-by=%2Bid", {
-                        headers: {
-                            Authorization: tokenAdmin,
-                            "Content-type": "application/json; charset=UTF-8",
-                        }
-                    })
-                    const data = await resp.json();
-                    console.log(data)
-                    bodyTable.innerHTML=data.map(student => (
-                        `
+
+        const tokenAdmin = localStorage.getItem("tokenAdmin");
+        async function getStudents() {
+            try {
+                const resp = await fetch("https://seedschool.herokuapp.com/api/v1/student/?page-number=0&page-size=10&sort-by=%2Bid", {
+                    headers: {
+                        Authorization: tokenAdmin,
+                        "Content-type": "application/json; charset=UTF-8",
+                    }
+                })
+                const data = await resp.json();
+                console.log(data)
+                bodyTable.innerHTML = data.map(student => (
+                    `
                         <tr>
                             <td>${student.name}</td>
                             <td>${student.id}</td>
@@ -349,14 +349,14 @@
                             <td><a href="">default</a></td>
                         </tr>
                         `
-                    )).join("")
-                    
-                } catch (error) {
-                        console.log(error)
-                    }
-                }
-                getStudents()
-        </script>
+                )).join("")
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getStudents()
+    </script>
 </body>
 
 </html>

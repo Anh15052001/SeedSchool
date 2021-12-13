@@ -235,37 +235,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="student-table-body">
-                                    <tr>
-                                        <td>Nguyễn Ngọc Bảo Anh</td>
-                                        <td>HS021001</td>
-                                        <td>M3A</td>
-                                        <td>Nữ</td>
-                                        <td>11/02/2018</td>
-                                        <td>11/02/2021</td>
-                                        <td>0326122017</td>
-                                        <td><a href="">anhnnb021001</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nguyễn Tuấn Anh</td>
-                                        <td>HS021002</td>
-                                        <td>M3A</td>
-                                        <td>Nam</td>
-                                        <td>11/02/2018</td>
-                                        <td>11/02/2021</td>
-                                        <td>0326122017</td>
-                                        <td><a href="">anhnt021002</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Lê Hữu Cường</td>
-                                        <td>HS021003</td>
-                                        <td>M3A</td>
-                                        <td>Nam</td>
-                                        <td>11/02/2018</td>
-                                        <td>11/02/2021</td>
-                                        <td>0326122017</td>
-                                        <td><a href="">cuonglh021003</a></td>
-                                    </tr>
-
+                        
                                 </tbody>
                             </table>
 
@@ -277,8 +247,8 @@
         </div>
     </main>
     <div class="ttr-overlay"></div>
-
     <!-- External JavaScripts -->
+    
     <script src="assets/js/jquery-3.6.0.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
@@ -293,6 +263,8 @@
     <script src="assets/js/admin.js"></script>
     <script src="assets/js//catchbutton.js"></script>
 
+
+    </script>
     <script>
         $(document).ready(function() {
             $('#student-table').dataTable({
@@ -323,10 +295,9 @@
                     [2, 'asc']
                 ]
             });
-        });
+        }); 
 
         const bodyTable = document.getElementById("student-table-body")
-
         const tokenAdmin = localStorage.getItem("tokenAdmin");
         async function getStudents() {
             try {
@@ -338,8 +309,8 @@
                 })
                 const data = await resp.json();
                 console.log(data)
-                bodyTable.innerHTML = data.map(student => (
-                    `
+                bodyTable.innerHTML=data.map(student => (
+                        `
                         <tr>
                             <td>${student.name}</td>
                             <td>${student.id}</td>
@@ -349,13 +320,13 @@
                             <td><a href="">default</a></td>
                         </tr>
                         `
-                )).join("")
-
+                    )).join("")
+                
             } catch (error) {
-                console.log(error)
+                    console.log(error)
+                }
             }
-        }
-        getStudents()
+            getStudents()
     </script>
 </body>
 

@@ -46,10 +46,11 @@ document.getElementById("myform").addEventListener("submit", (e) => {
               $('.close-btn').click(function(){
                 $('.alert--success').addClass("hide");
                 $('.alert--success').removeClass("show");
+                window.location.replace("./index.html");
               })
                 // alert("Login successfully!");
                 localStorage.setItem("token", posts.token);
-                window.location.replace("./index.html");
+                
             }
         })
         .catch((error) => console.log(error));

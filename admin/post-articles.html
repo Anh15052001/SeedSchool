@@ -127,10 +127,10 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="teachers-list.html" class="ttr-material-button"><span class="ttr-label">Danh sách giáo viên</span></a>
+                                <a href="list-teachers.html" class="ttr-material-button"><span class="ttr-label">Danh sách giáo viên</span></a>
                             </li>
                             <li>
-                                <a href="students-list.html" class="ttr-material-button"><span class="ttr-label">Học sinh và phụ huynh</span></a>
+                                <a href="list-students.html" class="ttr-material-button"><span class="ttr-label">Danh sách học sinh</span></a>
                             </li>
                         </ul>
                     </li>
@@ -167,6 +167,9 @@
                         <ul>
                             <li>
                                 <a href="post-articles.html" class="ttr-material-button"><span class="ttr-label">Đăng bài</span></a>
+                            </li>
+                            <li>
+                                <a href="list-articles.html" class="ttr-material-button"><span class="ttr-label">Danh sách bài viết</span></a>
                             </li>
                             <li>
                                 <a href="change-slideshow.html" class="ttr-material-button"><span class="ttr-label">Đổi ảnh slideshow</span></a>
@@ -229,17 +232,26 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <div class="col-12" style="margin-bottom: 20px;">
+                                        <label class="form-label">Mô tả</label>
+                                        <textarea class="form-control" id="articles-description" rows="5"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <div class="col-12">
+                                        <label class="form-label">Nội dung bài viết</label>
                                         <textarea class="form-control" id="articles-editor"></textarea>
                                         <script>
-                                            CKEDITOR.replace('articles-editor');
+                                            CKEDITOR.replace('articles-editor', {
+                                                height: 350
+                                            });
                                         </script>
                                     </div>
                                 </div>
 
-
                                 <div class="row flex" style="justify-content: center;">
-                                    <button class="green-btn" type="button" style="margin-right: 15px;">Đăng bài viết</button>
+                                    <button class="green-btn" type="button" style="margin-right: 15px;">Đăng bài</button>
                                 </div>
                             </form>
                         </div>

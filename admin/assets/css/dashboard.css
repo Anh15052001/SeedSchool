@@ -2,6 +2,25 @@
     font-family: Arial;
 }
 
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.articles-img {
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.in-img {
+    position: relative;
+    top: 48px;
+    right: 11px;
+}
+
 .hidden {
     visibility: hidden;
 }
@@ -481,10 +500,6 @@
 
 .ttr-sidebar-wrapper::-webkit-scrollbar {
     width: 6px;
-}
-
-.ttr-sidebar-wrapper::-webkit-scrollbar-thumb {
-    background: #f37319;
 }
 
 .ttr-sidebar-wrapper::-webkit-scrollbar-track {

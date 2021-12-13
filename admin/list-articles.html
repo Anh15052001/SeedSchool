@@ -15,7 +15,7 @@
     <link type="image/x-icon" href="assets/images/favicon.ico" rel="shortcut icon" />
 
     <!-- PAGE TITLE HERE ============================================= -->
-    <title>Trang quản lý - Thông tin cá nhân</title>
+    <title>Trang quản lý - Danh sách học sinh</title>
 
     <!-- MOBILE SPECIFIC ============================================= -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,6 +29,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/shortcodes/dialog.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/data-tables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/data-tables/css/responsive.bootstrap4.min.css">
 </head>
 
 <body class=" ttr-opened-sidebar ttr-pinned-sidebar">
@@ -74,14 +76,13 @@
                                 <li><a href="admin-index.html">Trang cá nhân</a></li>
                                 <li><a href="change-info.html">Chỉnh sửa thông tin</a></li>
                                 <li><a href="change-pass.html">Đổi mật khẩu</a></li>
-                                <li><a href="../loginadmin.html">Đăng xuất</a></li>
+                                <li><a href="../loginadmin.html ">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
                 <!-- header right menu end -->
             </div>
-
         </div>
     </header>
     <!-- header end -->
@@ -190,105 +191,88 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Thông tin cá nhân</h4>
+                <h4 class="breadcrumb-title">Danh sách bài viết</h4>
                 <ul class="db-breadcrumb-list">
                     <li><i class="fa fa-home"></i>Trang quản lý</li>
-                    <li>Thông tin cá nhân</li>
+                    <li>Quản lý web</li>
+                    <li>Danh sách bài viết</li>
                 </ul>
             </div>
             <!-- Card -->
-            <div class="row" id="content-row">
-                <div class="col-md-3" style="text-align: center;">
-                    <div><img class="user-avt" src="assets/images/testimonials/pic4.jpg"></div>
-                    <div>
-                        <p>
-                            <span><strong>Mã cán bộ: </strong></span>
-                            <span class="teacherID">CB016023</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="widget-box" style="min-height: 350px">
+            <div class="row">
+                <!-- Your Profile Views Chart -->
+                <div class="col-md-10 m-b30" style="margin: auto">
+
+                    <div class="widget-box">
+
                         <div class="wc-title">
-                            <h4>Thông tin cơ bản</h4>
+                            <h4>Danh sách bài viết</h4>
                         </div>
+
                         <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <ul>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Họ tên: </strong></span>
-                                        <span class="user-name">Trần Văn Tuyến</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Chức vụ: </strong></span>
-                                        <span class="user-role">Hiệu trưởng</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Mã cán bộ: </strong></span>
-                                        <span class="user-id">CB016023</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Giới tính: </strong></span>
-                                        <span class="user-gend">Nam</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Ngày sinh: </strong></span>
-                                        <span class="user-birth">11/02/1981</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul>
+                                <li>
+                                    <div class="row flex" style="justify-content: flex-end;">
+                                        <button class="blue-btn in-img" type="button" style="margin-right: 10px;"><i class="ti-pencil"></i></button>
+                                        <button class="red-btn in-img" type="button" style="margin-right: 15px;"><i class="ti-close"></i></button>
+                                    </div>
+
+                                    <div>
+                                        <img src="assets/images/slide1.jpg" class="articles-img"></img>
+                                        <a href="" class="articles-title">Thông báo tuyển sinh năm học 2021-2022</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row flex" style="justify-content: flex-end;">
+                                        <button class="blue-btn in-img" type="button" style="margin-right: 10px;"><i class="ti-pencil"></i></button>
+                                        <button class="red-btn in-img" type="button" style="margin-right: 15px;"><i class="ti-close"></i></button>
+                                    </div>
+
+                                    <div>
+                                        <img src="assets/images/slide2.jpg" class="articles-img"></img>
+                                        <a href="" class="articles-title">Siêu vé thần kỳ - Đặc quyền hết ý</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row flex" style="justify-content: flex-end;">
+                                        <button class="blue-btn in-img" type="button" style="margin-right: 10px;"><i class="ti-pencil"></i></button>
+                                        <button class="red-btn in-img" type="button" style="margin-right: 15px;"><i class="ti-close"></i></button>
+                                    </div>
+
+                                    <div>
+                                        <img src="assets/images/slide3.jpg" class="articles-img"></img>
+                                        <a href="" class="articles-title">Bé biết gì về cá?</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row flex" style="justify-content: flex-end;">
+                                        <button class="blue-btn in-img" type="button" style="margin-right: 10px;"><i class="ti-pencil"></i></button>
+                                        <button class="red-btn in-img" type="button" style="margin-right: 15px;"><i class="ti-close"></i></button>
+                                    </div>
+
+                                    <div>
+                                        <img src="assets/images/slide4.jpg" class="articles-img"></img>
+                                        <a href="" class="articles-title">Sự thú vị của đường</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item active"><a class="page-link border-secondary" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#">...</a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#"><i class="ti-angle-right"></i></a></li>
+                                <li class="page-item"><a class="page-link border-secondary" href="#"><i class="ti-angle-double-right"></i></a></li>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="widget-box" style="min-height: 350px">
-                        <div class="wc-title">
-                            <h4>Thông tin liên hệ</h4>
-                        </div>
-                        <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <ul>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>SĐT: </strong></span>
-                                        <span class="user-phone">0397973727</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Email: </strong></span>
-                                        <span class="user-mail">tuyentv@seed.edu.vn</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Web: </strong></span>
-                                        <span class="user-web">tuyenteaching.com.vn</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span><strong>Địa chỉ: </strong></span>
-                                        <span class="user-address">Số nhà 66, ngõ 75 Giải Phóng, phường Bách Khoa, quận Hai Bà Trưng, Hà Nội</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Your Profile Views Chart END-->
             </div>
-            <!-- Card END -->
         </div>
     </main>
     <div class="ttr-overlay"></div>
@@ -301,8 +285,45 @@
     <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/vendors/data-tables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/vendors/data-tables/js/dataTables.responsive.min.js"></script>
+    <script src="assets/vendors/data-tables/js/responsive.bootstrap4.min.js"></script>
     <script src="assets/js/admin.js"></script>
     <script src="assets/js//catchbutton.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#student-table').dataTable({
+                responsive: true,
+                "language": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ mục",
+                    "sZeroRecords": "Không có mục nào phù hợp",
+                    "sInfo": "Mục _START_-_END_ trong tổng _TOTAL_ mục",
+                    "sInfoEmpty": "Mục 0-0 trong tổng 0 mục",
+                    "sInfoFiltered": "(lọc từ _MAX_ mục)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm kiếm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
+                    }
+                },
+                "processing": true,
+                "aLengthMenu": [
+                    [10, 20, 50, 100],
+                    [10, 20, 50, 100]
+                ],
+                "order": [
+                    [2, 'asc']
+                ]
+            });
+        });
+    </script>
 </body>
 
 </html>

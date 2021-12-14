@@ -23,7 +23,6 @@ document.getElementById("myform").addEventListener("submit", (e) => {
     body: JSON.stringify({
       username: name,
 
-<<<<<<< HEAD
       password: password,
     }),
     headers: {
@@ -49,42 +48,8 @@ document.getElementById("myform").addEventListener("submit", (e) => {
         });
         // alert("Login successfully!");
         localStorage.setItem("token", posts.token);
-        window.location.replace("./index.html");
+        window.location.replace("index.html");
       }
     })
     .catch((error) => console.log(error));
 });
-=======
-                password: password,
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8",
-            },
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(posts) {
-            console.log(posts);
-            if (!posts.token) {
-                document.getElementById("error").innerHTML =
-                    posts.message || posts.error;
-                posts.error ? document.getElementById("username").focus() : "";
-                posts.message ? document.getElementById("password").focus() : "";
-            } else {
-                $('.alert--success').removeClass("hide");
-                $('.alert--success').addClass("show");
-                $('.alert--success').addClass("showAlert");
-              $('.close-btn').click(function(){
-                $('.alert--success').addClass("hide");
-                $('.alert--success').removeClass("show");
-                window.location.replace("./index.html");
-              })
-                // alert("Login successfully!");
-                localStorage.setItem("token", posts.token);
-                
-            }
-        })
-        .catch((error) => console.log(error));
-});
->>>>>>> 092751a05f990e1c72cfb170e5d2c7e7d6cf70d8

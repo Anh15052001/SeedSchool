@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="61a4b97b-0bc2-4b9f-93e1-61044a7a7515" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="218iaymDeXZIEDtuJNrEoyJo5nK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,6 +26,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,6 +48,9 @@
       <workItem from="1637385835328" duration="292000" />
       <workItem from="1637419437014" duration="3145000" />
       <workItem from="1637572346563" duration="620000" />
+      <workItem from="1639445196360" duration="506000" />
+      <workItem from="1639445709959" duration="85000" />
+      <workItem from="1639445796946" duration="1250000" />
     </task>
     <servers />
   </component>

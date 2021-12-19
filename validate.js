@@ -48,7 +48,7 @@ document.getElementById("myform").addEventListener("submit", (e) => {
         });
         // alert("Login successfully!");
         localStorage.setItem("token", posts.token);
-        window.location.replace("./index.html");
+        window.location.replace("index.html");
       }
     })
     .catch((error) => console.log(error));

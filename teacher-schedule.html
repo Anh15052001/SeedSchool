@@ -3,19 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Bin-It">
     <meta property="og:url" />
     <meta property="og:type" content="Seedschool" />
     <meta property="og:title" content="Website Seedschool" />
-    <meta property="og:description" content="Wellcome to my Website" />
+    <meta property="og:description" content="Welcome to my Website" />
 
     <title>Giáo Viên</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="style1.css">
     <!-- Latest compiled and minified CSS -->
@@ -36,6 +34,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
     <script type="text/javascript">
         //Phân Trang Cho Table
@@ -47,7 +46,7 @@
             this.pages = 0;
             this.inited = false;
 
-            this.showRecords = function (from, to) {
+            this.showRecords = function(from, to) {
                 var rows = document.getElementById(tableName).rows;
                 for (var i = 1; i < rows.length; i++) {
                     if (i < from || i > to)
@@ -57,7 +56,7 @@
                 }
             }
 
-            this.showPage = function (pageNumber) {
+            this.showPage = function(pageNumber) {
                 if (!this.inited) {
                     alert("not inited");
                     return;
@@ -74,24 +73,24 @@
                 this.showRecords(from, to);
             }
 
-            this.prev = function () {
+            this.prev = function() {
                 if (this.currentPage > 1)
                     this.showPage(this.currentPage - 1);
             }
 
-            this.next = function () {
+            this.next = function() {
                 if (this.currentPage < this.pages) {
                     this.showPage(this.currentPage + 1);
                 }
             }
 
-            this.init = function () {
+            this.init = function() {
                 var rows = document.getElementById(tableName).rows;
                 var records = (rows.length - 1);
                 this.pages = Math.ceil(records / itemsPerPage);
                 this.inited = true;
             }
-            this.showPageNav = function (pagerName, positionId) {
+            this.showPageNav = function(pagerName, positionId) {
                 if (!this.inited) {
                     alert("not inited");
                     return;
@@ -124,26 +123,18 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#home" data-toggle="tooltip" data-placement="bottom"
-                        title="HOẠT ĐỘNG">HOẠT ĐỘNG</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li><a href=""  data-toggle="tooltip" data-placement="bottom"
-                        title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href=""  data-toggle="tooltip" data-placement="bottom"
-                        title="NHẬN XÉT TỪNG BÉ">NHẬN XÉT TỪNG BÉ</a></li>
-                    <li><a href="#contact"  data-toggle="tooltip" data-placement="bottom"
-                        title="BÁO CÁO">BÁO CÁO</a></li>
-                    <li><a href="#tour"  data-toggle="tooltip" data-placement="bottom"
-                        title="SỰ KIỆN">SỰ KIỆN</a></li>
+                    <li class="active"><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="HOẠT ĐỘNG">HOẠT ĐỘNG</a></li>
+                    <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
+                    <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
+                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="NHẬN XÉT TỪNG BÉ">NHẬN XÉT TỪNG BÉ</a></li>
+                    <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a></li>
+                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
-                        <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN"><b>Tài Khoản</b>
+                        <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="index.html"  data-toggle="tooltip" data-placement="bottom"
-                                title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
+                            <li><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG XUẤT">ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i></a></li>
                         </ul>
                     </li>
 
@@ -154,38 +145,52 @@
     <div class="container-fluid al">
         <div id="clock"></div>
         <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM HOẠT ĐỘNG:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên hoạt động cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
-        <i class="fa fa-search" aria-hidden="true"></i>
-
-        <form action="">
-
-        </form>
-        <b>CHỨC NĂNG CHÍNH:</b><Br>
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Hoạt Động"><i class="fas fa-user-plus"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
-        <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
+        <Br>
+        <div class="row">
+            <div class="col-md-6" style="margin-bottom: 25px;">
+                <p class="timkiemnhanvien"><b>TÌM KIẾM HOẠT ĐỘNG:</b></p>
+                <Br>
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên hoạt động cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
+            </div>
+            <div class="col-md-6" style="margin-bottom: 25px;">
+                <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
+                <Br>
+                <select class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
+                    <option value="1" selected>M3A</option>
+                    <option value="2">M3B</option>
+                    <option value="3">M3E</option>
+                </select>
+            </div>
+        </div>
+        <b>CHỨC NĂNG CHÍNH:</b>
+        <Br>
+        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm Hoạt Động"><i class="fas fa-user-plus"></i></button>
+        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp bảng"><i class="fa fa-sort" aria-hidden="true"></i></button>
+        <button class="nv xuat export-table" id="export-table" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
                 class="fas fa-file-import"></i></button>
         <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
                 class="fas fa-cogs"></i></button>
-        <div class="table-title">
-            <div class="row">
 
-            </div>
+        <script>
+            $(".export-table").click(function() {
+                $("#myTable").table2excel({
+                    exclude: ".noExl",
+                    name: "Worksheet Name",
+                    filename: "ExportedTable",
+                    fileext: ".xls"
+                });
+            });
+        </script>
 
-        </div>
-        <table class="table table-bordered" id="myTable">
+        <table class="table table-bordered table-responsive-sm table-sm" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th width="auto">Tên Hoạt động</th>
+                    <th width="auto">Tên hoạt động</th>
                     <th width="auto">Tuần</th>
                     <th>Thời gian</th>
                     <th>Nội dung</th>
                     <th>Nhận xét</th>
-                    <th width="5px; !important">Tính Năng</th>
+                    <th width="100px; !important">Thao tác</th>
                 </tr>
             </thead>
             <tbody>
@@ -346,14 +351,14 @@
                 </tr>
             </tbody>
         </table>
-                <div id="pageNavPosition" class="text-right"></div>
-                <script type="text/javascript">
-                    var pager = new Pager('myTable', 5);
-                    pager.init();
-                    pager.showPageNav('pager', 'pageNavPosition');
-                    pager.showPage(1);
-                </script>
-            </div>
+        <div id="pageNavPosition" class="text-right"></div>
+        <script type="text/javascript">
+            var pager = new Pager('myTable', 5);
+            pager.init();
+            pager.showPageNav('pager', 'pageNavPosition');
+            pager.showPage(1);
+        </script>
+    </div>
     <hr class="hr1">
     <div class="container-fluid end">
         <div class="row text-center">
@@ -455,11 +460,11 @@
         }
 
         //Thêm Bảng
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             var actions = $("table td:last-child").html();
             // Append table with add row form on add new button click
-            $(".add-new").click(function () {
+            $(".add-new").click(function() {
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
@@ -475,24 +480,24 @@
                 $('[data-toggle="tooltip"]').tooltip();
             });
             //Add Hàng
-            $(document).on("click", ".add", function () {
+            $(document).on("click", ".add", function() {
                 var empty = false;
                 var input = $(this).parents("tr").find('input[type="text"]');
-                input.each(function () {
+                input.each(function() {
                     if (!$(this).val()) {
                         $(this).addClass("error");
-                        swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
+                        swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
                         empty = true;
                     } else {
                         $(this).removeClass("error");
-                        swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "error");
+                        swal("Thông báo!", "Bạn chưa nhập dữ liệu", "error");
                     }
                 });
                 $(this).parents("tr").find(".error").first().focus();
                 if (!empty) {
-                    input.each(function () {
+                    input.each(function() {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("Thành công", "Dữ liệu cập nhật thành công", "success");
                     });
                     $(this).parents("tr").find(".add, .edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -500,36 +505,36 @@
                 }
             });
             // Edit Hàng
-            $(document).on("click", ".edit", function () {
-                $(this).parents("tr").find("td:not(:last-child)").each(function () {
+            $(document).on("click", ".edit", function() {
+                $(this).parents("tr").find("td:not(:last-child)").each(function() {
                     $(this).html('<input type="text" class="form-control" value="' + $(this)
                         .text() + '">');
                 });
                 $(this).parents("tr").find(".add, .edit").toggle();
                 $(".add-new").attr("disabled", "disabled");
             });
-            jQuery(function () {
-                jQuery(".add").click(function () {
+            jQuery(function() {
+                jQuery(".add").click(function() {
                     swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
-            $(document).on("click", ".delete", function () {
+            $(document).on("click", ".delete", function() {
                 $(this).parents("tr").remove();
                 swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });
 
-        jQuery(function () {
-            jQuery(".cog").click(function () {
+        jQuery(function() {
+            jQuery(".cog").click(function() {
                 swal("Sorry!", "Tính Năng Này Chưa Có", "error");
             });
         });
     </script>
     <!--Tooltip-->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>

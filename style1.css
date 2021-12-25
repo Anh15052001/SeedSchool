@@ -382,6 +382,16 @@ form input {
     width: 100%;
 }
 
+.video-screenshot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
 .hr1 {
     border: 1px solid black;
 }

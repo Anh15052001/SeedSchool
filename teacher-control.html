@@ -37,9 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
+    <!-- Phân trang -->
     <script type="text/javascript">
-        //Phân Trang Cho Table
-        //<![CDATA[
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
             this.itemsPerPage = itemsPerPage;
@@ -108,7 +107,6 @@
                 element.innerHTML = pagerHtml;
             }
         }
-        //]]>
     </script>
 </head>
 
@@ -127,7 +125,7 @@
                     <li class="active"><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
                     <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
+                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="HỘP THƯ">HỘP THƯ</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
                             <span class="caret"></span>
@@ -142,32 +140,20 @@
     </nav>
     <div class="container-fluid al">
         <div id="clock"></div>
+
         <Br>
         <Br>
-        <div class="row">
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class="timkiemnhanvien"><b>TÌM KIẾM HỌC SINH:</b></p>
-                <Br>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên học sinh cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
-            </div>
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
-                <Br>
-                <select class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
-                    <option value="1" selected>M3A</option>
-                    <option value="2">M3B</option>
-                    <option value="3">M3E</option>
-                </select>
-            </div>
+
+        <div>
+            <ul>
+                <li><button class="nv" id="export-table" title="Xuất ra file Excel"><i class="fas fa-file-export"></i></button></li>
+                <li><button class="nv" id="search-table" title="Tìm kiếm" data-toggle="collapse" data-target="#myInput"><i class="fas fa-search-location"></i></button></li>
+            </ul>
         </div>
-        <b>CHỨC NĂNG CHÍNH:</b>
-        <Br>
-        <button class="nv" type="button" title="Lưu danh sách" data-toggle="modal" data-target="#save-muster-dialog"><i class="fas fa-save"></i></button>
-        <button class="nv" type="button" title="Gửi ảnh tại lớp của bé cho phụ huynh" data-toggle="modal" data-target="#send-muster-dialog"><i class="fa fa-send"></i></button>
-        <button class="nv" type="button" title="Gửi nhận xét về bé tại lớp cho phụ huynh" data-toggle="modal" data-target="#send-comment-dialog"><i class="fa fa-file-text"></i></button>
-        <Br>
-        <Br>
-        <Br>
+
+        <div>
+            <input type="text" class="collapse" id="myInput" placeholder="Tìm kiếm...">
+        </div>
 
         <div style="overflow-x: auto;">
 
@@ -184,8 +170,8 @@
                         <th width="180px">Tên học sinh</th>
                         <th width="90px">MSHS</th>
                         <th width="60px">Lớp</th>
-                        <th width="270px">Nhận xét về bé tại lớp</th>
-                        <th width="120px">Upload ảnh</th>
+                        <th width="240px">Nhận xét về bé tại lớp</th>
+                        <th width="60px"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -194,10 +180,10 @@
                         <td>Nguyễn Văn A</td>
                         <td>nva210001</td>
                         <td>M3A</td>
-                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td class="comment"></td>
                         <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -205,10 +191,10 @@
                         <td>Nguyễn Văn B</td>
                         <td>nva210002</td>
                         <td>M3A</td>
-                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td class="comment"></td>
                         <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -216,10 +202,10 @@
                         <td>Nguyễn Văn C</td>
                         <td>nva210003</td>
                         <td>M3A</td>
-                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td class="comment"></td>
                         <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -227,10 +213,10 @@
                         <td>Nguyễn Văn D</td>
                         <td>nva210004</td>
                         <td>M3A</td>
-                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td class="comment"></td>
                         <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -238,53 +224,15 @@
                         <td>Nguyễn Văn E</td>
                         <td>nva210005</td>
                         <td>M3A</td>
-                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td class="comment"></td>
                         <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <script>
-            var fullDate = new Date()
-            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
-            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
-            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-            $("#table-title").text("QUẢN LÝ LỚP - BUỔI HỌC NGÀY " + currentDate);
-        </script>
-
-        <script>
-            $('.inputImg').each(function() {
-
-                var $input = $(this),
-                    $label = $input.next('label'),
-                    labelVal = $label.html();
-
-                $input.on('change', function(e) {
-                    var fileName = '';
-
-                    if (this.files && this.files.length > 1)
-                        fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-                    else if (e.target.value)
-                        fileName = e.target.value.split('\\').pop();
-
-                    if (fileName) $label.find('span').html(fileName);
-                    else $label.html(labelVal);
-                });
-
-                // Firefox bug fix
-                $input
-                    .on('focus', function() {
-                        $input.addClass('has-focus');
-                    })
-                    .on('blur', function() {
-                        $input.removeClass('has-focus');
-                    });
-            });
-        </script>
 
         <div id="pageNavPosition" class="text-right"></div>
 
@@ -310,36 +258,16 @@
         </div>
     </div>
 
-    <div class="modal fade" id="send-muster-dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h5 class="modal-title ">Gửi ảnh</h5>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn gửi ảnh tại lớp của các bé cho phụ huynh?
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer" style="text-align: center;">
-                    <button type="button" class="btn btn-success confirm-btn" data-dismiss="modal">Xác nhận</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="send-comment-dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title ">Gửi ảnh</h5>
+                    <h5 class="modal-title ">Gửi nhận xét</h5>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn gửi nhận xét về các bé tại lớp cho phụ huynh?
+                    Bạn có chắc chắn muốn gửi nhận xét hiện tại để lưu lên hệ thống?
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer" style="text-align: center;">
@@ -350,17 +278,8 @@
         </div>
     </div>
 
-    <script>
-        $("#send-muster-dialog .confirm-btn").click(function() {
-            swal("Thành công!", "Ảnh của bé tại lớp đã được gửi tới phụ huynh", "success");
-        });
-
-        $("#send-comment-dialog .confirm-btn").click(function() {
-            swal("Thành công!", "Nhận xét về các bé tại lớp đã được gửi tới phụ huynh", "success");
-        });
-    </script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
+
     <script>
         function gtag() {
             dataLayer.push(arguments)
@@ -369,6 +288,7 @@
             gtag("js", new Date),
             gtag("config", "UA-111717926-1")
     </script>
+
     <div>
         <script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
         <ins class=adsbygoogle style="display:block; text-align:center;" data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1121308659421064 data-ad-slot=8232164616></ins>
@@ -378,28 +298,8 @@
         <div></div>
     </div>
 
-    <script src="jquery.min.js"></script>
+    <!-- Time -->
     <script type="text/javascript">
-        //Lọc Dữ Liệu
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-        //Thời Gian
         function time() {
             var today = new Date();
             var weekday = new Array(7);
@@ -439,25 +339,91 @@
                 return i;
             }
         }
-
-        //Thêm Bảng
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-        });
-
-        jQuery(function() {
-            jQuery(".cog").click(function() {
-                swal("Sorry!", "Tính Năng Này Chưa Có", "error");
-            });
-        });
     </script>
+
     <!--Tooltip-->
     <script>
         $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"], button').tooltip();
         });
     </script>
+
+
+    <!-- Table title -->
+    <script>
+        function getToday() {
+            var fullDate = new Date();
+            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+            return currentDate;
+        }
+        $("#table-title").text("QUẢN LÝ LỚP - NGÀY " + getToday());
+    </script>
+
+    <!-- Button -->
+    <script>
+        // sort
+        $('th').click(function() {
+            var table = $(this).parents('table').eq(0);
+            var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+            this.asc = !this.asc;
+            if (!this.asc) {
+                rows = rows.reverse();
+            }
+            for (var i = 0; i < rows.length; i++) {
+                table.append(rows[i]);
+            }
+        })
+
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index);
+                var valB = getCellValue(b, index);
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+            }
+        }
+
+        function getCellValue(row, index) {
+            return $(row).children('td').eq(index).text();
+        }
+
+        // search
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        // save
+        $(document).on("click", ".add", function() {
+            var cmttxt = $(this).parents("tr").find(".comment").text();
+            $(this).parents("tr").find(".comment").text(cmttxt);
+            $(this).parents("tr").find(".add, .edit").toggle();
+        });
+
+        // edit
+        $(document).on("click", ".edit", function() {
+            var cmttxt = $(this).parents("tr").find(".comment").text();
+            $(this).parents("tr").find(".comment").html("<input class='form-control' type='text' placeholder='Nhận xét hoạt động trên lớp...' value='" + cmttxt + "'>");
+            $(this).parents("tr").find(".add, .edit").toggle();
+        });
+
+        // export
+        $("#export-table").click(function() {
+
+            $("#myTable").table2excel({
+                exclude: ".noExl",
+                name: "Worksheet Name",
+                filename: "quanlylop" + $("tbody tr:first-child").find("td:nth-child(4)").text() + "_" + getToday(),
+                fileext: ".xls"
+            });
+
+            swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
+        });
+    </script>
+
 </body>
 
 </html>

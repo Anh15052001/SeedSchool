@@ -37,9 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
+    <!-- Phân trang -->
     <script type="text/javascript">
-        //Phân Trang Cho Table
-        //<![CDATA[
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
             this.itemsPerPage = itemsPerPage;
@@ -108,7 +107,6 @@
                 element.innerHTML = pagerHtml;
             }
         }
-        //]]>
     </script>
 </head>
 
@@ -127,7 +125,7 @@
                     <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
                     <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
+                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="HỘP THƯ">HỘP THƯ</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
                             <span class="caret"></span>
@@ -142,98 +140,20 @@
     </nav>
     <div class="container-fluid al">
         <div id="clock"></div>
+
         <Br>
         <Br>
-        <div class="row">
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class="timkiemnhanvien"><b>TÌM KIẾM HỌC SINH:</b></p>
-                <Br>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên học sinh cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
-            </div>
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
-                <Br>
-                <select id="current-class" class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
-                    <option value="1" selected>M3A</option>
-                    <option value="2">M3B</option>
-                    <option value="3">M3E</option>
-                </select>
-            </div>
+
+        <div>
+            <ul>
+                <li><button class="nv" id="export-table" title="Xuất ra file Excel"><i class="fas fa-file-export"></i></button></li>
+                <li><button class="nv" id="search-table" title="Tìm kiếm" data-toggle="collapse" data-target="#myInput"><i class="fas fa-search-location"></i></button></li>
+            </ul>
         </div>
-        <b>CHỨC NĂNG CHÍNH:</b>
-        <Br>
-        <button class="nv" type="button" title="Gửi danh sách" data-toggle="modal" data-target="#send-muster-dialog"><i class="fas fa-send"></i></button>
-        <button class="nv" id="export-table" title="Xuất file"><i class="fas fa-file-export"></i></button>
-        <button class="nv" id="edit-table" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
-        <button class="nv" id="save-table" title="Lưu lại"><i class="fas fa-save"></i></button>
-        <Br>
-        <Br>
-        <Br>
 
-        <script>
-            $("#export-table").click(function() {
-
-                var len = $("#myTable tbody tr").length;
-
-                for (var i = 1; i <= len; i++) {
-
-                    var trilate = $("#myTable tbody tr:nth-child(" + i + ") .late");
-                    trilate.text(trilate.find(":selected").text());
-
-                    var triabsent = $("#myTable tbody tr:nth-child(" + i + ") .absent");
-                    triabsent.text(triabsent.find(":selected").text());
-                }
-
-                $("#myTable").table2excel({
-                    exclude: ".noExl",
-                    name: "Worksheet Name",
-                    filename: "ExportedTable",
-                    fileext: ".xls"
-                });
-
-                for (var i = 1; i <= len; i++) {
-
-                    var trilate = $("#myTable tbody tr:nth-child(" + i + ") .late");
-                    var trilatetxt = trilate.text();
-                    trilate.html(
-                        "<select class='form-select form-control'>" +
-                        "<option value='1'>Không</option>" +
-                        "<option value='2'>Sau 5h30</option>" +
-                        "<option value='3'>Sau 6h30</option>" +
-                        "</select>"
-                    );
-                    if (trilatetxt == "Không") trilate.find("option[value='1']").attr('selected', 'selected');
-                    else if (trilatetxt == "Sau 5h30") trilate.find("option[value='2']").attr('selected', 'selected');
-                    else if (trilatetxt == "Sau 6h30") trilate.find("option[value='3']").attr('selected', 'selected');
-
-                    var triabsent = $("#myTable tbody tr:nth-child(" + i + ") .absent");
-                    var triabsenttxt = triabsent.text();
-                    triabsent.html(
-                        "<select class='form-select form-control'>" +
-                        "<option value='1'>Đi học</option>" +
-                        "<option value='2'>Nghỉ không phép</option>" +
-                        "<option value='3'>Nghỉ có phép</option>" +
-                        "</select>"
-                    );
-                    if (triabsenttxt == "Đi học") triabsent.find("option[value='1']").attr('selected', 'selected');
-                    else if (triabsenttxt == "Nghỉ không phép") triabsent.find("option[value='2']").attr('selected', 'selected');
-                    else if (triabsenttxt == "Nghỉ có phép") triabsent.find("option[value='3']").attr('selected', 'selected');
-                }
-
-                swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
-            });
-
-            $("#edit-table").click(function() {
-                $("tbody select").removeAttr("disabled");
-                $(this).parents("div").find("#edit-table, #save-table").toggle();
-            });
-
-            $("#save-table").click(function() {
-                $("tbody select").attr("disabled", "disabled");
-                $(this).parents("div").find("#edit-table, #save-table").toggle();
-                swal("Thành công!", "Thay đổi đã được lưu lại", "success");
-            });
-        </script>
+        <div>
+            <input type="text" class="collapse" id="myInput" placeholder="Tìm kiếm...">
+        </div>
 
         <div style="overflow-x: auto;">
 
@@ -252,6 +172,8 @@
                         <th width="60px">Lớp</th>
                         <th width="120px">Trông muộn</th>
                         <th width="120px">Điểm danh</th>
+                        <th width="120px">Upload ảnh</th>
+                        <th width="60px"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -260,19 +182,15 @@
                         <td>Nguyễn Văn A</td>
                         <td>nva210001</td>
                         <td>M3A</td>
-                        <td class="late">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Không</option>
-                                <option value="2">Sau 5h30</option>
-                                <option value="3">Sau 6h30</option>
-                            </select>
+                        <td class="late">Không</td>
+                        <td class="absent">Đi học</td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
-                        <td class="absent">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Đi học</option>
-                                <option value="2">Nghỉ không phép</option>
-                                <option value="3">Nghỉ có phép</option>
-                            </select>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -280,19 +198,15 @@
                         <td>Nguyễn Văn B</td>
                         <td>nva210002</td>
                         <td>M3A</td>
-                        <td class="late">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Không</option>
-                                <option value="2">Sau 5h30</option>
-                                <option value="3">Sau 6h30</option>
-                            </select>
+                        <td class="late">Không</td>
+                        <td class="absent">Đi học</td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
-                        <td class="absent">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Đi học</option>
-                                <option value="2">Nghỉ không phép</option>
-                                <option value="3">Nghỉ có phép</option>
-                            </select>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -300,19 +214,15 @@
                         <td>Nguyễn Văn C</td>
                         <td>nva210003</td>
                         <td>M3A</td>
-                        <td class="late">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Không</option>
-                                <option value="2">Sau 5h30</option>
-                                <option value="3">Sau 6h30</option>
-                            </select>
+                        <td class="late">Không</td>
+                        <td class="absent">Đi học</td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
-                        <td class="absent">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Đi học</option>
-                                <option value="2">Nghỉ không phép</option>
-                                <option value="3">Nghỉ có phép</option>
-                            </select>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -320,19 +230,15 @@
                         <td>Nguyễn Văn D</td>
                         <td>nva210004</td>
                         <td>M3A</td>
-                        <td class="late">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Không</option>
-                                <option value="2">Sau 5h30</option>
-                                <option value="3">Sau 6h30</option>
-                            </select>
+                        <td class="late">Không</td>
+                        <td class="absent">Đi học</td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
-                        <td class="absent">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Đi học</option>
-                                <option value="2">Nghỉ không phép</option>
-                                <option value="3">Nghỉ có phép</option>
-                            </select>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -340,41 +246,23 @@
                         <td>Nguyễn Văn E</td>
                         <td>nva210005</td>
                         <td>M3A</td>
-                        <td class="late">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Không</option>
-                                <option value="2">Sau 5h30</option>
-                                <option value="3">Sau 6h30</option>
-                            </select>
+                        <td class="late">Không</td>
+                        <td class="absent">Đi học</td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
-                        <td class="absent">
-                            <select class="form-select form-control" disabled>
-                                <option value="1" selected>Đi học</option>
-                                <option value="2">Nghỉ không phép</option>
-                                <option value="3">Nghỉ có phép</option>
-                            </select>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <script>
-            var fullDate = new Date()
-            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
-            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
-            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-            $("#table-title").text("ĐIỂM DANH - BUỔI HỌC NGÀY " + currentDate);
-        </script>
-
         <div id="pageNavPosition" class="text-right"></div>
 
-        <script type="text/javascript">
-            var pager = new Pager('myTable', 30);
-            pager.init();
-            pager.showPageNav('pager', 'pageNavPosition');
-            pager.showPage(1);
-        </script>
     </div>
     <hr class="hr1">
     <div class="container-fluid end">
@@ -411,13 +299,17 @@
         </div>
     </div>
 
-    <script>
-        $("#send-muster-dialog .confirm-btn").click(function() {
-            swal("Thành công!", "Thông tin quản lý buổi học đã được lưu lại", "success");
-        });
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
+
+
+
+    <script type="text/javascript">
+        var pager = new Pager('myTable', 30);
+        pager.init();
+        pager.showPageNav('pager', 'pageNavPosition');
+        pager.showPage(1);
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
     <script>
         function gtag() {
             dataLayer.push(arguments)
@@ -426,6 +318,7 @@
             gtag("js", new Date),
             gtag("config", "UA-111717926-1")
     </script>
+
     <div>
         <script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
         <ins class=adsbygoogle style="display:block; text-align:center;" data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1121308659421064 data-ad-slot=8232164616></ins>
@@ -435,28 +328,8 @@
         <div></div>
     </div>
 
-    <script src="jquery.min.js"></script>
+    <!-- Time -->
     <script type="text/javascript">
-        //Lọc Dữ Liệu
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-        //Thời Gian
         function time() {
             var today = new Date();
             var weekday = new Array(7);
@@ -496,23 +369,131 @@
                 return i;
             }
         }
-
-        //Thêm Bảng
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-        });
-
-        jQuery(function() {
-            jQuery(".cog").click(function() {
-                swal("Sorry!", "Tính Năng Này Chưa Có", "error");
-            });
-        });
     </script>
+
     <!--Tooltip-->
     <script>
         $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"], button').tooltip();
+        });
+    </script>
+
+    <!-- Button -->
+    <script>
+        // sort
+        $('th').click(function() {
+            var table = $(this).parents('table').eq(0);
+            var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+            this.asc = !this.asc;
+            if (!this.asc) {
+                rows = rows.reverse();
+            }
+            for (var i = 0; i < rows.length; i++) {
+                table.append(rows[i]);
+            }
+        })
+
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index);
+                var valB = getCellValue(b, index);
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+            }
+        }
+
+        function getCellValue(row, index) {
+            return $(row).children('td').eq(index).text();
+        }
+
+        // search
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        // save
+        $(document).on("click", ".add", function() {
+            var latetxt = $(this).parents("tr").find(".late option:selected").text();
+            var absenttxt = $(this).parents("tr").find(".absent option:selected").text();
+            $(this).parents("tr").find(".late").text(latetxt);
+            $(this).parents("tr").find(".absent").text(absenttxt);
+            $(this).parents("tr").find(".add, .edit").toggle();
+        });
+
+        // edit
+        $(document).on("click", ".edit", function() {
+            var latetxt = $(this).parents("tr").find(".late").text();
+            var absenttxt = $(this).parents("tr").find(".absent").text();
+            $(this).parents("tr").find(".late").html(
+                "<select class='form-select form-control'>" +
+                "<option value='1'>Không</option>" +
+                "<option value='2'>Sau 5h30</option>" +
+                "<option value='3'>Sau 6h30</option>" +
+                "</select>"
+            );
+            $(this).parents("tr").find(".absent").html(
+                "<select class='form-select form-control'>" +
+                "<option value='1'>Đi học</option>" +
+                "<option value='2'>Nghỉ không phép</option>" +
+                "<option value='3'>Nghỉ có phép</option>" +
+                "</select>"
+            );
+            $(this).parents("tr").find(".add, .edit").toggle();
+        });
+
+        //export
+        $("#export-table").click(function() {
+
+            $("#myTable").table2excel({
+                exclude: ".noExl",
+                name: "Worksheet Name",
+                filename: "diemdanhlop" + $("tbody tr:first-child").find("td:nth-child(4)").text() + "_" + getToday(),
+                fileext: ".xls"
+            });
+
+            swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
+        });
+    </script>
+
+    <!-- Table title -->
+    <script>
+        function getToday() {
+            var fullDate = new Date();
+            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+            return currentDate;
+        }
+        $("#table-title").text("ĐIỂM DANH - NGÀY " + getToday());
+
+        $('.inputImg').each(function() {
+
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
+
+            $input.on('change', function(e) {
+                var fileName = '';
+
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else if (e.target.value)
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName) $label.find('span').html(fileName);
+                else $label.html(labelVal);
+            });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function() {
+                    $input.addClass('has-focus');
+                })
+                .on('blur', function() {
+                    $input.removeClass('has-focus');
+                });
         });
     </script>
 </body>

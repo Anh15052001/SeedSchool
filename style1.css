@@ -177,6 +177,7 @@ thead tr th {
     font-weight: 600;
     background: #006bcf;
     text-align: center !important;
+    cursor: pointer;
 }
 
 tbody tr td {
@@ -191,9 +192,6 @@ tbody tr td {
 }
 
 #myInput {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
     width: 100%;
     font-size: 14px;
     padding: 12px 20px 12px 40px;

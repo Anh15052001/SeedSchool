@@ -122,10 +122,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li class="active"><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
+                    <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
@@ -135,7 +135,6 @@
                             <li><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG XUẤT">ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i></a></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -162,12 +161,12 @@
         </div>
         <b>CHỨC NĂNG CHÍNH:</b>
         <Br>
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm Hoạt Động"><i class="fas fa-user-plus"></i></button>
+        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm Hoạt Động"><i class="fas fa-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp bảng"><i class="fa fa-sort" aria-hidden="true"></i></button>
-        <button class="nv xuat export-table" id="export-table" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
+        <button class="nv xuat export-table" id="export-table" data-toggle="tooltip" data-placement="top" title="Xuất file"><i class="fas fa-file-import"></i></button>
+        <Br>
+        <Br>
+        <Br>
 
         <script>
             $(".export-table").click(function() {
@@ -180,36 +179,41 @@
             });
         </script>
 
-        <table class="table table-bordered table-responsive-md table-sm" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th width="auto">Tên hoạt động</th>
-                    <th width="auto">Tuần</th>
-                    <th>Thời gian</th>
-                    <th>Nội dung</th>
-                    <th>Nhận xét</th>
-                    <th width="100px; !important">Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Chào cờ</td>
-                    <td>2</td>
-                    <td>Tiết 1-thứ 2</td>
-                    <td>Chào cờ toàn trường</td>
+        <div style="overflow-x: auto;">
 
-                    <td>Trống</td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="text-center">
+                <span><b id="table-title" style="font-size: 16px;">LỊCH HOẠT ĐỘNG CỦA LỚP</b></span>
+            </div>
+
+            <Br>
+
+            <table class="table table-bordered table-sm" id="myTable">
+                <thead>
+                    <tr class="ex">
+                        <th width="180px">Tên hoạt động</th>
+                        <th width="90px">Ngày</th>
+                        <th width="90px">Thời gian</th>
+                        <th width="270px">Nội dung</th>
+                        <th width="270px">Nhận xét</th>
+                        <th width="90px;">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chào cờ</td>
+                        <td>11-02-2022</td>
+                        <td>7h00 A.M</td>
+                        <td>Chào cờ toàn trường</td>
+                        <td>Trống</td>
+                        <td>
+                            <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div id="pageNavPosition" class="text-right"></div>
         <script type="text/javascript">
             var pager = new Pager('myTable', 5);

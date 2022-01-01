@@ -123,10 +123,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li class="active"><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
+                    <li class="active"><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
@@ -136,7 +136,6 @@
                             <li><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG XUẤT">ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i></a></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -165,10 +164,10 @@
         <Br>
         <button class="nv btn add-new" type="button" data-placement="top" title="Thêm hoạt động" data-toggle="modal" data-target="#add-event-dialog"><i class="fas fa-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp"><i class="fa fa-sort" aria-hidden="true"></i></button>
-        <button class="nv xuat export-table" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
+        <button class="nv xuat export-table" data-toggle="tooltip" data-placement="top" title="Xuất file"><i class="fas fa-file-import"></i></button>
+        <Br>
+        <Br>
+        <Br>
 
         <script>
             $(".export-table").click(function() {
@@ -181,140 +180,150 @@
             });
         </script>
 
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th>Tên hoạt động</th>
-                    <th>Thời gian</th>
-                    <th>Địa điểm</th>
-                    <th>Đối tượng tham gia</th>
-                    <th>Phí tham gia</th>
-                    <th width="60px; !important"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Hoạt động ngoại khóa 1</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 2</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 3</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 4</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 5</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 6</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 7</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>700000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 8</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 9</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 10</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 11</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 12</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="overflow-x: auto;">
+
+            <div class="text-center">
+                <span><b id="table-title" style="font-size: 16px;">DANH SÁCH HOẠT ĐỘNG NGOẠI KHÓA CỦA LỚP</b></span>
+            </div>
+
+            <Br>
+
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr class="ex">
+                        <th>Tên hoạt động</th>
+                        <th>Thời gian</th>
+                        <th>Địa điểm</th>
+                        <th>Đối tượng tham gia</th>
+                        <th>Phí tham gia</th>
+                        <th width="60px; !important"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 1</td>
+                        <td>11-02-2021</td>
+                        <td>Sân vận động 8</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 2</td>
+                        <td>14-08-2021</td>
+                        <td>Sân vận động 5</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>100000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 3</td>
+                        <td>12-05-2021</td>
+                        <td>Sân vận động 7</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>400000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 4</td>
+                        <td>18-07-2021</td>
+                        <td>Sân vận động 1</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>200000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 5</td>
+                        <td>15-01-2021</td>
+                        <td>Sân vận động 4</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>800000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 6</td>
+                        <td>17-04-2021</td>
+                        <td>Sân vận động 2</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 7</td>
+                        <td>11-02-2021</td>
+                        <td>Sân vận động 8</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>700000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 8</td>
+                        <td>14-08-2021</td>
+                        <td>Sân vận động 5</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>100000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 9</td>
+                        <td>12-05-2021</td>
+                        <td>Sân vận động 7</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>400000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 10</td>
+                        <td>18-07-2021</td>
+                        <td>Sân vận động 1</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>200000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 11</td>
+                        <td>15-01-2021</td>
+                        <td>Sân vận động 4</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>800000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 12</td>
+                        <td>17-04-2021</td>
+                        <td>Sân vận động 2</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div id="pageNavPosition" class="text-right"></div>
         <script type="text/javascript">
             var pager = new Pager('myTable', 10);
@@ -476,7 +485,7 @@
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             var actions = $("table td:last-child").html();
-            //del hàng
+
             var del
 
             $(document).on("click", ".delete", function() {

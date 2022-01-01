@@ -7,14 +7,14 @@ body {
 }
 
  ::-webkit-scrollbar {
-    background: black;
+    background: lightgray;
     width: 4px;
     height: 20px;
     overflow: hidden;
 }
 
  ::-webkit-scrollbar-thumb {
-    background: white !important;
+    background: black !important;
     border-radius: 30px;
 }
 
@@ -240,7 +240,8 @@ td {
 }
 
 .table td {
-    text-align: center;
+    text-align: center !important;
+    vertical-align: middle !important;
 }
 
 .header {
@@ -257,9 +258,9 @@ td {
     padding: 0px !important;
 }
 
-#myTable th,
-#myTable td {
+#myTable th {
     text-align: center;
+    vertical-align: middle;
     padding: 10px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -374,6 +375,32 @@ form input {
     *cursor: hand;
 }
 
+.inputImg {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputImg+label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #f50000;
+    display: inline-block;
+}
+
+.inputImg:focus+label,
+.inputImg+label:hover {
+    background-color: #E34724;
+}
+
+.inputImg+label {
+    cursor: pointer;
+}
+
 .pagination {
     float: right;
 }
@@ -477,18 +504,15 @@ table.table td a.add i {
     top: 3px;
 }
 
-table.table .form-control {
-    height: 32px;
-    line-height: 32px;
-    box-shadow: none;
-    border-radius: 2px;
-}
-
 table.table .form-control.error {
     border-color: #f50000;
 }
 
 table.table td .add {
+    display: none;
+}
+
+#save-table {
     display: none;
 }
 

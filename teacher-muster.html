@@ -119,16 +119,14 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Quản
-                lí của giáo viên</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN LÝ LỚP HỌC</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="HOẠT ĐỘNG">HOẠT ĐỘNG</a></li>
+                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li class="active"><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
                     <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="NHẬN XÉT TỪNG BÉ">NHẬN XÉT TỪNG BÉ</a></li>
-                    <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a></li>
+                    <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
                     <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
@@ -156,7 +154,7 @@
             <div class="col-md-6" style="margin-bottom: 25px;">
                 <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
                 <Br>
-                <select class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
+                <select id="current-class" class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
                     <option value="1" selected>M3A</option>
                     <option value="2">M3B</option>
                     <option value="3">M3E</option>
@@ -165,296 +163,215 @@
         </div>
         <b>CHỨC NĂNG CHÍNH:</b>
         <Br>
-        <button class="nv btn add-new" type="button" data-placement="top" title="Gửi danh sách" data-toggle="modal" data-target="#send-muster-dialog"><i class="fas fa-send"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp"><i class="fa fa-sort" aria-hidden="true"></i></button>
-        <button class="nv xuat export-table" data-toggle="tooltip" data-placement="top" title="Xuất file"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
+        <button class="nv" type="button" title="Gửi danh sách" data-toggle="modal" data-target="#send-muster-dialog"><i class="fas fa-send"></i></button>
+        <button class="nv" id="export-table" title="Xuất file"><i class="fas fa-file-export"></i></button>
+        <button class="nv" id="edit-table" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+        <button class="nv" id="save-table" title="Lưu lại"><i class="fas fa-save"></i></button>
+        <Br>
+        <Br>
+        <Br>
 
         <script>
-            $(".export-table").click(function() {
+            $("#export-table").click(function() {
+
+                var len = $("#myTable tbody tr").length;
+
+                for (var i = 1; i <= len; i++) {
+
+                    var trilate = $("#myTable tbody tr:nth-child(" + i + ") .late");
+                    trilate.text(trilate.find(":selected").text());
+
+                    var triabsent = $("#myTable tbody tr:nth-child(" + i + ") .absent");
+                    triabsent.text(triabsent.find(":selected").text());
+                }
+
                 $("#myTable").table2excel({
                     exclude: ".noExl",
                     name: "Worksheet Name",
                     filename: "ExportedTable",
                     fileext: ".xls"
                 });
+
+                for (var i = 1; i <= len; i++) {
+
+                    var trilate = $("#myTable tbody tr:nth-child(" + i + ") .late");
+                    var trilatetxt = trilate.text();
+                    trilate.html(
+                        "<select class='form-select form-control'>" +
+                        "<option value='1'>Không</option>" +
+                        "<option value='2'>Sau 5h30</option>" +
+                        "<option value='3'>Sau 6h30</option>" +
+                        "</select>"
+                    );
+                    if (trilatetxt == "Không") trilate.find("option[value='1']").attr('selected', 'selected');
+                    else if (trilatetxt == "Sau 5h30") trilate.find("option[value='2']").attr('selected', 'selected');
+                    else if (trilatetxt == "Sau 6h30") trilate.find("option[value='3']").attr('selected', 'selected');
+
+                    var triabsent = $("#myTable tbody tr:nth-child(" + i + ") .absent");
+                    var triabsenttxt = triabsent.text();
+                    triabsent.html(
+                        "<select class='form-select form-control'>" +
+                        "<option value='1'>Đi học</option>" +
+                        "<option value='2'>Nghỉ không phép</option>" +
+                        "<option value='3'>Nghỉ có phép</option>" +
+                        "</select>"
+                    );
+                    if (triabsenttxt == "Đi học") triabsent.find("option[value='1']").attr('selected', 'selected');
+                    else if (triabsenttxt == "Nghỉ không phép") triabsent.find("option[value='2']").attr('selected', 'selected');
+                    else if (triabsenttxt == "Nghỉ có phép") triabsent.find("option[value='3']").attr('selected', 'selected');
+                }
+
+                swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
+            });
+
+            $("#edit-table").click(function() {
+                $("tbody select").removeAttr("disabled");
+                $(this).parents("div").find("#edit-table, #save-table").toggle();
+            });
+
+            $("#save-table").click(function() {
+                $("tbody select").attr("disabled", "disabled");
+                $(this).parents("div").find("#edit-table, #save-table").toggle();
+                swal("Thành công!", "Thay đổi đã được lưu lại", "success");
             });
         </script>
 
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th width="auto">Tên học sinh</th>
-                    <th width="auto">Mã học sinh</th>
-                    <th>Lớp</th>
-                    <th>Giới tính</th>
-                    <th>Ngày sinh</th>
-                    <th width="60px">Vắng</th>
-                    <th width="60px"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="modal" data-target="#take-photo-dialog"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>nva210001</td>
-                    <td class="text-center">M3A</td>
-                    <td>Nam</td>
-                    <td>11/02/2001</td>
-                    <td><input class="form-check-input" type="checkbox" value=""></td>
-                    <td>
-                        <a class="takePhoto" title="Chụp ảnh" data-toggle="tooltip"><i class="fa fa-camera" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="overflow-x: auto;">
+
+            <div class="text-center">
+                <span><b id="table-title" style="font-size: 16px;"></b></span>
+            </div>
+
+            <Br>
+
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr class="ex">
+                        <th width="45px">STT</th>
+                        <th width="180px">Tên học sinh</th>
+                        <th width="90px">MSHS</th>
+                        <th width="60px">Lớp</th>
+                        <th width="120px">Trông muộn</th>
+                        <th width="120px">Điểm danh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>nva210001</td>
+                        <td>M3A</td>
+                        <td class="late">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Không</option>
+                                <option value="2">Sau 5h30</option>
+                                <option value="3">Sau 6h30</option>
+                            </select>
+                        </td>
+                        <td class="absent">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Đi học</option>
+                                <option value="2">Nghỉ không phép</option>
+                                <option value="3">Nghỉ có phép</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>nva210002</td>
+                        <td>M3A</td>
+                        <td class="late">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Không</option>
+                                <option value="2">Sau 5h30</option>
+                                <option value="3">Sau 6h30</option>
+                            </select>
+                        </td>
+                        <td class="absent">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Đi học</option>
+                                <option value="2">Nghỉ không phép</option>
+                                <option value="3">Nghỉ có phép</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nguyễn Văn C</td>
+                        <td>nva210003</td>
+                        <td>M3A</td>
+                        <td class="late">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Không</option>
+                                <option value="2">Sau 5h30</option>
+                                <option value="3">Sau 6h30</option>
+                            </select>
+                        </td>
+                        <td class="absent">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Đi học</option>
+                                <option value="2">Nghỉ không phép</option>
+                                <option value="3">Nghỉ có phép</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Nguyễn Văn D</td>
+                        <td>nva210004</td>
+                        <td>M3A</td>
+                        <td class="late">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Không</option>
+                                <option value="2">Sau 5h30</option>
+                                <option value="3">Sau 6h30</option>
+                            </select>
+                        </td>
+                        <td class="absent">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Đi học</option>
+                                <option value="2">Nghỉ không phép</option>
+                                <option value="3">Nghỉ có phép</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Nguyễn Văn E</td>
+                        <td>nva210005</td>
+                        <td>M3A</td>
+                        <td class="late">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Không</option>
+                                <option value="2">Sau 5h30</option>
+                                <option value="3">Sau 6h30</option>
+                            </select>
+                        </td>
+                        <td class="absent">
+                            <select class="form-select form-control" disabled>
+                                <option value="1" selected>Đi học</option>
+                                <option value="2">Nghỉ không phép</option>
+                                <option value="3">Nghỉ có phép</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            var fullDate = new Date()
+            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+            $("#table-title").text("ĐIỂM DANH - BUỔI HỌC NGÀY " + currentDate);
+        </script>
+
         <div id="pageNavPosition" class="text-right"></div>
 
         <script type="text/javascript">
-            var pager = new Pager('myTable', 10);
+            var pager = new Pager('myTable', 30);
             pager.init();
             pager.showPageNav('pager', 'pageNavPosition');
             pager.showPage(1);
@@ -480,48 +397,15 @@
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title ">Gửi danh sách</h5>
+                    <h5 class="modal-title ">Lưu danh sách</h5>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn gửi danh sách?
+                    Bạn có chắc chắn muốn gửi danh sách hiện tại để lưu lại trên hệ thống?
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer" style="text-align: center;">
-                    <button type="button" class="btn btn-success" id="add-event" data-dismiss="modal">Xác nhận</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="take-photo-dialog">
-        <div class="modal-dialog" style="width: 90%;">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h5 class="modal-title ">Chụp ảnh</h5>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="text-center">
-                        <button class="btn btn-success is-hidden" id="btnPlay"><i class="fa fa-play"></i></button>
-                        <button class="btn btn-danger" id="btnPause"><i class="fa fa-pause"></i></button>
-                        <button class="btn btn-primary" id="btnScreenshot"><i class="fa fa-camera"></i></button>
-                        <button class="btn btn-info" id="btnChangeCamera"><i class="fa fa-refresh"></i></button>
-                    </div>
-                    <div class="video-screenshot" style="margin: 20px 0;">
-                        <video autoplay id=video></video>
-                        <div>
-                            <div id="screenshotsContainer">
-                                <canvas id="canvas" class="is-hidden"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer" style="text-align: center;">
-                    <button type="button" class="btn btn-success" id="add-event" data-dismiss="modal">Gửi ảnh</button>
+                    <button type="button" class="btn btn-success confirm-btn" id="add-event" data-dismiss="modal">Xác nhận</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
                 </div>
             </div>
@@ -529,87 +413,11 @@
     </div>
 
     <script>
-        window.onload = async function() {
-            if (!"mediaDevices" in navigator || !"getUserMedia" in navigator.mediaDevices) {
-                document.write('Not support API camera')
-                return;
-            }
-
-            const video = document.querySelector("#video");
-            const canvas = document.querySelector("#canvas");
-            const screenshotsContainer = document.querySelector("#screenshotsContainer");
-            let videoStream = null
-            let useFrontCamera = true;
-            //camera trước
-            const constraints = {
-                video: {
-                    width: {
-                        min: 1280,
-                        ideal: 1920,
-                        max: 2560,
-                    },
-                    height: {
-                        min: 720,
-                        ideal: 1080,
-                        max: 1440,
-                    }
-                },
-            };
-
-            // play
-            btnPlay.addEventListener("click", function() {
-                video.play();
-                btnPlay.classList.add("is-hidden");
-                btnPause.classList.remove("is-hidden");
-            });
-
-            // pause
-            btnPause.addEventListener("click", function() {
-                video.pause();
-                btnPause.classList.add("is-hidden");
-                btnPlay.classList.remove("is-hidden");
-            });
-
-            btnChangeCamera.addEventListener("click", function() {
-                useFrontCamera = !useFrontCamera;
-                init();
-            });
-
-            function stopVideoStream() {
-                if (videoStream) {
-                    videoStream.getTracks().forEach((track) => {
-                        track.stop();
-                    });
-                }
-            }
-
-            btnScreenshot.addEventListener("click", function() {
-                let img = document.getElementById('screenshot');
-                if (!img) {
-                    img = document.createElement("img");
-                    img.id = 'screenshot';
-                    img.style.width = '100%';
-                }
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                canvas.getContext("2d").drawImage(video, 0, 0);
-                img.src = canvas.toDataURL("image/png");
-                screenshotsContainer.prepend(img);
-            });
-
-            async function init() {
-                stopVideoStream();
-                constraints.video.facingMode = useFrontCamera ? "user" : "environment";
-                try {
-                    videoStream = await navigator.mediaDevices.getUserMedia(constraints);
-                    video.srcObject = videoStream;
-                } catch (error) {
-                    console.log(error)
-                }
-            }
-            init();
-        }
+        $("#send-muster-dialog .confirm-btn").click(function() {
+            swal("Thành công!", "Thông tin quản lý buổi học đã được lưu lại", "success");
+        });
     </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
     <script>
         function gtag() {
@@ -646,30 +454,6 @@
                     } else {
                         tr[i].style.display = "none";
                     }
-                }
-            }
-        }
-        //Lọc Table
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[0];
-                    y = rows[i + 1].getElementsByTagName("TD")[0];
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    swal("Thành công!", "Bảng đã được sắp xếp", "success");
                 }
             }
         }
@@ -718,67 +502,6 @@
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             var actions = $("table td:last-child").html();
-            // Append table with add row form on add new button click
-            // $(".add-new").click(function() {
-            //     $(this).attr("disabled", "disabled");
-            //     var index = $("table tbody tr:last-child").index();
-            //     var row = '<tr>' +
-            //         '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-            //         '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-            //         '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-            //         '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
-            //         '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-            //         '<td>' + actions + '</td>' +
-            //         '</tr>';
-            //     $("table").append(row);
-            //     $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-            //     $('[data-toggle="tooltip"]').tooltip();
-            // });
-            // //Add Hàng
-            // $(document).on("click", ".add", function() {
-            //     var empty = false;
-            //     var input = $(this).parents("tr").find('input[type="text"]');
-            //     input.each(function() {
-            //         if (!$(this).val()) {
-            //             $(this).addClass("error");
-            //             swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
-            //             empty = true;
-            //         } else {
-            //             $(this).removeClass("error");
-            //             swal("Thông báo!", "Bạn chưa nhập dữ liệu", "error");
-            //         }
-            //     });
-            //     $(this).parents("tr").find(".error").first().focus();
-            //     if (!empty) {
-            //         input.each(function() {
-            //             $(this).parent("td").html($(this).val());
-            //             swal("Thành công", "Dữ liệu cập nhật thành công", "success");
-            //         });
-            //         $(this).parents("tr").find(".add, .edit").toggle();
-            //         $(".add-new").removeAttr("disabled");
-
-            //     }
-            // });
-            // Edit Hàng
-            $(document).on("click", ".edit", function() {
-                $(this).parents("tr").find("td:not(:last-child)").each(function() {
-                    $(this).html('<input type="text" class="form-control" value="' + $(this)
-                        .text() + '">');
-                });
-                $(this).parents("tr").find(".add, .edit").toggle();
-                $(".add-new").attr("disabled", "disabled");
-            });
-            jQuery(function() {
-                jQuery(".add").click(function() {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
-                });
-            });
-            // Delete Hàng
-            $(document).on("click", ".delete", function() {
-                $(this).parents("tr").remove();
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
-                $(".add-new").removeAttr("disabled");
-            });
         });
 
         jQuery(function() {

@@ -125,8 +125,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li class="active"><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
+                    <li class="active"><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
                     <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
@@ -147,9 +147,9 @@
         <Br>
         <div class="row">
             <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class="timkiemnhanvien"><b>TÌM KIẾM HOẠT ĐỘNG:</b></p>
+                <p class="timkiemnhanvien"><b>TÌM KIẾM HỌC SINH:</b></p>
                 <Br>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên hoạt động cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên học sinh cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
             </div>
             <div class="col-md-6" style="margin-bottom: 25px;">
                 <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
@@ -163,161 +163,134 @@
         </div>
         <b>CHỨC NĂNG CHÍNH:</b>
         <Br>
-        <button class="nv btn add-new" type="button" data-placement="top" title="Thêm hoạt động" data-toggle="modal" data-target="#add-event-dialog"><i class="fas fa-plus"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp"><i class="fa fa-sort" aria-hidden="true"></i></button>
-        <button class="nv xuat export-table" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
+        <button class="nv" type="button" title="Lưu danh sách" data-toggle="modal" data-target="#save-muster-dialog"><i class="fas fa-save"></i></button>
+        <button class="nv" type="button" title="Gửi ảnh tại lớp của bé cho phụ huynh" data-toggle="modal" data-target="#send-muster-dialog"><i class="fa fa-send"></i></button>
+        <button class="nv" type="button" title="Gửi nhận xét về bé trong buổi học cho phụ huynh" data-toggle="modal" data-target="#send-comment-dialog"><i class="fa fa-file-text"></i></button>
+        <Br>
+        <Br>
+        <Br>
+
+        <div style="overflow-x: auto;">
+
+            <div class="text-center">
+                <span><b id="table-title" style="font-size: 16px;"></b></span>
+            </div>
+
+            <Br>
+
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr class="ex">
+                        <th width="45px">STT</th>
+                        <th width="180px">Tên học sinh</th>
+                        <th width="90px">MSHS</th>
+                        <th width="60px">Lớp</th>
+                        <th width="270px">Nhận xét về bé trong buổi học</th>
+                        <th width="120px">Upload ảnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>nva210001</td>
+                        <td>M3A</td>
+                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>nva210002</td>
+                        <td>M3A</td>
+                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nguyễn Văn C</td>
+                        <td>nva210003</td>
+                        <td>M3A</td>
+                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Nguyễn Văn D</td>
+                        <td>nva210004</td>
+                        <td>M3A</td>
+                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Nguyễn Văn E</td>
+                        <td>nva210005</td>
+                        <td>M3A</td>
+                        <td class="comment"><input class="form-control" type="text"></td>
+                        <td>
+                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
+                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <script>
-            $(".export-table").click(function() {
-                $("#myTable").table2excel({
-                    exclude: ".noExl",
-                    name: "Worksheet Name",
-                    filename: "ExportedTable",
-                    fileext: ".xls"
+            var fullDate = new Date()
+            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+            $("#table-title").text("QUẢN LÝ LỚP - BUỔI HỌC NGÀY " + currentDate);
+        </script>
+
+        <script>
+            $('.inputImg').each(function() {
+
+                var $input = $(this),
+                    $label = $input.next('label'),
+                    labelVal = $label.html();
+
+                $input.on('change', function(e) {
+                    var fileName = '';
+
+                    if (this.files && this.files.length > 1)
+                        fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                    else if (e.target.value)
+                        fileName = e.target.value.split('\\').pop();
+
+                    if (fileName) $label.find('span').html(fileName);
+                    else $label.html(labelVal);
                 });
+
+                // Firefox bug fix
+                $input
+                    .on('focus', function() {
+                        $input.addClass('has-focus');
+                    })
+                    .on('blur', function() {
+                        $input.removeClass('has-focus');
+                    });
             });
         </script>
 
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th>Tên hoạt động</th>
-                    <th>Thời gian</th>
-                    <th>Địa điểm</th>
-                    <th>Đối tượng tham gia</th>
-                    <th>Phí tham gia</th>
-                    <th width="60px; !important"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Hoạt động ngoại khóa 1</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 2</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 3</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 4</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 5</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 6</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 7</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>700000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 8</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 9</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 10</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 11</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 12</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <div id="pageNavPosition" class="text-right"></div>
+
         <script type="text/javascript">
-            var pager = new Pager('myTable', 10);
+            var pager = new Pager('myTable', 30);
             pager.init();
             pager.showPageNav('pager', 'pageNavPosition');
             pager.showPage(1);
@@ -338,52 +311,72 @@
         </div>
     </div>
 
-    <div class="modal fade" id="add-event-dialog">
+    <div class="modal fade" id="send-muster-dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title ">Thêm hoạt động</h5>
+                    <h5 class="modal-title ">Gửi ảnh</h5>
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
-                        <fieldset>
-                            <label class="dialog-label">Các hoạt động hiện có</label>
-                            <select class="form-select form-control">
-                                <option value="1" selected>Hoạt động hiện có 1</option>
-                                <option value="2">Hoạt động hiện có 2</option>
-                                <option value="3">Hoạt động hiện có 3</option>
-                                <option value="4">Hoạt động hiện có 4</option>
-                                <option value="5">Hoạt động hiện có 5</option>
-                            </select>
-                        </fieldset>
-                    </form>
+                    Bạn có chắc chắn muốn gửi ảnh tại lớp của các bé cho phụ huynh?
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer" style="text-align: center;">
-                    <button type="button" class="btn btn-success" id="add-event" data-dismiss="modal">Thêm hoạt động</button>
+                    <button type="button" class="btn btn-success confirm-btn" data-dismiss="modal">Xác nhận</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="send-comment-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    Xác nhận xóa
+                    <h5 class="modal-title ">Gửi ảnh</h5>
                 </div>
+                <!-- Modal body -->
                 <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa mục này?
+                    Bạn có chắc chắn muốn gửi nhận xét về các bé tại lớp cho phụ huynh?
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
-                    <button type="button" class="btn btn-danger" id="btn-del" data-dismiss="modal">Xóa</button>
+                <!-- Modal footer -->
+                <div class="modal-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-success confirm-btn" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <script>
+        $("#send-muster-dialog .confirm-btn").click(function() {
+            swal("Thành công!", "Ảnh của bé tại lớp đã được gửi tới phụ huynh", "success");
+        });
+
+        $("#send-comment-dialog .confirm-btn").click(function() {
+            swal("Thành công!", "Nhận xét về các bé tại lớp đã được gửi tới phụ huynh", "success");
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
+    <script>
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        window.dataLayer = window.dataLayer || [],
+            gtag("js", new Date),
+            gtag("config", "UA-111717926-1")
+    </script>
+    <div>
+        <script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+        <ins class=adsbygoogle style="display:block; text-align:center;" data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1121308659421064 data-ad-slot=8232164616></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({})
+        </script>
+        <div></div>
     </div>
 
     <script src="jquery.min.js"></script>
@@ -404,30 +397,6 @@
                     } else {
                         tr[i].style.display = "none";
                     }
-                }
-            }
-        }
-        //Lọc Table
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[0];
-                    y = rows[i + 1].getElementsByTagName("TD")[0];
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -476,22 +445,6 @@
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             var actions = $("table td:last-child").html();
-            //del hàng
-            var del
-
-            $(document).on("click", ".delete", function() {
-                del = $(this).parents("tr");
-            })
-
-            $(document).on("click", "#btn-del", function() {
-                del.remove()
-                var pager = new Pager('myTable', 5);
-                pager.init();
-                pager.showPageNav('pager', 'pageNavPosition');
-                pager.showPage(1);
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
-                $(".add-new").removeAttr("disabled");
-            });
         });
 
         jQuery(function() {

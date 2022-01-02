@@ -360,9 +360,9 @@
         // save
         $(document).on("click", ".add", function() {
             var empty = false;
-            var input = $(this).parents("tr").find('input[type="text"');
-            var date = $(this).parents("tr").find('input[type="date"');
-            var time = $(this).parents("tr").find('input[type="time"')
+            var input = $(this).parents("tr").find('input[type="text"]');
+            var date = $(this).parents("tr").find('input[type="date"]');
+            var time = $(this).parents("tr").find('input[type="time"]')
 
             input.each(function() {
                 if (!$(this).val()) {
@@ -398,8 +398,13 @@
             $(this).parents("tr").find(".txt").each(function() {
                 $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
             });
-            $(this).parents("tr").find(".dat").html('<input type="date" class="form-control" value="' + $(this).text() + '">');
-            $(this).parents("tr").find(".tim").html('<input type="time" class="form-control" value="' + $(this).text() + '">');
+            $(this).parents("tr").find(".dat").each(function() {
+                $(this).html('<input type="date" class="form-control" value="' + $(this).text() + '">');
+            });
+            $(this).parents("tr").find(".tim").each(function() {
+                $(this).html('<input type="time" class="form-control" value="' + $(this).text() + '">');
+            });
+
             $(this).parents("tr").find(".add, .edit").toggle();
         });
 

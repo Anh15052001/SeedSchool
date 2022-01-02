@@ -180,7 +180,7 @@
                         <td>Nguyễn Văn A</td>
                         <td>nva210001</td>
                         <td>M3A</td>
-                        <td class="comment"></td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
@@ -191,7 +191,7 @@
                         <td>Nguyễn Văn B</td>
                         <td>nva210002</td>
                         <td>M3A</td>
-                        <td class="comment"></td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
@@ -202,7 +202,7 @@
                         <td>Nguyễn Văn C</td>
                         <td>nva210003</td>
                         <td>M3A</td>
-                        <td class="comment"></td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
@@ -213,7 +213,7 @@
                         <td>Nguyễn Văn D</td>
                         <td>nva210004</td>
                         <td>M3A</td>
-                        <td class="comment"></td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
@@ -224,7 +224,7 @@
                         <td>Nguyễn Văn E</td>
                         <td>nva210005</td>
                         <td>M3A</td>
-                        <td class="comment"></td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
@@ -398,15 +398,17 @@
 
         // save
         $(document).on("click", ".add", function() {
-            var cmttxt = $(this).parents("tr").find(".comment").text();
-            $(this).parents("tr").find(".comment").text(cmttxt);
+            var cmt = $(this).parents("tr").find("input[type='text']");
+            cmt.parent("td").html(cmt.val());
             $(this).parents("tr").find(".add, .edit").toggle();
         });
 
         // edit
         $(document).on("click", ".edit", function() {
             var cmttxt = $(this).parents("tr").find(".comment").text();
-            $(this).parents("tr").find(".comment").html("<input class='form-control' type='text' placeholder='Nhận xét hoạt động trên lớp...' value='" + cmttxt + "'>");
+            $(this).parents("tr").find(".comment").each(function() {
+                $(this).html("<input class='form-control' type='text' placeholder='Nhận xét hoạt động trên lớp...' value='" + cmttxt + "'>");
+            });
             $(this).parents("tr").find(".add, .edit").toggle();
         });
 

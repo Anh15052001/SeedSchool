@@ -37,7 +37,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Phân trang -->
     <script type="text/javascript">
         function Pager(tableName, itemsPerPage) {
@@ -412,8 +412,7 @@
                     $input.removeClass('has-focus');
                 });
         });
-    </script>
-    <script>
+
         const studentList = document.querySelector(".student-list");
         const token = localStorage.getItem("token");
 
@@ -430,7 +429,7 @@
                         <td>${item.id}</td>
                         <td>${item.name}</td>
                         <td>${item.studentId}</td>
-                        <td>${item.gender}</td>
+                        <td class="gender">${item.gender}</td>
                         <td class="late">Không</td>
                         <td class="absent">Đi học</td>
                         <td>
@@ -438,13 +437,30 @@
                             <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
                         </td>
                         <td>
-                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                            </a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip">
+                                <i class="fa fa-save" aria-hidden="true"
+                                onclick="muster(${item.studentId},${item.id},this)"
+                                ></i>
+                            </a>
                         </td>
                     </tr>
                 `
             ))
         })
+        function muster(studentId,id,e) {
+            const info = $(e).parents("tr").find("td:not(:last-child)")
+            axios.post('https://seedschool.herokuapp.com/api/v1/details/',{
+                studentId,
+                active: info[5].innerHTML === 'Đi học' ? true : false,
+                comment: "test",
+                id,
+                timein: "2022-01-07T10:21:25.868Z",
+                image: "url"
+            }).then(resp => console.log(resp.data))
+        }
     </script>
 </body>
 

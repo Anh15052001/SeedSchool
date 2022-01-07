@@ -37,9 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
+    <!-- Phân trang -->
     <script type="text/javascript">
-        //Phân Trang Cho Table
-        //<![CDATA[
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
             this.itemsPerPage = itemsPerPage;
@@ -108,7 +107,6 @@
                 element.innerHTML = pagerHtml;
             }
         }
-        //]]>
     </script>
 </head>
 
@@ -119,17 +117,15 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Quản
-                lí của giáo viên</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN LÝ LỚP HỌC</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="HOẠT ĐỘNG">HOẠT ĐỘNG</a></li>
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
+                    <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li class="active"><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
-                    <li><a href="" data-toggle="tooltip" data-placement="bottom" title="NHẬN XÉT TỪNG BÉ">NHẬN XÉT TỪNG BÉ</a></li>
-                    <li><a href="#contact" data-toggle="tooltip" data-placement="bottom" title="BÁO CÁO">BÁO CÁO</a></li>
-                    <li><a href="#tour" data-toggle="tooltip" data-placement="bottom" title="SỰ KIỆN">SỰ KIỆN</a></li>
+                    <li><a href="teacher-post.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG BÀI">ĐĂNG BÀI</a></li>
                     <li>
                         <a href="#" data-placement="bottom" title="TÀI KHOẢN">TÀI KHOẢN
                             <span class="caret"></span>
@@ -138,186 +134,185 @@
                             <li><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG XUẤT">ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i></a></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container-fluid al">
         <div id="clock"></div>
-        <Br>
-        <Br>
-        <div class="row">
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class="timkiemnhanvien"><b>TÌM KIẾM HOẠT ĐỘNG:</b></p>
-                <Br>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên hoạt động cần tìm..." data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm hoạt động">
-            </div>
-            <div class="col-md-6" style="margin-bottom: 25px;">
-                <p class=""><b>LỚP ĐANG QUẢN LÝ:</b></p>
-                <Br>
-                <select class="form-select niceInput" data-toggle="tooltip" data-placement="bottom" title="LỚP ĐANG QUẢN LÝ">
-                    <option value="1" selected>M3A</option>
-                    <option value="2">M3B</option>
-                    <option value="3">M3E</option>
-                </select>
-            </div>
-        </div>
-        <b>CHỨC NĂNG CHÍNH:</b>
-        <Br>
-        <button class="nv btn add-new" type="button" data-placement="top" title="Thêm hoạt động" data-toggle="modal" data-target="#add-event-dialog"><i class="fas fa-plus"></i></button>
-        <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top" title="Sắp xếp"><i class="fa fa-sort" aria-hidden="true"></i></button>
-        <button class="nv xuat export-table" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
-                class="fas fa-file-import"></i></button>
-        <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
-                class="fas fa-cogs"></i></button>
 
+        <Br>
+        <Br>
+
+        <div>
+            <ul>
+                <li><button class="nv" type="button" title="Thêm hoạt động ngoại khóa" data-toggle="modal" data-target="#add-event-dialog"><i class="fas fa-plus"></i></button></li>
+                <li><button class="nv" id="export-table" title="Xuất ra file Excel"><i class="fas fa-file-export"></i></button></li>
+                <li><button class="nv" id="search-table" title="Tìm kiếm" data-toggle="collapse" data-target="#myInput"><i class="fas fa-search-location"></i></button></li>
+            </ul>
+        </div>
+
+        <div>
+            <input type="text" class="collapse" id="myInput" placeholder="Tìm kiếm...">
+        </div>
+
+        <div style="overflow-x: auto;">
+
+            <div class="text-center">
+                <span><b id="table-title" style="font-size: 16px;">DANH SÁCH HOẠT ĐỘNG NGOẠI KHÓA CỦA LỚP</b></span>
+            </div>
+
+            <Br>
+
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr class="ex">
+                        <th width="240px">Tên hoạt động</th>
+                        <th width="120px">Thời gian</th>
+                        <th width="180px">Địa điểm</th>
+                        <th width="180px">Đối tượng tham gia</th>
+                        <th width="120px">Phí tham gia</th>
+                        <th width="60px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 1</td>
+                        <td>11-02-2021</td>
+                        <td>Sân vận động 8</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 2</td>
+                        <td>14-08-2021</td>
+                        <td>Sân vận động 5</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>100000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 3</td>
+                        <td>12-05-2021</td>
+                        <td>Sân vận động 7</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>400000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 4</td>
+                        <td>18-07-2021</td>
+                        <td>Sân vận động 1</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>200000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 5</td>
+                        <td>15-01-2021</td>
+                        <td>Sân vận động 4</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>800000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 6</td>
+                        <td>17-04-2021</td>
+                        <td>Sân vận động 2</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 7</td>
+                        <td>11-02-2021</td>
+                        <td>Sân vận động 8</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>700000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 8</td>
+                        <td>14-08-2021</td>
+                        <td>Sân vận động 5</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>100000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 9</td>
+                        <td>12-05-2021</td>
+                        <td>Sân vận động 7</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>400000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 10</td>
+                        <td>18-07-2021</td>
+                        <td>Sân vận động 1</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>200000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 11</td>
+                        <td>15-01-2021</td>
+                        <td>Sân vận động 4</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>800000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoạt động ngoại khóa 12</td>
+                        <td>17-04-2021</td>
+                        <td>Sân vận động 2</td>
+                        <td>Học sinh toàn trường</td>
+                        <td>500000</td>
+                        <td>
+                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#del-event-dialog"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Table title -->
         <script>
-            $(".export-table").click(function() {
-                $("#myTable").table2excel({
-                    exclude: ".noExl",
-                    name: "Worksheet Name",
-                    filename: "ExportedTable",
-                    fileext: ".xls"
-                });
-            });
+            function getToday() {
+                var fullDate = new Date();
+                var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+                var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+                var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+                return currentDate;
+            }
         </script>
 
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr class="ex">
-                    <th>Tên hoạt động</th>
-                    <th>Thời gian</th>
-                    <th>Địa điểm</th>
-                    <th>Đối tượng tham gia</th>
-                    <th>Phí tham gia</th>
-                    <th width="45px; !important"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Hoạt động ngoại khóa 1</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 2</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 3</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 4</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 5</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 6</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 7</td>
-                    <td>11-02-2021</td>
-                    <td>Sân vận động 8</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>700000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 8</td>
-                    <td>14-08-2021</td>
-                    <td>Sân vận động 5</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>100000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 9</td>
-                    <td>12-05-2021</td>
-                    <td>Sân vận động 7</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>400000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 10</td>
-                    <td>18-07-2021</td>
-                    <td>Sân vận động 1</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>200000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 11</td>
-                    <td>15-01-2021</td>
-                    <td>Sân vận động 4</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>800000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hoạt động ngoại khóa 12</td>
-                    <td>17-04-2021</td>
-                    <td>Sân vận động 2</td>
-                    <td>Học sinh toàn trường</td>
-                    <td>500000</td>
-                    <td>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         <div id="pageNavPosition" class="text-right"></div>
+
         <script type="text/javascript">
             var pager = new Pager('myTable', 10);
             pager.init();
@@ -364,59 +359,32 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer" style="text-align: center;">
-                    <button type="button" class="btn btn-success" id="add-event" data-dismiss="modal">Thêm hoạt động</button>
+                    <button type="button" class="btn btn-success confirm-btn" data-dismiss="modal">Thêm hoạt động</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy bỏ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="jquery.min.js"></script>
+    <div class="modal fade" id="del-event-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Xác nhận xóa
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa mục này?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
+                    <button type="button" class="btn btn-danger confirm-btn" data-dismiss="modal">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time -->
     <script type="text/javascript">
-        //Lọc Dữ Liệu
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-        //Lọc Table
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[0];
-                    y = rows[i + 1].getElementsByTagName("TD")[0];
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    swal("Thành công!", "Bảng đã được sắp xếp", "success");
-                }
-            }
-        }
-        //Thời Gian
         function time() {
             var today = new Date();
             var weekday = new Array(7);
@@ -456,84 +424,81 @@
                 return i;
             }
         }
-
-        //Thêm Bảng
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-            // Append table with add row form on add new button click
-            // $(".add-new").click(function() {
-            //     $(this).attr("disabled", "disabled");
-            //     var index = $("table tbody tr:last-child").index();
-            //     var row = '<tr>' +
-            //         '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-            //         '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-            //         '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-            //         '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
-            //         '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-            //         '<td>' + actions + '</td>' +
-            //         '</tr>';
-            //     $("table").append(row);
-            //     $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-            //     $('[data-toggle="tooltip"]').tooltip();
-            // });
-            // //Add Hàng
-            // $(document).on("click", ".add", function() {
-            //     var empty = false;
-            //     var input = $(this).parents("tr").find('input[type="text"]');
-            //     input.each(function() {
-            //         if (!$(this).val()) {
-            //             $(this).addClass("error");
-            //             swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
-            //             empty = true;
-            //         } else {
-            //             $(this).removeClass("error");
-            //             swal("Thông báo!", "Bạn chưa nhập dữ liệu", "error");
-            //         }
-            //     });
-            //     $(this).parents("tr").find(".error").first().focus();
-            //     if (!empty) {
-            //         input.each(function() {
-            //             $(this).parent("td").html($(this).val());
-            //             swal("Thành công", "Dữ liệu cập nhật thành công", "success");
-            //         });
-            //         $(this).parents("tr").find(".add, .edit").toggle();
-            //         $(".add-new").removeAttr("disabled");
-
-            //     }
-            // });
-            // Edit Hàng
-            $(document).on("click", ".edit", function() {
-                $(this).parents("tr").find("td:not(:last-child)").each(function() {
-                    $(this).html('<input type="text" class="form-control" value="' + $(this)
-                        .text() + '">');
-                });
-                $(this).parents("tr").find(".add, .edit").toggle();
-                $(".add-new").attr("disabled", "disabled");
-            });
-            jQuery(function() {
-                jQuery(".add").click(function() {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
-                });
-            });
-            // Delete Hàng
-            $(document).on("click", ".delete", function() {
-                $(this).parents("tr").remove();
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
-                $(".add-new").removeAttr("disabled");
-            });
-        });
-
-        jQuery(function() {
-            jQuery(".cog").click(function() {
-                swal("Sorry!", "Tính Năng Này Chưa Có", "error");
-            });
-        });
     </script>
+
     <!--Tooltip-->
     <script>
         $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"], button').tooltip();
+        });
+    </script>
+
+    <!-- Button -->
+    <script>
+        // sort
+        $('th').click(function() {
+            var table = $(this).parents('table').eq(0)
+            var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+            this.asc = !this.asc
+            if (!this.asc) {
+                rows = rows.reverse()
+            }
+            for (var i = 0; i < rows.length; i++) {
+                table.append(rows[i])
+            }
+        })
+
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index),
+                    valB = getCellValue(b, index)
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+            }
+        }
+
+        function getCellValue(row, index) {
+            return $(row).children('td').eq(index).text()
+        }
+
+        // search
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        //add
+        $(document).on("click", "#add-event-dialog .confirm-btn", function() {
+            swal("Thành công!", "Hoạt động đã được thêm vào danh sách hoạt động ngoại khóa của lớp", "success");
+        });
+
+        // delete
+        var del;
+
+        $(document).on("click", ".delete", function() {
+            del = $(this).parents("tr");
+        });
+
+        $(document).on("click", "#del-event-dialog .confirm-btn", function() {
+            del.remove();
+            swal("Thành công!", "Hoạt động đã được xóa khỏi danh sách hoạt động ngoại khóa của lớp", "success");
+            var pager = new Pager('myTable', 10);
+            pager.init();
+            pager.showPageNav('pager', 'pageNavPosition');
+            pager.showPage(1);
+        });
+
+        //export
+        $("#export-table").click(function() {
+            $("#myTable").table2excel({
+                exclude: ".noExl",
+                name: "Worksheet Name",
+                filename: "hoatdongngoaikhoa",
+                fileext: ".xls"
+            });
+
+            swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
         });
     </script>
 </body>

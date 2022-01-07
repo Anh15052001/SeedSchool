@@ -34,8 +34,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
+    <!-- Phân trang -->
     <script type="text/javascript">
         function Pager(tableName, itemsPerPage) {
             this.tableName = tableName;
@@ -120,8 +122,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
-                    <li class="active"><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
+                    <li class="active"><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="teacher-post.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG BÀI">ĐĂNG BÀI</a></li>
                     <li>
@@ -144,7 +146,6 @@
 
         <div>
             <ul>
-                <li><button class="nv" id="add-table" title="Thêm hoạt động trên lớp"><i class="fas fa-plus"></i></button></li>
                 <li><button class="nv" id="export-table" title="Xuất ra file Excel"><i class="fas fa-file-export"></i></button></li>
                 <li><button class="nv" id="search-table" title="Tìm kiếm" data-toggle="collapse" data-target="#myInput"><i class="fas fa-search-location"></i></button></li>
             </ul>
@@ -157,53 +158,76 @@
         <div style="overflow-x: auto;">
 
             <div class="text-center">
-                <span><b id="table-title" style="font-size: 16px;">LỊCH HOẠT ĐỘNG CỦA LỚP</b></span>
+                <span><b id="table-title" style="font-size: 16px;"></b></span>
             </div>
 
             <Br>
 
-            <table class="table table-bordered table-sm" id="myTable">
+            <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr class="ex">
-                        <th width="180px">Tên hoạt động</th>
-                        <th width="165px">Ngày</th>
-                        <th width="135px">Thời gian</th>
-                        <th width="270px">Nội dung</th>
-                        <th width="90px;">Thao tác</th>
+                        <th width="45px">STT</th>
+                        <th width="180px">Tên học sinh</th>
+                        <th width="90px">MSHS</th>
+                        <th width="60px">Lớp</th>
+                        <th width="240px">Nhận xét về bé tại lớp</th>
+                        <th width="60px"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="txt">Chào cờ</td>
-                        <td class="dat">2022-02-11</td>
-                        <td class="tim">07:00</td>
-                        <td class="txt">Chào cờ toàn trường</td>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>nva210001</td>
+                        <td>M3A</td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
-                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td class="txt">Chào cờ cờ</td>
-                        <td class="dat">2021-02-11</td>
-                        <td class="tim">09:00</td>
-                        <td class="txt">Chào cờ toàn trường</td>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>nva210002</td>
+                        <td>M3A</td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
-                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td class="txt">Chào cờ cờ cờ</td>
-                        <td class="dat">2024-02-11</td>
-                        <td class="tim">19:30</td>
-                        <td class="txt">Chào cờ toàn trường</td>
+                        <td>3</td>
+                        <td>Nguyễn Văn C</td>
+                        <td>nva210003</td>
+                        <td>M3A</td>
+                        <td class="comment">Bé ngoan</td>
                         <td>
                             <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                             <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
-                            <a class="delete" title="Xóa" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Nguyễn Văn D</td>
+                        <td>nva210004</td>
+                        <td>M3A</td>
+                        <td class="comment">Bé ngoan</td>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Nguyễn Văn E</td>
+                        <td>nva210005</td>
+                        <td>M3A</td>
+                        <td class="comment">Bé ngoan</td>
+                        <td>
+                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a class="add" title="Lưu lại" data-toggle="tooltip"><i class="fa fa-save" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -211,8 +235,9 @@
         </div>
 
         <div id="pageNavPosition" class="text-right"></div>
+
         <script type="text/javascript">
-            var pager = new Pager('myTable', 10);
+            var pager = new Pager('myTable', 30);
             pager.init();
             pager.showPageNav('pager', 'pageNavPosition');
             pager.showPage(1);
@@ -233,21 +258,24 @@
         </div>
     </div>
 
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    Xác nhận xóa
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc chắn muốn xóa mục này?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
-                    <button type="button" class="btn btn-danger" id="btn-del" data-dismiss="modal">Xóa</button>
-                </div>
-            </div>
-        </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
+
+    <script>
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        window.dataLayer = window.dataLayer || [],
+            gtag("js", new Date),
+            gtag("config", "UA-111717926-1")
+    </script>
+
+    <div>
+        <script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+        <ins class=adsbygoogle style="display:block; text-align:center;" data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1121308659421064 data-ad-slot=8232164616></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({})
+        </script>
+        <div></div>
     </div>
 
     <!-- Time -->
@@ -293,6 +321,26 @@
         }
     </script>
 
+    <!--Tooltip-->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"], button').tooltip();
+        });
+    </script>
+
+
+    <!-- Table title -->
+    <script>
+        function getToday() {
+            var fullDate = new Date();
+            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
+            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
+            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+            return currentDate;
+        }
+        $("#table-title").text("QUẢN LÝ LỚP - NGÀY " + getToday());
+    </script>
+
     <!-- Button -->
     <script>
         // sort
@@ -328,109 +376,36 @@
             });
         });
 
-        // export
-        $("#export-table").click(function() {
-            $("#myTable").table2excel({
-                exclude: ".noExl",
-                name: "Worksheet Name",
-                filename: "lichhoatdongcualop",
-                fileext: ".xls"
-            });
-        });
-
-        // add
-        $("#add-table").click(function() {
-            var index = $("table tbody tr:last-child").index();
-            $("table").append(
-                "<tr>" +
-                "<td class='txt'><input class='form-control' type='text' placeholder='Nhập tên hoạt động...'></td>" +
-                "<td class='dat'><input class='form-control' type='date' value='2001-02-11'></td>" +
-                "<td class='tim'><input class='form-control' type='time' value='11:02'></td>" +
-                "<td class='txt'><input class='form-control' type='text' placeholder='Nhập nội dung hoạt động...'></td>" +
-                "<td>" +
-                "<a class='edit' title='Chỉnh sửa' data-toggle='tooltip'><i class='fa fa-edit' aria-hidden='true'></i></a>" +
-                "<a class='add' title='Lưu lại' data-toggle='tooltip'><i class='fa fa-save' aria-hidden='true'></i></a>" +
-                "<a class='delete' title='Xóa' data-toggle='modal' data-target='#confirm-delete'><i class='fa fa-trash-o' aria-hidden='true'></i></a>" +
-                "</td>" +
-                "</tr>"
-            );
-            $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-        });
-
         // save
         $(document).on("click", ".add", function() {
-            var empty = false;
-            var input = $(this).parents("tr").find('input[type="text"]');
-            var date = $(this).parents("tr").find('input[type="date"]');
-            var time = $(this).parents("tr").find('input[type="time"]')
-
-            input.each(function() {
-                if (!$(this).val()) {
-                    $(this).addClass("error");
-                    swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
-                    empty = true;
-                } else {
-                    $(this).removeClass("error");
-                    swal("Thông báo!", "Bạn chưa nhập dữ liệu", "error");
-                }
-            });
-
-            $(this).parents("tr").find(".error").first().focus();
-
-            if (!empty) {
-                input.each(function() {
-                    $(this).parent("td").html($(this).val());
-                    date.parents("td").html(date.val());
-                    time.parents("td").html(time.val());
-                    swal("Thành công", "Dữ liệu cập nhật thành công", "success");
-                });
-                $(this).parents("tr").find(".add, .edit").toggle();
-            }
-
-            var pager = new Pager('myTable', 10);
-            pager.init();
-            pager.showPageNav('pager', 'pageNavPosition');
-            pager.showPage(1);
+            var cmt = $(this).parents("tr").find("input[type='text']");
+            cmt.parent("td").html(cmt.val());
+            $(this).parents("tr").find(".add, .edit").toggle();
         });
 
         // edit
         $(document).on("click", ".edit", function() {
-            $(this).parents("tr").find(".txt").each(function() {
-                $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+            var cmttxt = $(this).parents("tr").find(".comment").text();
+            $(this).parents("tr").find(".comment").each(function() {
+                $(this).html("<input class='form-control' type='text' placeholder='Nhận xét hoạt động trên lớp...' value='" + cmttxt + "'>");
             });
-            $(this).parents("tr").find(".dat").each(function() {
-                $(this).html('<input type="date" class="form-control" value="' + $(this).text() + '">');
-            });
-            $(this).parents("tr").find(".tim").each(function() {
-                $(this).html('<input type="time" class="form-control" value="' + $(this).text() + '">');
-            });
-
             $(this).parents("tr").find(".add, .edit").toggle();
         });
 
-        // delete
-        var del
+        // export
+        $("#export-table").click(function() {
 
-        $(document).on("click", ".delete", function() {
-            del = $(this).parents("tr");
-        })
+            $("#myTable").table2excel({
+                exclude: ".noExl",
+                name: "Worksheet Name",
+                filename: "quanlylop" + $("tbody tr:first-child").find("td:nth-child(4)").text() + "_" + getToday(),
+                fileext: ".xls"
+            });
 
-        $(document).on("click", "#btn-del", function() {
-            del.remove()
-            var pager = new Pager('myTable', 10);
-            pager.init();
-            pager.showPageNav('pager', 'pageNavPosition');
-            pager.showPage(1);
-            swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+            swal("Thành công!", "Đã xuất danh sách thành file Excel", "success");
         });
     </script>
 
-    <!--Tooltip-->
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 
 </html>

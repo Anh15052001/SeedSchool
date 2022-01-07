@@ -219,7 +219,7 @@
         function addArticle() {
             axios.post('https://seedschool.herokuapp.com/api/v1/article/',{
                 title: $('#title').val(),
-                detail: $('#txtEditor').val()
+                detail: $("#txtEditor").Editor("getText")
         }, {
             headers: {
                 Authorization: token,

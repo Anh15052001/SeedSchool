@@ -363,9 +363,10 @@
     <script>
         const url = 'https://seedschool.herokuapp.com/'
         const studentList = document.querySelector(".student-list");
+        const token = localStorage.getItem('token')
         axios.get(url + "api/v1/student", {
             headers: {
-                Authorization: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHJpbmciLCJleHAiOjE2NDE1MTM2MDB9.C_CCG3Xi5LxIdMZ3qIdRVv23Rm1sItyaBqgufokGqRnSsLkho0u-F_WTdosXsjFBj5Zai_Leyffvx12pRm-Hsw",
+                Authorization: token,
                 "Content-Type": "application/json"
             }
         }).then(resp => {console.log(resp.data)
@@ -380,7 +381,7 @@
                     <a class="edit" title="Chỉnh sửa" data-toggle="tooltip"><class="fa fa-edit" aria-hidden="true"></class=></a>
                     <a class="add" title="Lưu lại" data-toggle="tooltip"><class="fa fa-save" aria-hidden="true"></class=></a>
                 </td>
-             </tr>`
+            </tr>`
             )).join('')
         })
 

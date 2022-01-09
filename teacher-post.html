@@ -78,21 +78,21 @@
         <Br>
 
         <div class="row">
-                <div class="col-sm-3">
-                    <div>
-                        <label class="col-form-label">Tiêu đề bài viết</label>
-                        <input type="text" placeholder="Nhập tiêu đề bài viết..." class="form-control" id="title">
-                    </div>
-    
-                    <div>
-                        <label class="col-form-label">&#8203;</label>
-                        <button class="form-control" id="send-post" title="Gửi bài viết" data-toggle="modal" data-target="#send-post-dialog" style="background: rgb(20, 97, 197); color: rgb(255, 255, 255);" type="submit"><i class="fas fa-send"></i></button>
-                    </div>
+            <div class="col-sm-3">
+                <div>
+                    <label class="col-form-label">Tiêu đề bài viết</label>
+                    <input type="text" placeholder="Nhập tiêu đề bài viết..." class="form-control" id="title">
                 </div>
-    
-                <div class="col-sm-9">
-                    <div id="txtEditor"></div>
+
+                <div>
+                    <label class="col-form-label">&#8203;</label>
+                    <button class="form-control" id="send-post" title="Gửi bài viết" data-toggle="modal" data-target="#send-post-dialog" style="background: firebrick; color: rgb(255, 255, 255);" type="submit"><i class="fas fa-send"></i></button>
                 </div>
+            </div>
+
+            <div class="col-sm-9">
+                <div id="txtEditor"></div>
+            </div>
 
         </div>
 
@@ -216,18 +216,20 @@
     </script>
     <script>
         const token = localStorage.getItem("token");
+
         function addArticle() {
-            axios.post('https://seedschool.herokuapp.com/api/v1/article/',{
-                title: $('#title').val(),
-                detail: $("#txtEditor").Editor("getText")
-        }, {
-            headers: {
-                Authorization: token,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(resp => {
-            console.log(resp.data)})
+            axios.post('https://seedschool.herokuapp.com/api/v1/article/', {
+                    title: $('#title').val(),
+                    detail: $("#txtEditor").Editor("getText")
+                }, {
+                    headers: {
+                        Authorization: token,
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(resp => {
+                    console.log(resp.data)
+                })
         }
     </script>
 </body>

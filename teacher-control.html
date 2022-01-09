@@ -122,7 +122,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="teacher-muster.html" data-toggle="tooltip" data-placement="bottom" title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li class="active"><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="QUẢN LÝ LỚP">QUẢN LÝ LỚP</a></li>
+                    <li class="active"><a href="teacher-control.html" data-toggle="tooltip" data-placement="bottom" title="LÝ LỚP">QUẢN LÝ LỚP</a></li>
                     <li><a href="teacher-schedule.html" data-toggle="tooltip" data-placement="bottom" title="XẾP LỊCH">XẾP LỊCH</a></li>
                     <li><a href="teacher-event.html" data-toggle="tooltip" data-placement="bottom" title="NGOẠI KHÓA">NGOẠI KHÓA</a></li>
                     <li><a href="teacher-post.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG BÀI">ĐĂNG BÀI</a></li>
@@ -369,9 +369,10 @@
                 Authorization: token,
                 "Content-Type": "application/json"
             }
-        }).then(resp => {console.log(resp.data)
+        }).then(resp => {
+            console.log(resp.data)
             studentList.innerHTML = resp.data.map(item => (
-            `<tr>
+                `<tr>
                 <td>${item.id}</td>
                 <td>${item.name}</td>
                 <td>${item.studentId}</td>
@@ -384,8 +385,6 @@
             </tr>`
             )).join('')
         })
-
-
     </script>
 
 </body>

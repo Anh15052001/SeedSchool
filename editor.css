@@ -112,6 +112,7 @@ h2.demo-text {
 
 .Editor-container {
     margin-top: 10px;
+    border: 1px solid gray;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -182,8 +183,6 @@ h2.demo-text {
     margin-bottom: 3px;
 }
 
-#paletteCntr {}
-
 select,
 textarea,
 input[type="text"],
@@ -224,7 +223,7 @@ input[type="color"],
 }
 
 .Editor-editor {
-    height: 380px;
+    height: 350px;
     padding: 1%;
     border: 1px solid #EEE;
     border-radius: 0;
@@ -344,7 +343,7 @@ pre {
 .fullscreen .line-control-status-bar {
     position: fixed;
     bottom: 0;
-    border-top: 1px solid #DDD;
+    border-top: 1px solid #EEE;
 }
 
 .fullscreen #contentarea {

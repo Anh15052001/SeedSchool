@@ -424,42 +424,63 @@
         }).then(resp => {
             console.log(resp.data)
             studentList.innerHTML = resp.data.map(item => (
+                `<tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.studentId}</td>
+                    <td class="gender">${item.gender}</td>
+                    <td class="late">${item.babysittingLate}</td>
+                    <td class="absent">${item.statusDetails}</td>
+                    <td>
+                        <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple/>
+                        <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
+                    </td>
+                    <td>
+                        <a class="edit" title="Chỉnh sửa" data-toggle="tooltip">
+                            <i class="fa fa-edit" aria-hidden="true"></i>
+                        </a>
+                        <a class="add" title="Lưu lại" data-toggle="tooltip">
+                            <i class="fa fa-save" aria-hidden="true"
+                            onclick="muster(${item.studentId}, ${item.id}, this)"
+                            ></i>
+                        </a>
+                    </td>
+                </tr>
                 `
-                <tr>
-                        <td>${item.id}</td>
-                        <td>${item.name}</td>
-                        <td>${item.studentId}</td>
-                        <td class="gender">${item.gender}</td>
-                        <td class="late">Không</td>
-                        <td class="absent">Đi học</td>
-                        <td>
-                            <input type="file" id="imghs1" class="inputImg" data-multiple-caption="{count} files selected" multiple />
-                            <label for="imghs1" class="form-control"><span>Chọn ảnh</span></label>
-                        </td>
-                        <td>
-                            <a class="edit" title="Chỉnh sửa" data-toggle="tooltip">
-                                <i class="fa fa-edit" aria-hidden="true"></i>
-                            </a>
-                            <a class="add" title="Lưu lại" data-toggle="tooltip">
-                                <i class="fa fa-save" aria-hidden="true"
-                                onclick="muster(${item.studentId},${item.id},this)"
-                                ></i>
-                            </a>
-                        </td>
-                    </tr>
-                `
-            ))
+            )).join('')
         })
+        
         function muster(studentId,id,e) {
             const info = $(e).parents("tr").find("td:not(:last-child)")
-            axios.post('https://seedschool.herokuapp.com/api/v1/details/',{
-                studentId,
-                active: info[5].innerHTML === 'Đi học' ? true : false,
-                comment: "test",
-                id,
-                timein: "2022-01-07T10:21:25.868Z",
-                image: "url"
-            }).then(resp => console.log(resp.data))
+            setTimeout(() => {
+            let babysittingLate = info[4].innerHTML;
+            let statusDetails = info[5].innerHTML
+            // let input= e.parentElement.parentElement.parentElement.querySelector("#imghs1")
+            let input= document.querySelector("#imghs1")
+            console.log(input)
+            console.log(input.files[0])
+            let date = new Date();
+            let [month, day, year] = [date.getMonth()+1, date.getDate(), date.getFullYear()];
+            let [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+            let time = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
+            let formData = new FormData();
+            formData.append("image", input.files[0]);
+            axios.put(`https://seedschool.herokuapp.com/api/v1/student/roll_up/${id}?babysittingLate=${babysittingLate}&statusDetails=${statusDetails}&timeIn=${time}`,formData,{
+                headers: {
+                    Authorization: token,
+                    'Content-Type': 'multipart/form-data'
+                }, 
+            })
+            .then(resp => {
+                console.log(resp.data)
+                swal("Thành công", "Dữ liệu cập nhật thành công", "success");
+            }
+            
+            )
+            .catch(error => {
+                swal("Không thành công", "Dữ liệu cập nhật không thành công", "error");
+            })
+            },100)
         }
     </script>
 </body>

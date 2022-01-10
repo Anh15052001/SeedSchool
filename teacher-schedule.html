@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Bin-It" />
@@ -13,15 +17,33 @@
     <meta property="og:description" content="Welcome to my Website" />
 
     <title>Giáo Viên</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
     <!--===============================================================================================-->
     <link rel="stylesheet" href="style1.css" />
     <!-- Latest compiled and minified CSS -->
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
     <!-- AXIOS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"
+      integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- jQuery library -->
     <!--===============================================================================================-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -29,109 +51,127 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css"
+    />
     <!--===============================================================================================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
     <script type="text/javascript">
-        //Phân Trang Cho Table
-        //<![CDATA[
-        function Pager(tableName, itemsPerPage) {
-            this.tableName = tableName;
-            this.itemsPerPage = itemsPerPage;
-            this.currentPage = 1;
-            this.pages = 0;
-            this.inited = false;
+      //Phân Trang Cho Table
+      //<![CDATA[
+      function Pager(tableName, itemsPerPage) {
+        this.tableName = tableName;
+        this.itemsPerPage = itemsPerPage;
+        this.currentPage = 1;
+        this.pages = 0;
+        this.inited = false;
 
-            this.showRecords = function(from, to) {
-                var rows = document.getElementById(tableName).rows;
-                for (var i = 1; i < rows.length; i++) {
-                    if (i < from || i > to) rows[i].style.display = "none";
-                    else rows[i].style.display = "";
-                }
-            };
+        this.showRecords = function (from, to) {
+          var rows = document.getElementById(tableName).rows;
+          for (var i = 1; i < rows.length; i++) {
+            if (i < from || i > to) rows[i].style.display = "none";
+            else rows[i].style.display = "";
+          }
+        };
 
-            this.showPage = function(pageNumber) {
-                if (!this.inited) {
-                    alert("not inited");
-                    return;
-                }
-                var oldPageAnchor = document.getElementById("pg" + this.currentPage);
-                oldPageAnchor.className = "pg-normal";
+        this.showPage = function (pageNumber) {
+          if (!this.inited) {
+            alert("not inited");
+            return;
+          }
+          var oldPageAnchor = document.getElementById("pg" + this.currentPage);
+          oldPageAnchor.className = "pg-normal";
 
-                this.currentPage = pageNumber;
-                var newPageAnchor = document.getElementById("pg" + this.currentPage);
-                newPageAnchor.className = "pg-selected";
+          this.currentPage = pageNumber;
+          var newPageAnchor = document.getElementById("pg" + this.currentPage);
+          newPageAnchor.className = "pg-selected";
 
-                var from = (pageNumber - 1) * itemsPerPage + 1;
-                var to = from + itemsPerPage - 1;
-                this.showRecords(from, to);
-            };
+          var from = (pageNumber - 1) * itemsPerPage + 1;
+          var to = from + itemsPerPage - 1;
+          this.showRecords(from, to);
+        };
 
-            this.prev = function() {
-                if (this.currentPage > 1) this.showPage(this.currentPage - 1);
-            };
+        this.prev = function () {
+          if (this.currentPage > 1) this.showPage(this.currentPage - 1);
+        };
 
-            this.next = function() {
-                if (this.currentPage < this.pages) {
-                    this.showPage(this.currentPage + 1);
-                }
-            };
+        this.next = function () {
+          if (this.currentPage < this.pages) {
+            this.showPage(this.currentPage + 1);
+          }
+        };
 
-            this.init = function() {
-                var rows = document.getElementById(tableName).rows;
-                var records = rows.length - 1;
-                this.pages = Math.ceil(records / itemsPerPage);
-                this.inited = true;
-            };
-            this.showPageNav = function(pagerName, positionId) {
-                if (!this.inited) {
-                    alert("not inited");
-                    return;
-                }
-                var element = document.getElementById(positionId);
+        this.init = function () {
+          var rows = document.getElementById(tableName).rows;
+          var records = rows.length - 1;
+          this.pages = Math.ceil(records / itemsPerPage);
+          this.inited = true;
+        };
+        this.showPageNav = function (pagerName, positionId) {
+          if (!this.inited) {
+            alert("not inited");
+            return;
+          }
+          var element = document.getElementById(positionId);
 
-                var pagerHtml =
-                    '<span onclick="' +
-                    pagerName +
-                    '.prev();" class="pg-normal">&#171</span> | ';
-                for (var page = 1; page <= this.pages; page++)
-                    pagerHtml +=
-                    '<span id="pg' +
-                    page +
-                    '" class="pg-normal" onclick="' +
-                    pagerName +
-                    ".showPage(" +
-                    page +
-                    ');">' +
-                    page +
-                    "</span> | ";
-                pagerHtml +=
-                    '<span onclick="' +
-                    pagerName +
-                    '.next();" class="pg-normal">&#187;</span>';
+          var pagerHtml =
+            '<span onclick="' +
+            pagerName +
+            '.prev();" class="pg-normal">&#171</span> | ';
+          for (var page = 1; page <= this.pages; page++)
+            pagerHtml +=
+              '<span id="pg' +
+              page +
+              '" class="pg-normal" onclick="' +
+              pagerName +
+              ".showPage(" +
+              page +
+              ');">' +
+              page +
+              "</span> | ";
+          pagerHtml +=
+            '<span onclick="' +
+            pagerName +
+            '.next();" class="pg-normal">&#187;</span>';
 
-                element.innerHTML = pagerHtml;
-            };
-        }
-        //]]>
+          element.innerHTML = pagerHtml;
+        };
+      }
+      //]]>
     </script>
-</head>
+  </head>
 
-<body onload="time()">
+  <body onload="time()">
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
             <i class="fas fa-bars"></i>
           </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN LÝ LỚP
+          <a class="navbar-brand" href="#"
+            ><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN LÝ LỚP
             HỌC</a
           >
         </div>
@@ -187,156 +227,201 @@
                 >TÀI KHOẢN
                 <span class="caret"></span>
               </a>
-                <ul class="dropdown">
-                    <li>
-                        <a href="index.html" data-toggle="tooltip" data-placement="bottom" title="ĐĂNG XUẤT">ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i
+              <ul class="dropdown">
+                <li>
+                  <a
+                    href="index.html"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="ĐĂNG XUẤT"
+                    >ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i
                   ></a>
-                    </li>
-                </ul>
                 </li>
-                </ul>
-            </div>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <div class="container-fluid al">
-        <div id="clock"></div>
+      <div id="clock"></div>
 
-        <Br>
-        <Br>
+      <br />
+      <br />
 
-        <div>
-            <ul>
-                <li><button class="nv add-new" type="button" data-toggle="tooltip" data-placement="top" title="Thêm hoạt động"><i class="fas fa-plus"></i></button></li>
-                <li><button class="nv" id="export-table" title="Xuất ra file Excel"><i class="fas fa-file-export"></i></button></li>
-                <li><button class="nv" id="search-table" title="Tìm kiếm" data-toggle="collapse" data-target="#myInput"><i class="fas fa-search-location"></i></button></li>
-            </ul>
+      <div>
+        <ul>
+          <li>
+            <button
+              class="nv add-new"
+              type="button"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Thêm hoạt động"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+          </li>
+          <li>
+            <button class="nv" id="export-table" title="Xuất ra file Excel">
+              <i class="fas fa-file-export"></i>
+            </button>
+          </li>
+          <li>
+            <button
+              class="nv"
+              id="search-table"
+              title="Tìm kiếm"
+              data-toggle="collapse"
+              data-target="#myInput"
+            >
+              <i class="fas fa-search-location"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          class="collapse"
+          id="myInput"
+          placeholder="Tìm kiếm..."
+        />
+      </div>
+
+      <script>
+        //export
+        $(".export-table").click(function () {
+          $("#myTable").table2excel({
+            exclude: ".noExl",
+            name: "Worksheet Name",
+            filename: "ExportedTable",
+            fileext: ".xls",
+          });
+        });
+        // sort
+        $("th").click(function () {
+          var table = $(this).parents("table").eq(0);
+          var rows = table
+            .find("tr:gt(0)")
+            .toArray()
+            .sort(comparer($(this).index()));
+          this.asc = !this.asc;
+          if (!this.asc) {
+            rows = rows.reverse();
+          }
+          for (var i = 0; i < rows.length; i++) {
+            table.append(rows[i]);
+          }
+        });
+
+        function comparer(index) {
+          return function (a, b) {
+            var valA = getCellValue(a, index);
+            var valB = getCellValue(b, index);
+            return $.isNumeric(valA) && $.isNumeric(valB)
+              ? valA - valB
+              : valA.toString().localeCompare(valB);
+          };
+        }
+
+        function getCellValue(row, index) {
+          return $(row).children("td").eq(index).text();
+        }
+
+        // search
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          });
+        });
+      </script>
+
+      <div style="overflow-x: auto">
+        <div class="text-center">
+          <span
+            ><b id="table-title" style="font-size: 16px"
+              >Xếp lịch hoạt động của lớp</b
+            ></span
+          >
         </div>
 
-        <div>
-            <input type="text" class="collapse" id="myInput" placeholder="Tìm kiếm...">
-        </div>
+        <br />
 
-        <script>
-            //export
-            $(".export-table").click(function() {
-                $("#myTable").table2excel({
-                    exclude: ".noExl",
-                    name: "Worksheet Name",
-                    filename: "ExportedTable",
-                    fileext: ".xls",
-                });
-            });
-            // sort
-            $('th').click(function() {
-                var table = $(this).parents('table').eq(0);
-                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
-                this.asc = !this.asc;
-                if (!this.asc) {
-                    rows = rows.reverse();
-                }
-                for (var i = 0; i < rows.length; i++) {
-                    table.append(rows[i]);
-                }
-            })
+        <table class="table table-bordered" id="myTable">
+          <thead>
+            <tr class="ex">
+              <th>Tên hoạt động</th>
+              <th>Thời gian</th>
+              <th>Nội dung</th>
+              <th>Nhận xét</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody class="body-data">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a class="add" title="Lưu Lại" data-toggle="tooltip"
+                  ><i class="fa fa-floppy-o" aria-hidden="true"></i
+                ></a>
+                <a class="edit" title="Sửa" data-toggle="tooltip"
+                  ><i class="fa fa-pencil" aria-hidden="true"></i
+                ></a>
+                <a class="delete" title="Xóa" data-toggle="tooltip"
+                  ><i class="fa fa-trash-o" aria-hidden="true"></i
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-            function comparer(index) {
-                return function(a, b) {
-                    var valA = getCellValue(a, index);
-                    var valB = getCellValue(b, index);
-                    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
-                }
-            }
-
-            function getCellValue(row, index) {
-                return $(row).children('td').eq(index).text();
-            }
-
-            // search
-            $("#myInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tbody tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        </script>
-
-        <div style="overflow-x: auto;">
-
-            <div class="text-center">
-                <span><b id="table-title" style="font-size: 16px;">Xếp lịch hoạt động của lớp</b></span>
-            </div>
-
-            <Br>
-
-            <table class="table table-bordered" id="myTable">
-                <thead>
-                    <tr class="ex">
-                        <th width="150px">Tên hoạt động</th>
-                        <th width="60px">Thời gian</th>
-                        <th width="210px">Nội dung</th>
-                        <th width="210px">Nhận xét</th>
-                        <th>Thao tác</th>
-                    </tr>
-                </thead>
-                <tbody class="body-data">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o" aria-hidden="true"></i
-                  ></a>
-                            <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil" aria-hidden="true"></i
-                  ></a>
-                            <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i
-                  ></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="pageNavPosition" class="text-right"></div>
-        <script type="text/javascript">
-            var pager = new Pager("myTable", 5);
-            pager.init();
-            pager.showPageNav("pager", "pageNavPosition");
-            pager.showPage(1);
-        </script>
+      <div id="pageNavPosition" class="text-right"></div>
+      <script type="text/javascript">
+        var pager = new Pager("myTable", 5);
+        pager.init();
+        pager.showPageNav("pager", "pageNavPosition");
+        pager.showPage(1);
+      </script>
     </div>
     <hr class="hr1" />
     <div class="container-fluid end">
-        <div class="row text-center">
-            <div class="col-lg-12 link">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-google"></i>
-            </div>
-            <div class="col-lg-12">2021 Seedschool <a href="#">NEUIT12</a></div>
+      <div class="row text-center">
+        <div class="col-lg-12 link">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-google"></i>
         </div>
+        <div class="col-lg-12">2021 Seedschool <a href="#">NEUIT12</a></div>
+      </div>
     </div>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
-        const baseUrl = "https://seedschool.herokuapp.com/";
-        const tokenTeacher = localStorage.getItem("token");
+      const baseUrl = "https://seedschool.herokuapp.com/";
+      const tokenTeacher = localStorage.getItem("token");
 
-        // Xuất danh sách hoạt động
-        const bodyData = document.querySelector(".body-data");
-        axios
-            .get("https://seedschool.herokuapp.com/api/v1/activity", {
-                headers: {
-                    Authorization: tokenTeacher,
-                },
-            })
-            .then((response) => response.data)
-            .then((data) => {
-                console.log(data);
-                bodyData.innerHTML = data
-                    .map(
-                        (item, index) =>
-                        `<tr>
+      // Xuất danh sách hoạt động
+      const bodyData = document.querySelector(".body-data");
+      axios
+        .get("https://seedschool.herokuapp.com/api/v1/activity", {
+          headers: {
+            Authorization: tokenTeacher,
+          },
+        })
+        .then((response) => response.data)
+        .then((data) => {
+          console.log(data);
+          bodyData.innerHTML = data
+            .map(
+              (item, index) =>
+                `<tr>
                     <td>${item.nameActivity}</td>
                     <td>${dayjs(item.startDate).format("MMM D,  YYYY")}</td>
                     <td>${item.detail}</td>
@@ -358,222 +443,223 @@
                       </a>
                     </td>
                   </tr>`
-                    )
-                    .join("");
-            });
-        //Thời Gian
-        function time() {
-            var today = new Date();
-            var weekday = new Array(7);
-            weekday[0] = "Chủ Nhật";
-            weekday[1] = "Thứ Hai";
-            weekday[2] = "Thứ Ba";
-            weekday[3] = "Thứ Tư";
-            weekday[4] = "Thứ Năm";
-            weekday[5] = "Thứ Sáu";
-            weekday[6] = "Thứ Bảy";
-            var day = weekday[today.getDay()];
-            var dd = today.getDate();
-            var mm = today.getMonth() + 1;
-            var yyyy = today.getFullYear();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            nowTime = h + ":" + m + ":" + s;
-            if (dd < 10) {
-                dd = "0" + dd;
-            }
-            if (mm < 10) {
-                mm = "0" + mm;
-            }
-            today = day + ", " + dd + "/" + mm + "/" + yyyy;
-            tmp =
-                '<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="date">' +
-                today +
-                " | " +
-                nowTime +
-                "</span>";
-            document.getElementById("clock").innerHTML = tmp;
-            clocktime = setTimeout("time()", "1000", "Javascript");
-
-            function checkTime(i) {
-                if (i < 10) {
-                    i = "0" + i;
-                }
-                return i;
-            }
-        }
-
-        //Thêm Bảng
-        let flag = true;
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html(); // THIS
-            console.log(actions);
-            // Append table with add row form on add new button click
-            $(".add-new").click(function() {
-                flag = false;
-                $(this).attr("disabled", "disabled");
-                var index = $("table tbody tr:last-child").index();
-                var row =
-                    "<tr>" +
-                    '<td><input type="text" class="form-control" name="name" id="name" placeholder="Tên hoạt động"></td>' +
-                    '<td><input type="text" class="form-control" name="time" id="time" value="" placeholder="Thời gian"></td>' +
-                    '<td><input type="text" class="form-control" name="content" id="content" value="" placeholder="Nội dung"></td>' +
-                    '<td><input type="text" class="form-control" name="comment" id="comment" value="" placeholder="Nhận xét"></td>' +
-                    "<td>" +
-                    actions +
-                    "</td>" +
-                    "</tr>";
-                $("table").append(row);
-
-                $("table tbody tr")
-                    .eq(index + 1)
-                    .find(".add, .edit")
-                    .toggle();
-                $('[data-toggle="tooltip"]').tooltip();
-                $(document).on("click", ".add", function() {
-                    var empty = false;
-                    var input = $(this).parents("tr").find('input[type="text"]');
-                    input.each(function() {
-                        if (!$(this).val()) {
-                            $(this).addClass("error");
-                            swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
-                            empty = true;
-                        }
-                    });
-                    $(this).parents("tr").find(".error").first().focus();
-                    if (!empty) {
-                        const inputData = {
-                            applicableObject: input[3].value,
-                            condition: "string",
-                            detail: input[2].value,
-                            feeAttend: 0,
-                            location: "string",
-                            nameActivity: input[0].value,
-                            startDate: "2022-01-01T14:35:14.724Z",
-                        };
-                        if (!flag) {
-                            axios
-                                .post(
-                                    "https://seedschool.herokuapp.com/api/v1/activity/",
-                                    JSON.stringify(inputData), {
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                            Authorization: tokenTeacher,
-                                        },
-                                    }
-                                )
-                                .then((resp) => {
-                                    console.log(resp.data);
-                                    input.each(function() {
-                                        $(this).parent("td").html($(this).val());
-                                        swal(
-                                            "Thành công",
-                                            "Dữ liệu cập nhật thành công",
-                                            "success"
-                                        );
-                                    });
-                                    $(this).parents("tr").find(".add, .edit").toggle();
-                                    $(".add-new").removeAttr("disabled");
-                                    flag = true;
-                                })
-                                .catch((error) => console.log(error.response));
-                        }
-                    }
-                });
-            });
-
-            jQuery(function() {
-                jQuery(".add").click(function() {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
-                });
-            });
+            )
+            .join("");
         });
-
-        function deleteRow(id, e) {
-            axios
-                .delete(`https://seedschool.herokuapp.com/api/v1/activity/${id}`, {
-                    headers: {
-                        Authorization: tokenTeacher,
-                    },
-                })
-                .then((res) => {
-                    $(e).parents("tr").remove();
-                    $(".add-new").removeAttr("disabled");
-                    swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
-                })
-                .catch((error) => {
-                    swal("Lỗi", "Bạn Đã Xóa Không Thành Công", "error");
-                });
+      //Thời Gian
+      function time() {
+        var today = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Chủ Nhật";
+        weekday[1] = "Thứ Hai";
+        weekday[2] = "Thứ Ba";
+        weekday[3] = "Thứ Tư";
+        weekday[4] = "Thứ Năm";
+        weekday[5] = "Thứ Sáu";
+        weekday[6] = "Thứ Bảy";
+        var day = weekday[today.getDay()];
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        nowTime = h + ":" + m + ":" + s;
+        if (dd < 10) {
+          dd = "0" + dd;
         }
+        if (mm < 10) {
+          mm = "0" + mm;
+        }
+        today = day + ", " + dd + "/" + mm + "/" + yyyy;
+        tmp =
+          '<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="date">' +
+          today +
+          " | " +
+          nowTime +
+          "</span>";
+        document.getElementById("clock").innerHTML = tmp;
+        clocktime = setTimeout("time()", "1000", "Javascript");
 
-        function updateRow(id, e) {
-            console.log(id);
-            $(e).parents("tr").find(".add, .edit").toggle();
-            $(e)
-                .parents("tr")
-                .find("td:not(:last-child)")
-                .each(function() {
-                    $(this).html(
-                        '<input type="text" class="form-control" value="' +
-                        $(this).text() +
-                        '">'
-                    );
-                });
-            $(document).on("click", ".add", function() {
-                var input = $(e).parents("tr").find('input[type="text"]');
-                console.log(input[0].value);
-                const inputData = {
-                    applicableObject: input[3].value,
-                    condition: "string",
-                    detail: input[2].value,
-                    feeAttend: 0,
-                    location: "string",
-                    nameActivity: input[0].value,
-                    startDate: "2022-01-01T14:35:14.724Z",
-                };
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
+      }
+
+      //Thêm Bảng
+      let flag = true;
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        var actions = $("table td:last-child").html(); // THIS
+        console.log(actions);
+        // Append table with add row form on add new button click
+        $(".add-new").click(function () {
+          flag = false;
+          $(this).attr("disabled", "disabled");
+          var index = $("table tbody tr:last-child").index();
+          var row =
+            "<tr>" +
+            '<td><input type="text" class="form-control" name="name" id="name" placeholder="Tên hoạt động"></td>' +
+            '<td><input type="text" class="form-control" name="time" id="time" value="" placeholder="Thời gian"></td>' +
+            '<td><input type="text" class="form-control" name="content" id="content" value="" placeholder="Nội dung"></td>' +
+            '<td><input type="text" class="form-control" name="comment" id="comment" value="" placeholder="Nhận xét"></td>' +
+            "<td>" +
+            actions +
+            "</td>" +
+            "</tr>";
+          $("table").append(row);
+
+          $("table tbody tr")
+            .eq(index + 1)
+            .find(".add, .edit")
+            .toggle();
+          $('[data-toggle="tooltip"]').tooltip();
+          $(document).on("click", ".add", function () {
+            var empty = false;
+            var input = $(this).parents("tr").find('input[type="text"]');
+            input.each(function () {
+              if (!$(this).val()) {
+                $(this).addClass("error");
+                swal("Thông báo!", "Không được bỏ trống dữ liệu", "error");
+                empty = true;
+              }
+            });
+            $(this).parents("tr").find(".error").first().focus();
+            if (!empty) {
+              const inputData = {
+                applicableObject: input[3].value,
+                condition: "string",
+                detail: input[2].value,
+                feeAttend: 0,
+                location: "string",
+                nameActivity: input[0].value,
+                startDate: "2022-01-01T14:35:14.724Z",
+              };
+              if (!flag) {
                 axios
-                    .put(
-                        `https://seedschool.herokuapp.com/api/v1/activity/${id}`,
-                        JSON.stringify(inputData), {
-                            headers: {
-                                Authorization: tokenTeacher,
-                                "Content-Type": "application/json",
-                            },
-                        }
-                    )
-                    .then((resp) => {
-                        console.log(resp.data);
-                        input.each(function() {
-                            $(this).parent("td").html($(this).val());
-                            swal("Thành công", "Dữ liệu cập nhật thành công", "success");
-                        });
-                        $(this).parents("tr").find(".add, .edit").toggle();
-                        $(".add-new").removeAttr("disabled");
-                    })
-                    .catch((error) => {
-                        console.log(error.response.data);
-                        swal("Thất bại", "Dữ liệu cập nhật không thành công", "error");
+                  .post(
+                    "https://seedschool.herokuapp.com/api/v1/activity/",
+                    JSON.stringify(inputData),
+                    {
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: tokenTeacher,
+                      },
+                    }
+                  )
+                  .then((resp) => {
+                    console.log(resp.data);
+                    input.each(function () {
+                      $(this).parent("td").html($(this).val());
+                      swal(
+                        "Thành công",
+                        "Dữ liệu cập nhật thành công",
+                        "success"
+                      );
                     });
-            });
+                    $(this).parents("tr").find(".add, .edit").toggle();
+                    $(".add-new").removeAttr("disabled");
+                    flag = true;
+                  })
+                  .catch((error) => console.log(error.response));
+              }
+            }
+          });
+        });
 
-            $(".add-new").attr("disabled", "disabled");
-        }
-        jQuery(function() {
-            jQuery(".cog").click(function() {
-                swal("Sorry!", "Tính Năng Này Chưa Có", "error");
+        jQuery(function () {
+          jQuery(".add").click(function () {
+            swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
+          });
+        });
+      });
+
+      function deleteRow(id, e) {
+        axios
+          .delete(`https://seedschool.herokuapp.com/api/v1/activity/${id}`, {
+            headers: {
+              Authorization: tokenTeacher,
+            },
+          })
+          .then((res) => {
+            $(e).parents("tr").remove();
+            $(".add-new").removeAttr("disabled");
+            swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+          })
+          .catch((error) => {
+            swal("Lỗi", "Bạn Đã Xóa Không Thành Công", "error");
+          });
+      }
+
+      function updateRow(id, e) {
+        console.log(id);
+        $(e).parents("tr").find(".add, .edit").toggle();
+        $(e)
+          .parents("tr")
+          .find("td:not(:last-child)")
+          .each(function () {
+            $(this).html(
+              '<input type="text" class="form-control" value="' +
+                $(this).text() +
+                '">'
+            );
+          });
+        $(document).on("click", ".add", function () {
+          var input = $(e).parents("tr").find('input[type="text"]');
+          console.log(input[0].value);
+          const inputData = {
+            applicableObject: input[3].value,
+            condition: "string",
+            detail: input[2].value,
+            feeAttend: 0,
+            location: "string",
+            nameActivity: input[0].value,
+            startDate: "2022-01-01T14:35:14.724Z",
+          };
+          axios
+            .put(
+              `https://seedschool.herokuapp.com/api/v1/activity/${id}`,
+              JSON.stringify(inputData),
+              {
+                headers: {
+                  Authorization: tokenTeacher,
+                  "Content-Type": "application/json",
+                },
+              }
+            )
+            .then((resp) => {
+              console.log(resp.data);
+              input.each(function () {
+                $(this).parent("td").html($(this).val());
+                swal("Thành công", "Dữ liệu cập nhật thành công", "success");
+              });
+              $(this).parents("tr").find(".add, .edit").toggle();
+              $(".add-new").removeAttr("disabled");
+            })
+            .catch((error) => {
+              console.log(error.response.data);
+              swal("Thất bại", "Dữ liệu cập nhật không thành công", "error");
             });
         });
+
+        $(".add-new").attr("disabled", "disabled");
+      }
+      jQuery(function () {
+        jQuery(".cog").click(function () {
+          swal("Sorry!", "Tính Năng Này Chưa Có", "error");
+        });
+      });
     </script>
     <!--Tooltip-->
     <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"], button').tooltip();
-        });
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"], button').tooltip();
+      });
     </script>
-</body>
-
+  </body>
 </html>

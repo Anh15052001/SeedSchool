@@ -370,7 +370,6 @@
                 "Content-Type": "application/json"
             }
         }).then(resp => {
-            console.log(resp.data)
             studentList.innerHTML = resp.data.map(item => (
                 `<tr>
                 <td>${item.id}</td>

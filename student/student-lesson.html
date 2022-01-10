@@ -367,6 +367,15 @@
             return currentDate;
         }
         $("#class-title").text("THÔNG TIN BUỔI HỌC - NGÀY " + getToday());
+        const nameStudent = localStorage.getItem("nameStudent");
+        const urlAvatar = localStorage.getItem("urlAvatar");
+        const name = document.getElementById("std-name");
+        const userAvt = document.querySelector(".ttr-user-avatar img")
+        userAvt.src = urlAvatar
+        name.innerHTML = nameStudent
+
+        const user = document.querySelector(".user-avt");
+        user.src = urlAvatar
     </script>
 </body>
 

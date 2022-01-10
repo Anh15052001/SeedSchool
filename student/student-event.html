@@ -236,6 +236,14 @@
     <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
     <script src="assets/js/admin.js"></script>
+    <script>
+          const nameStudent = localStorage.getItem("nameStudent");
+        const urlAvatar = localStorage.getItem("urlAvatar");
+        const name = document.getElementById("std-name");
+        const userAvt = document.querySelector(".ttr-user-avatar img")
+        userAvt.src = urlAvatar
+        name.innerHTML = nameStudent
+    </script>
 </body>
 
 </html>

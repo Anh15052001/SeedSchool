@@ -16,7 +16,7 @@ document.getElementById("myform").addEventListener("submit", (e) => {
     // alert("Mật khẩu phải ít nhất 6 kí tự");
     return false;
   }
-  var postAPI = "https://seedschool.herokuapp.com/api/v1/account/login";
+  const postAPI = "https://seedschool.herokuapp.com/api/v1/account/login";
 
   fetch(postAPI, {
     method: "POST",
@@ -33,7 +33,6 @@ document.getElementById("myform").addEventListener("submit", (e) => {
       return response.json();
     })
     .then(function (posts) {
-      console.log(posts);
       if (!posts.token) {
         document.getElementById("error").innerHTML =
           "Incorrect username or password";
@@ -47,6 +46,8 @@ document.getElementById("myform").addEventListener("submit", (e) => {
           $(".alert--success").removeClass("show");
         });
         // alert("Login successfully!");
+        localStorage.setItem("ROLE", posts.role.name);
+        localStorage.setItem("id", name);
         localStorage.setItem("token", posts.token);
         window.location.replace("index.html");
       }

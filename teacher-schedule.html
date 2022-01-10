@@ -417,13 +417,12 @@
         })
         .then((response) => response.data)
         .then((data) => {
-          console.log(data);
           bodyData.innerHTML = data
             .map(
               (item, index) =>
                 `<tr>
                     <td>${item.nameActivity}</td>
-                    <td>${dayjs(item.startDate).format("MMM D,  YYYY")}</td>
+                    <td>${dayjs(item.startDate).format("YYYY-MM-DD")}</td>
                     <td>${item.detail}</td>
 
                     <td>${item.applicableObject}</td>
@@ -496,7 +495,6 @@
       $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
         var actions = $("table td:last-child").html(); // THIS
-        console.log(actions);
         // Append table with add row form on add new button click
         $(".add-new").click(function () {
           flag = false;
@@ -538,7 +536,7 @@
                 feeAttend: 0,
                 location: "string",
                 nameActivity: input[0].value,
-                startDate: "2022-01-01T14:35:14.724Z",
+                startDate: input[1].value + "T14:35:14.724Z",
               };
               if (!flag) {
                 axios
@@ -611,7 +609,6 @@
           });
         $(document).on("click", ".add", function () {
           var input = $(e).parents("tr").find('input[type="text"]');
-          console.log(input[0].value);
           const inputData = {
             applicableObject: input[3].value,
             condition: "string",
@@ -619,7 +616,7 @@
             feeAttend: 0,
             location: "string",
             nameActivity: input[0].value,
-            startDate: "2022-01-01T14:35:14.724Z",
+            startDate: input[1].value + "T14:35:14.724Z",
           };
           axios
             .put(

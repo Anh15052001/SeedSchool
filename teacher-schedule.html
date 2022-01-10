@@ -566,7 +566,9 @@
                     $(".add-new").removeAttr("disabled");
                     flag = true;
                   })
-                  .catch((error) => console.log(error.response));
+                  .catch((error) => {
+                    swal("Lỗi", "Bạn Đã Thêm Không Thành Công", "error");
+                  });
               }
             }
           });

@@ -97,7 +97,9 @@
                 <ul>
                   <li><a href="student-index.html">Trang cá nhân</a></li>
                   <li><a href="student-change-pass.html">Đổi mật khẩu</a></li>
-                  <li><a href="../login.html">Đăng xuất</a></li>
+                  <li onclick="remove()">
+                    <a href="../login.html">Đăng xuất</a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -145,12 +147,12 @@
                 <span class="ttr-label">Các khoản phí</span>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="student-change-pass.html" class="ttr-material-button">
                 <span class="ttr-icon"><i class="ti-key"></i></span>
                 <span class="ttr-label">Đổi mật khẩu</span>
               </a>
-            </li>
+            </li> -->
             <li class="ttr-seperate"></li>
           </ul>
           <!-- sidebar menu end -->
@@ -168,7 +170,7 @@
           <ul class="db-breadcrumb-list">
             <li><i class="fa fa-home"></i>Trang cá nhân</li>
             <li>Cài đặt</li>
-            <li>Đổi mật khẩu</li>
+            <!-- <li>Đổi mật khẩu</li> -->
           </ul>
         </div>
         <!-- Card -->
@@ -183,7 +185,7 @@
                 <h4>Đổi mật khẩu</h4>
               </div>
               <div class="widget-inner">
-                <form class="edit-profile m-b30">
+                <div class="edit-profile m-b30">
                   <div class="form-group row">
                     <div class="col-12">
                       <input
@@ -193,11 +195,10 @@
                       />
                     </div>
                   </div>
-
                   <div class="form-group row">
                     <div class="col-12">
                       <input
-                        class="form-control new-password"
+                        class="form-control old-password"
                         type="password"
                         placeholder="Nhập mật khẩu mới"
                       />
@@ -224,7 +225,7 @@
                       </button>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -251,29 +252,31 @@
       userAvt.src = urlAvatar;
       name.innerHTML = nameStudent;
 
-      function reset() {
-        const oldPassword = document.querySelector(".old-password");
-        const newPassword = document.querySelector(".new-password");
-        const token = localStorage.getItem("token");
-        console.log(newPassword);
-        axios
-          .post(
-            "https://seedschool.herokuapp.com/api/v1/account/reset-pass",
-            {
-              password: newPassword.value,
-            },
-            {
-              headers: {
-                Authorization: token,
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then((resp) => {
-            console.log(resp.data);
-            window.location.replace("index.html");
-          })
-          .catch((error) => console.log(error));
+      // function reset() {
+      //   const oldPassword = document.querySelector(".old-password");
+      //   const token = localStorage.getItem("token");
+      //   console.log(oldPassword.value);
+      //   const passObj = {
+      //     password: oldPassword.value,
+      //   };
+      //   axios
+      //     .post(
+      //       `https://seedschool.herokuapp.com/api/v1/account/reset-pass?passsword=${passObj}&token=${token}`,
+      //       {
+      //         headers: {
+      //           Authorization: token,
+      //           "Content-Type": "application/json",
+      //         },
+      //       }
+      //     )
+      //     .then((resp) => console.log(resp.data))
+      //     .catch((error) => console.log(error));
+      // }
+
+      function remove() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("nameStudent");
+        localStorage.removeItem("urlAvatar");
       }
     </script>
   </body>

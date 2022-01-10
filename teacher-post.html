@@ -139,11 +139,6 @@
         });
     </script>
 
-    <script>
-        $(document).on("click", "#send-post-dialog .confirm-btn", function() {
-            swal("Thành công!", "Bài viết đã được gửi lên hệ thống chờ phê duyệt", "success");
-        });
-    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111717926-1"></script>
 
@@ -229,6 +224,9 @@
                 })
                 .then(resp => {
                     console.log(resp.data)
+                    swal("Thành công!", "Bài viết đã được gửi lên hệ thống chờ phê duyệt", "success");
+                }).catch(error => {
+                    swal("Không thành công!", "Bài viết chưa được gửi lên hệ thống chờ phê duyệt", "error");
                 })
         }
     </script>

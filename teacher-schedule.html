@@ -538,7 +538,7 @@
                 feeAttend: 0,
                 location: "string",
                 nameActivity: input[0].value,
-                startDate: "2022-01-01T14:35:14.724Z",
+                startDate: input[1].value + "T14:35:14.724Z",
               };
               if (!flag) {
                 axios
@@ -619,7 +619,7 @@
             feeAttend: 0,
             location: "string",
             nameActivity: input[0].value,
-            startDate: "2022-01-01T14:35:14.724Z",
+            startDate: input[1].value + "T14:35:14.724Z",
           };
           axios
             .put(

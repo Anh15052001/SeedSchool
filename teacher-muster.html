@@ -416,7 +416,7 @@
         const studentList = document.querySelector(".student-list");
         const token = localStorage.getItem("token");
 
-        axios.get('https://seedschool.herokuapp.com/api/v1/student',{
+        axios.get('https://seedschool.herokuapp.com/api/v1/student', {
             headers: {
                 Authorization: token,
                 "Content-Type": "application/json"
@@ -448,38 +448,38 @@
                 `
             )).join('')
         })
-        
-        function muster(studentId,id,e) {
+
+        function muster(studentId, id, e) {
             const info = $(e).parents("tr").find("td:not(:last-child)")
             setTimeout(() => {
-            let babysittingLate = info[4].innerHTML;
-            let statusDetails = info[5].innerHTML
-            // let input= e.parentElement.parentElement.parentElement.querySelector("#imghs1")
-            let input= document.querySelector("#imghs1")
-            console.log(input)
-            console.log(input.files[0])
-            let date = new Date();
-            let [month, day, year] = [date.getMonth()+1, date.getDate(), date.getFullYear()];
-            let [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            let time = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
-            let formData = new FormData();
-            formData.append("image", input.files[0]);
-            axios.put(`https://seedschool.herokuapp.com/api/v1/student/roll_up/${id}?babysittingLate=${babysittingLate}&statusDetails=${statusDetails}&timeIn=${time}`,formData,{
-                headers: {
-                    Authorization: token,
-                    'Content-Type': 'multipart/form-data'
-                }, 
-            })
-            .then(resp => {
-                console.log(resp.data)
-                swal("Thành công", "Dữ liệu cập nhật thành công", "success");
-            }
-            
-            )
-            .catch(error => {
-                swal("Không thành công", "Dữ liệu cập nhật không thành công", "error");
-            })
-            },100)
+                let babysittingLate = info[4].innerHTML;
+                let statusDetails = info[5].innerHTML
+                    // let input= e.parentElement.parentElement.parentElement.querySelector("#imghs1")
+                let input = document.querySelector("#imghs1")
+                console.log(input)
+                console.log(input.files[0])
+                let date = new Date();
+                let [month, day, year] = [date.getMonth() + 1, date.getDate(), date.getFullYear()];
+                let [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+                let time = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day} ${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
+                let formData = new FormData();
+                formData.append("image", input.files[0]);
+                axios.put(`https://seedschool.herokuapp.com/api/v1/student/roll_up/${id}?babysittingLate=${babysittingLate}&statusDetails=${statusDetails}&timeIn=${time}`, formData, {
+                        headers: {
+                            Authorization: token,
+                            'Content-Type': 'multipart/form-data'
+                        },
+                    })
+                    .then(resp => {
+                            console.log(resp.data)
+                            swal("Thành công", "Dữ liệu cập nhật thành công", "success");
+                        }
+
+                    )
+                    .catch(error => {
+                        // swal("Không thành công", "Dữ liệu cập nhật không thành công", "error");
+                    })
+            }, 100)
         }
     </script>
 </body>

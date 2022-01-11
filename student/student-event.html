@@ -161,7 +161,7 @@
             <Br>
 
             <div class="row">
-                <div class="col-lg-10 m-b30" style="margin: auto">
+                <div class="col-12 m-b30" style="margin: auto">
                     <div class="widget-box">
                         <div class="wc-title">
                             <h4>Danh sách hoạt động ngoại khóa</h4>
@@ -181,39 +181,32 @@
                                     </thead>
                                     <tbody class="body-data">
                                         <tr>
-                                            <td>Tên HĐ 1</td>
-                                            <td>11-11-1111</td>
-                                            <td>Địa điểm 1</td>
-                                            <td>111111</td>
-                                            <td>Chi tiết chi tiết chi tiết chi tiết chi tiết</td>
+                                            <td>Tập làm đều bếp</td>
+                                            <td>17-01-2022</td>
+                                            <td>Khu bếp chính</td>
+                                            <td>50000</td>
+                                            <td>Các bé được hướng dẫn cách vo gạo, cắm cơm, luộc trứng, luộc rau,...</td>
                                         </tr>
                                         <tr>
-                                            <td>Tên HĐ 2</td>
-                                            <td>11-11-1111</td>
-                                            <td>Địa điểm 2</td>
-                                            <td>111111</td>
-                                            <td>Chi tiết chi tiết chi tiết chi tiết chi tiết</td>
+                                            <td>Hội thi nặn tượng</td>
+                                            <td>11-02-2022</td>
+                                            <td>Sân chính</td>
+                                            <td>30000</td>
+                                            <td>Các bé tham gia thi nặn các hình ảnh được được chiếu lên màn hình, cuối buổi sẽ có trao thưởng cho các bé đoạt giải</td>
                                         </tr>
                                         <tr>
-                                            <td>Tên HĐ 3</td>
-                                            <td>11-11-1111</td>
-                                            <td>Địa điểm 3</td>
-                                            <td>111111</td>
-                                            <td>Chi tiết chi tiết chi tiết chi tiết chi tiết</td>
+                                            <td>Cuộc thi vẽ tranh cổ vũ Việt Nam chiến thắng Covid</td>
+                                            <td>19-02-2022</td>
+                                            <td>Sân vận động</td>
+                                            <td>50000</td>
+                                            <td>Các bé thực hiện vẽ tranh cổ vũ chống dịch dưới sự hướng dẫn của giáo viên</td>
                                         </tr>
                                         <tr>
-                                            <td>Tên HĐ 4</td>
-                                            <td>11-11-1111</td>
-                                            <td>Địa điểm 4</td>
-                                            <td>111111</td>
-                                            <td>Chi tiết chi tiết chi tiết chi tiết chi tiết</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tên HĐ 5</td>
-                                            <td>11-11-1111</td>
-                                            <td>Địa điểm 5</td>
-                                            <td>111111</td>
-                                            <td>Chi tiết chi tiết chi tiết chi tiết chi tiết</td>
+                                            <td>Hội khỏe SeedSchool</td>
+                                            <td>21-03-2022</td>
+                                            <td>Sân vận động</td>
+                                            <td>30000</td>
+                                            <td>Các bé tham gia chơi các trò chơi dân gian và thi đấu với nhau</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -237,7 +230,7 @@
     <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
     <script src="assets/js/admin.js"></script>
     <script>
-          const nameStudent = localStorage.getItem("nameStudent");
+        const nameStudent = localStorage.getItem("nameStudent");
         const urlAvatar = localStorage.getItem("urlAvatar");
         const name = document.getElementById("std-name");
         const userAvt = document.querySelector(".ttr-user-avatar img")
@@ -245,10 +238,10 @@
         name.innerHTML = nameStudent
 
         function remove() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("nameStudent");
-        localStorage.removeItem("urlAvatar");
-      }
+            localStorage.removeItem("token");
+            localStorage.removeItem("nameStudent");
+            localStorage.removeItem("urlAvatar");
+        }
     </script>
 </body>
 

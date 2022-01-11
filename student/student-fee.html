@@ -28,12 +28,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/css/bootstrap.css">
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
-    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
 </head>
 
 <body class=" ttr-opened-sidebar ttr-pinned-sidebar">
@@ -153,10 +147,10 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Thông tin buổi học</h4>
+                <h4 class="breadcrumb-title">Các khoản phí</h4>
                 <ul class="db-breadcrumb-list">
                     <li><i class="fa fa-home"></i>Trang cá nhân</li>
-                    <li>Thông tin buổi học</li>
+                    <li>Các khoản phí</li>
                 </ul>
             </div>
 
@@ -166,192 +160,54 @@
 
             <Br>
 
-            <div class="row teacher-info">
-                <div class="col-lg-10 m-b30" style="margin: auto">
-                    <div class="widget-box">
-                        <div class="wc-title">
-                            <h4>Giáo viên quản lý</h4>
-                        </div>
-                        <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Họ và tên:</span>
-                                                <span id="teacher-name">Nguyễn Thị B</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Bằng cấp:</span>
-                                                <span id="teacher-degree">Cử nhân</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Giới tính:</span>
-                                                <span id="teacher-gend">Nữ</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text"> </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Mã GV:</span>
-                                                <span id="teacher-id">GV011012</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Số điện thoại:</span>
-                                                <span id="teacher-phone">0398384843</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Địa chỉ email:</span>
-                                                <span id="teacher-mail">gvbnt011012@seed.edu.vn</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text"> </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-lg-10 m-b30" style="margin: auto">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Ảnh điểm danh</h4>
+                            <h4>Danh sách các khoản phí</h4>
                         </div>
                         <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <div class="row">
-                                    <div class="col-md-4 col-sm-6 col-8" style="margin: auto;">
-                                        <img class="user-avt" style="margin-bottom: 0;" src="assets/images/testimonials/muster.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <div style="overflow-x: auto;">
 
-            <div class="row">
-                <div class="col-lg-10 m-b30" style="margin: auto">
-                    <div class="widget-box">
-                        <div class="wc-title">
-                            <h4>Thực đơn tại trường</h4>
-                        </div>
-                        <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <ul>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span class="info-lbl">Mô tả:</span>
-                                        <span id="menu-description">Thực đơn đầy đủ dinh dưỡng, tốt cho bé</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span class="info-lbl">Món 1:</span>
-                                        <span class="food-name">Mỳ tôm trứng, </span>
-                                        <span class="food-cal">năng lượng 100 calories, </span>
-                                        <span class="food-element">thành phần gồm mỳ tôm và trứng.</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span class="info-lbl">Món 2:</span>
-                                        <span class="food-name">Mỳ tôm trứng, </span>
-                                        <span class="food-cal">năng lượng 100 calories, </span>
-                                        <span class="food-element">thành phần gồm mỳ tôm và trứng.</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span class="info-lbl">Món ...:</span>
-                                        <span class="food-name">Mỳ tôm trứng, </span>
-                                        <span class="food-cal">năng lượng 100 calories, </span>
-                                        <span class="food-element">thành phần gồm mỳ tôm và trứng.</span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="notification-text">
-                                        <span class="info-lbl">Món n:</span>
-                                        <span class="food-name">Mỳ tôm trứng, </span>
-                                        <span class="food-cal">năng lượng 100 calories, </span>
-                                        <span class="food-element">thành phần gồm mỳ tôm và trứng.</span>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                <table class="table table-striped" id="myTable" style="border: 1px solid gray">
+                                    <thead style="background: firebrick; color: white;">
+                                        <tr>
+                                            <th width="240px">Tên khoản phí</th>
+                                            <th width="120px">Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="body-data">
+                                        <tr>
+                                            <td>Học phí tháng</td>
+                                            <td>1200000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền ăn tháng</td>
+                                            <td>600000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phí trông muộn</td>
+                                            <td>120000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền ăn (Hoàn lại)</td>
+                                            <td>-60000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-            <div class="row">
-                <div class="col-lg-10 m-b30" style="margin: auto">
-                    <div class="widget-box">
-                        <div class="wc-title">
-                            <h4>Hoạt động trên lớp</h4>
-                        </div>
-                        <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <div style="overflow-x: auto;">
-
-                                    <table class="table table-striped" id="myTable" style="border: 1px solid gray">
-                                        <thead style="background: firebrick; color: white;">
-                                            <tr>
-                                                <th width="150px">Tên hoạt động</th>
-                                                <th width="300px">Nội dung</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="body-data">
-                                            <tr>
-                                                <td>Tập đánh vần</td>
-                                                <td>Đánh vần 28 chữ cái trong tiếng việt</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tập làm toán</td>
-                                                <td>Nhận biết chữ số</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tập hát</td>
-                                                <td>Học thuộc bài hát bé lên ba</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tập vẽ</td>
-                                                <td>Vẽ 1 bức tranh về ước mơ của bé</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div>
+                                <div class="text-right">
                                     <span class="notification-text">
-                                    <span><strong>Nhận xét về bé trong buổi học:</strong></span>
-                                    <span id="cmt">Hiện chưa có nhận xét</span>
+                                        <span class="info-lbl">Tổng cần đóng:</span>
+                                    <span id="stdfee">1860000</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
     </main>
     <div class="ttr-overlay"></div>
 
@@ -365,16 +221,6 @@
     <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
     <script src="assets/js/admin.js"></script>
     <script>
-        function getToday() {
-            var fullDate = new Date();
-            var twoDigitDay = (fullDate.getDate().length === 1) ? fullDate.getDate() : '0' + fullDate.getDate();
-            var twoDigitMonth = ((fullDate.getMonth().length + 1) === 1) ? (fullDate.getMonth() + 1) : '0' + (fullDate.getMonth() + 1);
-            var currentDate = twoDigitDay + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-            return currentDate;
-        }
-        $("#class-title").text("THÔNG TIN BUỔI HỌC - NGÀY " + getToday());
-    </script>
-    <script>
         const nameStudent = localStorage.getItem("nameStudent");
         const urlAvatar = localStorage.getItem("urlAvatar");
         const name = document.getElementById("std-name");
@@ -382,91 +228,11 @@
         userAvt.src = urlAvatar
         name.innerHTML = nameStudent
 
-        const user = document.querySelector(".user-avt");
-        user.src = urlAvatar
-
-        const idClassroom = localStorage.getItem("idClassroom");
-        const teacherInfo = document.querySelector(".teacher-info")
-        axios.get(`https://seedschool.herokuapp.com/api/v1/class/teacher_list?id=${idClassroom}`, {
-            headers: {
-                Authorization: localStorage.getItem("token")
-            }
-        })
-        .then(resp => {
-            console.log(resp.data)
-            const item = resp.data[0];
-            teacherInfo.innerHTML = 
-            `
-            <div class="col-lg-10 m-b30" style="margin: auto">
-                    <div class="widget-box">
-                        <div class="wc-title">
-                            <h4>Giáo viên quản lý</h4>
-                        </div>
-                        <div class="widget-inner">
-                            <div class="noti-box-list">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Họ và tên:</span>
-                                                <span id="teacher-name">${item.name}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Bằng cấp:</span>
-                                                <span id="teacher-degree">${item.degree}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Giới tính:</span>
-                                                <span id="teacher-gend">${item.gender}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text"> </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Mã GV:</span>
-                                                <span id="teacher-id">${item.teacherId}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Số điện thoại:</span>
-                                                <span id="teacher-phone">${item.phoneNumber}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text">
-                                                <span class="info-lbl">Địa chỉ email:</span>
-                                                <span id="teacher-mail">${item.email}</span>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="notification-text"> </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        })
         function remove() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("nameStudent");
-        localStorage.removeItem("urlAvatar");
-      }
+            localStorage.removeItem("token");
+            localStorage.removeItem("nameStudent");
+            localStorage.removeItem("urlAvatar");
+        }
     </script>
 </body>
 

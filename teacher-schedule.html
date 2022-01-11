@@ -538,7 +538,7 @@
                 feeAttend: 0,
                 location: "string",
                 nameActivity: input[0].value,
-                startDate: "2022-01-01T14:35:14.724Z",
+                startDate: input[1].value + "T14:35:14.724Z",
               };
               if (!flag) {
                 axios
@@ -566,7 +566,9 @@
                     $(".add-new").removeAttr("disabled");
                     flag = true;
                   })
-                  .catch((error) => console.log(error.response));
+                  .catch((error) => {
+                    swal("Lỗi", "Bạn Đã Thêm Không Thành Công", "error");
+                  });
               }
             }
           });
@@ -619,7 +621,7 @@
             feeAttend: 0,
             location: "string",
             nameActivity: input[0].value,
-            startDate: "2022-01-01T14:35:14.724Z",
+            startDate: input[1].value + "T14:35:14.724Z",
           };
           axios
             .put(
